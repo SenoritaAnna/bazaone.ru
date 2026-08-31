@@ -142,6 +142,19 @@ body {
     linear-gradient(180deg, rgba(0,0,0,.35) 0%, rgba(0,0,0,.15) 45%, rgba(0,0,0,.45) 100%);
 }
 
+/* Логотип БАЗА — держится сверху по центру, поверх сцен */
+.hero-logo {
+  position: absolute;
+  top: clamp(28px, 5vh, 64px);
+  left: 50%;
+  transform: translateX(-50%);
+  height: clamp(84px, 13vh, 150px);
+  width: auto;
+  z-index: 6;
+  filter: drop-shadow(0 10px 34px rgba(0,0,0,.7));
+  pointer-events: none;
+}
+
 /* Каждая сцена — слой поверх сцены. JS управляет opacity/transform через CSS-переменные */
 .scene {
   position: absolute;
