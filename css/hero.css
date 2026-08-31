@@ -67,25 +67,25 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: clamp(16px, 4vw, 80px);
+  gap: clamp(20px, 6vw, 96px);
   padding: clamp(6px, 2vh, 20px) 14px clamp(14px, 3vh, 40px);
 }
-/* высота = максимум по высоте, но чтобы две портретные иконки влезли по ширине */
+/* размер как в эталоне: небольшие бюсты по центру, ~20% высоты экрана */
 .figure {
-  height: min(78vh, 46vw);
+  height: clamp(140px, 22vh, 230px);
   width: auto;
-  filter: drop-shadow(0 16px 46px rgba(0,0,0,.75));
+  filter: drop-shadow(0 14px 40px rgba(0,0,0,.7));
 }
 .icons__amp {
-  font-size: clamp(34px, 6vw, 88px);
+  font-size: clamp(26px, 3.4vw, 52px);
   font-weight: 300;
   color: #fff;
   text-shadow: 0 6px 24px rgba(0,0,0,.7);
 }
 
-/* Мобильные: две портретные иконки в ряд — тянем по ширине */
+/* Мобильные */
 @media (max-width: 680px) {
-  .icons { gap: clamp(4px, 2vw, 12px); }
-  .figure { height: min(68vh, 62vw); }
-  .icons__amp { font-size: clamp(24px, 7vw, 44px); }
+  .icons { gap: clamp(14px, 6vw, 36px); }
+  .figure { height: clamp(120px, 19vh, 200px); }
+  .icons__amp { font-size: clamp(22px, 6vw, 38px); }
 }
