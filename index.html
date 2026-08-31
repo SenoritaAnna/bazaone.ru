@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>БАЗА — корпоративный сайт</title>
+  <meta name="description" content="БАЗА — система, которая держит данные под контролем." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2308080a'/%3E%3Ctext x='16' y='23' font-family='Arial,sans-serif' font-size='20' font-weight='900' fill='%23f5f5f7' text-anchor='middle'%3E%D0%91%3C/text%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="css/hero.css" />
+</head>
+<body>
+  <!-- Пропустить интерактивное вступление (клавиатурная навигация / доступность) -->
+  <a class="skip-link" href="#after-hero">Пропустить вступление</a>
+
+  <header class="site-nav" aria-label="Основная навигация">
+    <a class="site-nav__brand" href="#top">БАЗА</a>
+    <nav class="site-nav__links">
+      <a href="#after-hero">Дальше</a>
+    </nav>
+  </header>
+
+  <!-- ================= HERO ================= -->
+  <!--
+    Механика (принцип enso, НЕ копия):
+    1) первый экран на подложке из чёрной кожи крокодила — только иконки Артём/Анна;
+    2) при скролле Hero закреплён (sticky):
+       иконки съезжают влево → справа налево выезжает крупное «БАЗА»
+       (Playfair Display 900) синхронно со скроллом (scrub, не marquee);
+    3) после этого Hero естественно отдаёт управление секции #after-hero.
+    Без фото — только иконки. prefers-reduced-motion: те же сцены статично.
+    Белые иконки лежат на чёрном фоне PNG → mix-blend-mode:screen «выбивает»
+    чёрное, оставляя белые линии; сквозь силуэт видна текстура кожи.
+  -->
+  <main id="top">
+    <section class="hero" data-hero aria-label="Вступление">
+      <!-- .hero__track задаёт длину прокрутки; .hero__stage закреплён -->
+      <div class="hero__track" data-hero-track>
+        <div class="hero__stage">
+
+          <!-- Подложка: текстура чёрной кожи крокодила -->
+          <div class="hero__bg" aria-hidden="true"></div>
+
+          <!-- Сцена 1 — иконки Артём / Анна (только иконки, без фото) -->
+          <div class="scene scene--icons" data-scene="icons">
+            <div class="icons">
+              <img class="figure figure--man" src="assets/icon-artem.png"
+                   width="675" height="900" alt="Артём" decoding="async" />
+              <span class="icons__amp" aria-hidden="true">&amp;</span>
+              <img class="figure figure--woman" src="assets/icon-anna.png"
+                   width="720" height="900" alt="Анна" decoding="async" />
+            </div>
+            <p class="scene--icons__hint" aria-hidden="true">Листайте вниз</p>
+          </div>
+
+          <!-- Сцена 2 — «БАЗА» выезжает справа налево (Playfair Display 900) -->
+          <h1 class="scene scene--type" data-scene="type" aria-label="БАЗА">
+            <span class="type__word type__word--main" data-line aria-hidden="true">БАЗА</span>
+          </h1>
+
+        </div><!-- /.hero__stage -->
+      </div><!-- /.hero__track -->
+    </section>
+
+    <!-- ================= СЛЕДУЮЩАЯ СЕКЦИЯ ================= -->
+    <!-- Hero отдаёт управление сюда: обычный скролл, не бесконечная анимация -->
+    <section id="after-hero" class="after" tabindex="-1" aria-label="Следующий раздел">
+      <div class="after__inner">
+        <p class="after__kicker">Раздел 01</p>
+        <h2 class="after__title">Здесь начинается остальная страница.</h2>
+        <p class="after__text">
+          Hero завершён — дальше идёт обычный контент сайта. Этот блок временный,
+          он лишь показывает плавную передачу управления следующей секции.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/hero.js" defer></script>
+</body>
+</html>
