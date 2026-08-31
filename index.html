@@ -9,20 +9,65 @@
   <link rel="stylesheet" href="css/hero.css" />
 </head>
 <body>
-  <!-- Заглушка: один экран — подложка (кожа крокодила) + логотип + иконки Артём/Анна -->
-  <main class="hero" aria-label="БАЗА">
-    <div class="hero__bg" aria-hidden="true"></div>
+  <!--
+    HERO (принцип enso, не копия):
+    Сцена 1 — иконки Артём & Анна + логотип сверху, на коже крокодила.
+    Скролл (Hero закреплён): иконки съезжают влево → буквы «БАЗА» из логотипа
+    заезжают справа налево (первой появляется «Б»), на весь экран.
+    Всё адаптивно; prefers-reduced-motion — статичные сцены без движения.
+  -->
+  <main id="top">
+    <section class="hero" data-hero aria-label="Вступление">
+      <div class="hero__track" data-hero-track>
+        <div class="hero__stage">
 
-    <img class="hero-logo" src="assets/logo.png"
-         alt="БАЗА — платформа для решений бизнеса" decoding="async" />
+          <!-- Подложка: кожа крокодила -->
+          <div class="hero__bg" aria-hidden="true"></div>
 
-    <div class="icons">
-      <img class="figure figure--man" src="assets/icon-artem.png"
-           width="675" height="900" alt="Артём" decoding="async" />
-      <span class="icons__amp" aria-hidden="true">&amp;</span>
-      <img class="figure figure--woman" src="assets/icon-anna.png"
-           width="720" height="900" alt="Анна" decoding="async" />
-    </div>
+          <!-- Сцена 1: логотип сверху + иконки по центру (уезжает влево) -->
+          <div class="scene scene--icons" data-scene="icons">
+            <img class="hero-logo" src="assets/logo.png"
+                 alt="БАЗА — платформа для решений бизнеса" decoding="async" />
+            <div class="icons">
+              <img class="figure figure--man" src="assets/icon-artem.png"
+                   width="675" height="900" alt="Артём" decoding="async" />
+              <span class="icons__amp" aria-hidden="true">&amp;</span>
+              <img class="figure figure--woman" src="assets/icon-anna.png"
+                   width="720" height="900" alt="Анна" decoding="async" />
+            </div>
+          </div>
+
+          <!-- Сцена 2: гигантские буквы «БАЗА» из логотипа, проезжают по одной -->
+          <div class="scene scene--type" data-scene="type">
+            <svg class="baza" data-line viewBox="60 484 525 95" role="img" aria-label="БАЗА">
+              <g transform="translate(0,450)">
+                <path fill="#f6f4ef" fill-rule="evenodd"
+                  d="M65 39 H135 V53 H80 V72 H113 C130 72 141 83 141 98 C141 113 130 124 113 124 H65 Z
+                     M80 86 V110 H113 C122 110 127 105 127 98 C127 91 122 86 113 86 Z
+                     M202 124 L241 39 H256 L295 124 H279 L249 57 L218 124 Z
+                     M358 39 H424 V53 L398 74 H404 C418 74 427 84 427 98 C427 113 416 124 400 124 H358 V110 H399 C408 110 413 105 413 98 C413 90 407 86 398 86 H380 V74 L404 53 H358 Z
+                     M488 124 L526 39 H541 L580 124 H564 L534 57 L503 124 Z" />
+              </g>
+            </svg>
+          </div>
+
+          <!-- Сцена 3: текст-описание (появляется после того как буквы ушли) -->
+          <div class="scene scene--text" data-scene="text">
+            <p class="hero-desc">
+              <!-- ПЛЕЙСХОЛДЕР текста — заменить на реальное описание -->
+              БАЗА — платформа для решений бизнеса. Объединяем данные, процессы
+              и людей в одном пространстве: CRM, аналитику и автоматизацию,
+              которые работают на результат. Без хаоса в таблицах и переписках —
+              всё под контролем, в одной системе. Здесь начинается порядок,
+              на котором строится рост.
+            </p>
+          </div>
+
+        </div><!-- /.hero__stage -->
+      </div><!-- /.hero__track -->
+    </section>
   </main>
+
+  <script src="js/hero.js" defer></script>
 </body>
 </html>
