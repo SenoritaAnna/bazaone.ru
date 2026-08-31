@@ -1,126 +1,30 @@
 /* ============================================================
-   БАЗА — Hero. Vanilla CSS, без библиотек.
-   Тёмная кинематографичная сцена. Механика pin+scrub — в hero.js.
+   БАЗА — заглушка. Один статичный экран. Vanilla CSS.
+   Подложка (кожа крокодила) + логотип + иконки Артём/Анна.
    ============================================================ */
 
-/* Unbounded — self-host (OFL, бесплатный). Вариативный: один файл = все веса. */
-@font-face {
-  font-family: 'Unbounded';
-  font-style: normal;
-  font-weight: 100 900;
-  font-display: swap;
-  src: url('../assets/fonts/unbounded-cyrillic.woff2') format('woff2');
-  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
-}
-@font-face {
-  font-family: 'Unbounded';
-  font-style: normal;
-  font-weight: 100 900;
-  font-display: swap;
-  src: url('../assets/fonts/unbounded-latin.woff2') format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
-/* Playfair Display — self-host (OFL). Начертание Black 900 под гигантское «БАЗА». */
-@font-face {
-  font-family: 'Playfair Display';
-  font-style: normal;
-  font-weight: 900;
-  font-display: swap;
-  src: url('../assets/fonts/playfair-cyr.woff2') format('woff2');
-  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
-}
-
-:root {
-  --bg:        #08080a;
-  --bg-2:      #0e0e12;
-  --ink:       #f5f5f7;
-  --ink-dim:   #a1a1aa;
-  --ink-faint: #55555e;
-  --line:      #1c1c22;
-  --accent:    #8b93ff;   /* холодный стальной акцент */
-  --stage-h:   100svh;    /* высота закреплённой сцены */
-}
-
 * { box-sizing: border-box; }
-
 html { -webkit-text-size-adjust: 100%; }
 
 body {
   margin: 0;
-  background: var(--bg);
-  color: var(--ink);
+  background: #08080a;
+  color: #f5f5f7;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, "Helvetica Neue", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
   overflow-x: hidden;
 }
 
-/* ---- Доступность: skip-link ---- */
-.skip-link {
-  position: fixed;
-  top: 10px;
-  left: 50%;
-  transform: translate(-50%, -160%);
-  z-index: 100;
-  padding: 10px 18px;
-  background: var(--ink);
-  color: var(--bg);
-  border-radius: 999px;
-  font-size: 14px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: transform .2s ease;
-}
-.skip-link:focus { transform: translate(-50%, 0); outline: 2px solid var(--accent); outline-offset: 2px; }
+:focus-visible { outline: 2px solid #8b93ff; outline-offset: 3px; }
 
-:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
-
-/* ---- Навигация ---- */
-.site-nav {
-  position: fixed;
-  inset: 0 0 auto 0;
-  z-index: 40;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 22px clamp(20px, 5vw, 56px);
-  mix-blend-mode: difference; /* остаётся читаемой над любой сценой */
-}
-.site-nav__brand {
-  font-family: 'Unbounded', -apple-system, sans-serif;
-  font-weight: 800;
-  letter-spacing: .18em;
-  font-size: 15px;
-  color: #fff;
-  text-decoration: none;
-}
-.site-nav__links a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 13px;
-  letter-spacing: .16em;
-  text-transform: uppercase;
-  opacity: .85;
-}
-.site-nav__links a:hover { opacity: 1; }
-
-/* ============================================================
-   HERO — pin + scrub
-   ============================================================ */
-.hero { position: relative; }
-
-/* .hero__track задаёт длину прокрутки (4 экрана) */
-.hero__track { height: 400vh; position: relative; }
-
-/* .hero__stage закреплён на весь экран, пока трек прокручивается */
-.hero__stage {
-  position: sticky;
-  top: 0;
-  height: 100vh;
-  height: var(--stage-h);
+/* Экран на всю высоту вьюпорта */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
   overflow: hidden;
-  background: var(--bg);
   isolation: isolate;
 }
 
@@ -132,7 +36,7 @@ body {
   background: #000 url('../assets/crocodile.jpg') center / cover no-repeat;
   pointer-events: none;
 }
-/* затемнение + виньетка поверх текстуры — чтобы иконки и «БАЗА» читались */
+/* затемнение + виньетка — чтобы логотип и иконки читались */
 .hero__bg::after {
   content: "";
   position: absolute;
@@ -142,7 +46,7 @@ body {
     linear-gradient(180deg, rgba(0,0,0,.35) 0%, rgba(0,0,0,.15) 45%, rgba(0,0,0,.45) 100%);
 }
 
-/* Логотип БАЗА — держится сверху по центру, поверх сцен */
+/* Логотип — сверху по центру */
 .hero-logo {
   position: absolute;
   top: clamp(28px, 5vh, 64px);
@@ -150,143 +54,34 @@ body {
   transform: translateX(-50%);
   height: clamp(84px, 13vh, 150px);
   width: auto;
-  z-index: 6;
+  z-index: 2;
   filter: drop-shadow(0 10px 34px rgba(0,0,0,.7));
   pointer-events: none;
 }
 
-/* Каждая сцена — слой поверх сцены. JS управляет opacity/transform через CSS-переменные */
-.scene {
-  position: absolute;
-  inset: 0;
-  display: grid;
-  place-items: center;
-  z-index: 1;
-  will-change: opacity, transform;
-}
-
-/* ---- Сцена 1: иконки Артём / Анна ---- */
-.scene--icons {
-  opacity: var(--icons-op, 1);
-}
+/* Иконки Артём & Анна — по центру */
 .icons {
+  position: relative;
+  z-index: 1;
   display: flex;
   align-items: center;
   gap: clamp(24px, 7vw, 96px);
-  /* весь блок съезжает влево по скроллу */
-  transform: translate3d(var(--icons-x, 0), 0, 0);
-  will-change: transform;
 }
 .figure {
   height: clamp(200px, 42vh, 440px);
   width: auto;
-  /* прозрачный PNG: белые линии, сквозь силуэт видна кожа крокодила */
   filter: drop-shadow(0 14px 40px rgba(0,0,0,.7));
 }
 .icons__amp {
   font-size: clamp(30px, 5vw, 64px);
   font-weight: 300;
   color: #fff;
-  opacity: var(--amp-op, .85);
   text-shadow: 0 6px 24px rgba(0,0,0,.7);
 }
-.scene--icons__hint {
-  position: absolute;
-  bottom: clamp(28px, 7vh, 64px);
-  margin: 0;
-  font-size: 12px;
-  letter-spacing: .32em;
-  text-transform: uppercase;
-  color: var(--ink-faint);
-  animation: hintPulse 2.4s ease-in-out infinite;
-}
-@keyframes hintPulse { 0%,100%{opacity:.35; transform:translateY(0)} 50%{opacity:.9; transform:translateY(4px)} }
 
-/* ---- Сцена 2: гигантское «БАЗА» (Playfair Display 900) ---- */
-.scene--type {
-  margin: 0;
-  display: grid;
-  place-items: center;
-  opacity: var(--type-op, 0);
-  pointer-events: none;
-}
-.type__word {
-  grid-area: 1 / 1;
-  white-space: nowrap;
-  font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
-  font-weight: 900;
-  line-height: .9;
-  font-size: clamp(96px, 30vw, 440px);
-  letter-spacing: .005em;
-  color: #f6f4ef;                       /* тёплый ivory — премиум на коже */
-  text-shadow: 0 10px 60px rgba(0,0,0,.55), 0 2px 10px rgba(0,0,0,.5);
-  transform: translate3d(var(--tx, 0), 0, 0);
-  will-change: transform;
-}
-
-/* ============================================================
-   Следующая секция
-   ============================================================ */
-.after {
-  position: relative;
-  z-index: 2;
-  min-height: 100vh;
-  display: grid;
-  place-items: center;
-  background: linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
-  border-top: 1px solid var(--line);
-  padding: 10vh clamp(20px, 6vw, 80px);
-}
-.after__inner { max-width: 820px; }
-.after__kicker {
-  margin: 0 0 18px;
-  font-size: 12px;
-  letter-spacing: .34em;
-  text-transform: uppercase;
-  color: var(--accent);
-}
-.after__title {
-  margin: 0 0 20px;
-  font-size: clamp(30px, 5vw, 60px);
-  font-weight: 700;
-  line-height: 1.06;
-  letter-spacing: -.02em;
-}
-.after__text { margin: 0; font-size: clamp(16px, 2vw, 20px); color: var(--ink-dim); line-height: 1.6; max-width: 60ch; }
-
-/* ---- Мобильные: уменьшаем иконки и зазор, чтобы влезали по ширине ---- */
+/* Мобильные: уменьшаем иконки и зазор */
 @media (max-width: 680px) {
   .icons { gap: clamp(10px, 4vw, 28px); }
   .figure { height: clamp(150px, 30vh, 260px); }
   .icons__amp { font-size: clamp(22px, 6vw, 40px); }
-}
-
-/* ============================================================
-   prefers-reduced-motion:
-   тот же порядок сцен, но статично — без pin и движения.
-   ============================================================ */
-@media (prefers-reduced-motion: reduce) {
-  .hero__track { height: auto; }
-  .hero__stage {
-    position: static;
-    height: auto;
-    overflow: visible;
-  }
-  .scene {
-    position: relative;
-    inset: auto;
-    min-height: 100svh;
-    opacity: 1 !important;
-    transform: none !important;
-    padding: 12vh 20px;
-  }
-  .scene--type { pointer-events: auto; place-items: center; }
-  .type__word {
-    white-space: normal;
-    transform: none !important;
-    font-size: clamp(72px, 24vw, 340px);
-    text-align: center;
-  }
-  .icons { transform: none !important; }
-  .scene--icons__hint { animation: none; }
 }
