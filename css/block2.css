@@ -1,0 +1,150 @@
+/* ============================================================
+   БАЗА — Блок 2 «Что мы собираем»: 4 продуктовые карточки
+   с абстрактными фирменными схемами. Стиль сайта: графит,
+   замша, серебро, дозированный красный, тонкие золотые линии.
+   ============================================================ */
+.b2{
+  --gold:#c9a24b;
+  --red:#d8262c;
+  --silver:#bcc1c9;
+  --ink:#e9e7e2;
+  --ink-dim:#8c8781;
+  position:relative;
+  background:transparent;
+  border-top:1px solid rgba(230,230,236,.16);   /* разделитель между блоками */
+  padding:clamp(56px,8vh,110px) 0;
+}
+.b2__wrap{
+  max-width:1360px; margin:0 auto;
+  padding:0 clamp(20px,3vw,48px);
+}
+
+/* --- Шапка блока --- */
+.b2__eyebrow{
+  margin:0 0 16px; display:inline-flex; align-items:center; gap:10px;
+  font-family:'Geist Mono','JetBrains Mono',ui-monospace,monospace;
+  text-transform:uppercase; letter-spacing:.22em; font-size:12px;
+  color:var(--ink-dim);
+}
+.b2__eyebrow::before{ content:""; width:26px; height:1px; background:var(--gold); opacity:.7; }
+
+.b2__title{
+  margin:0 0 14px; font-family:'Geist',-apple-system,Arial,sans-serif;
+  font-weight:800; letter-spacing:-.02em; line-height:1.05;
+  font-size:clamp(30px,4.4vw,52px); color:#f2f3f5;
+}
+.b2__sub{
+  margin:0 0 clamp(34px,4.5vh,56px); max-width:60ch;
+  font-family:'Onest',Arial,sans-serif; color:#b7bcc4;
+  font-size:clamp(16px,1.5vw,21px); line-height:1.5;
+}
+
+/* --- Сетка карточек: 4 в ряд → 2×2 → 1 --- */
+.b2__grid{
+  display:grid; grid-template-columns:repeat(4,1fr);
+  gap:clamp(16px,1.4vw,22px);
+}
+
+/* --- Карточка --- */
+.b2card{
+  display:flex; flex-direction:column;
+  border:1px solid rgba(201,162,75,.28); border-radius:16px;
+  padding:clamp(24px,2vw,34px);
+  /* замша, как на плашках сайта */
+  background-color:#0b0c0e;
+  background-image:url('../assets/black-suede.jpg');
+  background-image:image-set(url('../assets/black-suede.webp') type('image/webp'), url('../assets/black-suede.jpg') type('image/jpeg'));
+  background-position:center; background-size:cover; background-repeat:no-repeat;
+  box-shadow:0 24px 60px rgba(0,0,0,.35);
+  transition:border-color .25s ease, box-shadow .35s ease, transform .35s ease;
+}
+.b2card:hover{
+  border-color:var(--gold); transform:translateY(-3px);
+  box-shadow:0 0 22px rgba(201,162,75,.28), 0 30px 70px rgba(0,0,0,.5);
+}
+
+.b2card__head{ display:flex; flex-direction:column; gap:8px; }
+.b2card__num{
+  font-family:'Geist Mono','JetBrains Mono',ui-monospace,monospace;
+  font-size:15px; letter-spacing:.12em; color:var(--ink-dim);
+}
+.b2card__title{
+  margin:0; font-family:'Geist',-apple-system,Arial,sans-serif;
+  font-weight:700; letter-spacing:-.01em; line-height:1.15;
+  font-size:clamp(20px,1.6vw,25px); color:#eef0f2;
+}
+
+/* --- Центральная схема в отдельном «экране» (рамка внутри карточки) --- */
+.b2card__viz{
+  margin:clamp(22px,2.8vh,32px) 0;
+  border:1px solid rgba(201,162,75,.2); border-radius:12px;
+  padding:clamp(18px,1.8vw,26px) clamp(14px,1.4vw,20px);
+  background:rgba(0,0,0,.24);
+}
+.b2viz{ width:100%; height:auto; display:block; overflow:visible; }
+
+/* --- Низ карточки --- */
+.b2card__desc{
+  margin:0 0 18px; font-family:'Onest',Arial,sans-serif;
+  color:#cdd0d6; font-size:clamp(16px,1.2vw,19px); line-height:1.5;
+}
+.b2card__tags{
+  margin:auto 0 0; padding-top:16px; border-top:1px solid rgba(201,162,75,.16);
+  font-family:'Geist Mono','JetBrains Mono',ui-monospace,monospace;
+  font-size:clamp(13px,1.05vw,15px); letter-spacing:.05em; color:var(--ink-dim);
+}
+
+/* ============ Анимация схем (лёгкая, при появлении) ============ */
+/* исходное состояние — линии не нарисованы, узлы скрыты */
+.b2viz__lines *, .b2viz__track{ stroke-dasharray:1; stroke-dashoffset:1; }
+.b2viz__dots circle, .b2viz__accent, .b2viz__mid, .b2viz__layer{
+  opacity:0; transform:scale(.5); transform-box:fill-box; transform-origin:center;
+}
+.b2viz__pulse{ opacity:0; }
+
+/* при появлении карточки */
+.b2card--in .b2viz__lines *, .b2card--in .b2viz__track{
+  stroke-dashoffset:0; transition:stroke-dashoffset 1s ease .1s;
+}
+.b2card--in .b2viz__dots circle,
+.b2card--in .b2viz__accent,
+.b2card--in .b2viz__mid,
+.b2card--in .b2viz__layer{
+  opacity:1; transform:none; transition:opacity .5s ease, transform .5s cubic-bezier(.22,1,.36,1);
+}
+.b2card--in .b2viz__pulse{ opacity:1; transition:opacity .4s ease .9s; }
+
+/* стаггер: точки появляются по очереди */
+.b2card--in .b2viz__dots circle:nth-child(1){ transition-delay:.15s; }
+.b2card--in .b2viz__dots circle:nth-child(2){ transition-delay:.28s; }
+.b2card--in .b2viz__dots circle:nth-child(3){ transition-delay:.41s; }
+.b2card--in .b2viz__dots circle:nth-child(4){ transition-delay:.54s; }
+.b2card--in .b2viz__dots circle:nth-child(5){ transition-delay:.67s; }
+/* 02 — слои включаются последовательно */
+.b2card--in .b2viz__layer:nth-of-type(1){ transition-delay:.15s; }
+.b2card--in .b2viz__layer:nth-of-type(2){ transition-delay:.45s; }
+.b2card--in .b2viz__layer:nth-of-type(3){ transition-delay:.75s; }
+/* акцент/центр — после линий */
+.b2card--in .b2viz__mid{ transition-delay:.6s; }
+.b2card--in .b2viz__accent{ transition-delay:.9s; }
+
+/* мягкое «дыхание» акцентного узла (очень деликатно) */
+.b2card--in .b2viz__accent circle:first-child{ animation:b2pulse 3.2s ease-in-out 1.4s infinite; transform-box:fill-box; transform-origin:center; }
+@keyframes b2pulse{ 0%,100%{ opacity:.5; } 50%{ opacity:.95; } }
+
+/* --- Адаптив: 2×2, потом 1 колонка --- */
+@media (max-width:1080px){
+  .b2__grid{ grid-template-columns:repeat(2,1fr); gap:clamp(16px,2vw,22px); }
+}
+@media (max-width:600px){
+  .b2__grid{ grid-template-columns:1fr; }
+  .b2card__viz{ margin:22px 0; }
+}
+
+/* --- Без анимации: сразу финальное состояние --- */
+@media (prefers-reduced-motion:reduce){
+  .b2viz__lines *, .b2viz__track{ stroke-dashoffset:0; }
+  .b2viz__dots circle, .b2viz__accent, .b2viz__mid, .b2viz__layer{ opacity:1; transform:none; }
+  .b2viz__pulse{ opacity:1; }
+  .b2card--in .b2viz__accent circle:first-child{ animation:none; }
+}

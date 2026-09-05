@@ -10,9 +10,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..900&family=Onest:wght@400..700&family=Geist+Mono:wght@400..600&family=JetBrains+Mono:wght@400..600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/fonts.css?v=2" />
-  <link rel="stylesheet" href="css/menu.css?v=13" />
+  <link rel="stylesheet" href="css/menu.css?v=14" />
   <link rel="stylesheet" href="css/hero.css?v=18" />
-  <link rel="stylesheet" href="css/block1.css?v=29" />
+  <link rel="stylesheet" href="css/block1.css?v=30" />
+  <link rel="stylesheet" href="css/block2.css?v=3" />
 </head>
 <body>
   <!--
@@ -44,6 +45,7 @@
 
   <!-- Полноэкранное мобильное меню -->
   <div class="mmenu" id="mobile-menu" data-mobile-menu aria-hidden="true">
+    <button class="mmenu__close" type="button" data-mmenu-close aria-label="Закрыть меню">&times;</button>
     <nav class="mmenu__links" aria-label="Мобильное меню">
       <a href="#">Возможности</a>
       <a href="#">Кейсы</a>
@@ -116,10 +118,146 @@
         </div><!-- /.b1__stage -->
       </div><!-- /.b1__track -->
     </section>
+
+    <!-- ============ БЛОК 2 — «Что мы собираем»: 4 продуктовые карточки ============ -->
+    <section class="b2" id="block2" aria-label="Что мы собираем">
+      <div class="b2__wrap">
+        <p class="b2__eyebrow">Возможности</p>
+        <h2 class="b2__title">Что мы собираем</h2>
+        <p class="b2__sub">Цифровые решения для процессов, продаж, коммуникаций и&nbsp;управления.</p>
+
+        <div class="b2__grid">
+
+          <!-- 01 -->
+          <article class="b2card" data-b2card>
+            <div class="b2card__head">
+              <span class="b2card__num">01</span>
+              <h3 class="b2card__title">CRM и&nbsp;внутренние системы</h3>
+            </div>
+            <div class="b2card__viz">
+              <svg class="b2viz" viewBox="0 0 300 130" fill="none" aria-hidden="true">
+                <g class="b2viz__lines" stroke="rgba(201,162,75,.5)" stroke-width="1.2">
+                  <path pathLength="1" d="M34,28 L244,65"/>
+                  <path pathLength="1" d="M30,62 L244,65"/>
+                  <path pathLength="1" d="M36,100 L244,65"/>
+                  <path pathLength="1" d="M66,46 L244,65"/>
+                  <path pathLength="1" d="M66,84 L244,65"/>
+                </g>
+                <g class="b2viz__dots" fill="#cfd2d8">
+                  <circle cx="34" cy="28" r="3.5"/>
+                  <circle cx="30" cy="62" r="3.5"/>
+                  <circle cx="36" cy="100" r="3.5"/>
+                  <circle cx="66" cy="46" r="3"/>
+                  <circle cx="66" cy="84" r="3"/>
+                </g>
+                <g class="b2viz__accent">
+                  <circle cx="250" cy="65" r="13" fill="none" stroke="rgba(216,38,44,.5)" stroke-width="1.2"/>
+                  <circle cx="250" cy="65" r="6" fill="#d8262c"/>
+                </g>
+              </svg>
+            </div>
+            <p class="b2card__desc">Карточки клиентов, сделки, задачи, документы, роли, аналитика, внутренние панели и&nbsp;рабочие интерфейсы.</p>
+            <p class="b2card__tags">CRM · кабинеты · админки · роли · данные</p>
+          </article>
+
+          <!-- 02 -->
+          <article class="b2card" data-b2card>
+            <div class="b2card__head">
+              <span class="b2card__num">02</span>
+              <h3 class="b2card__title">Сайты и&nbsp;web-продукты</h3>
+            </div>
+            <div class="b2card__viz">
+              <svg class="b2viz" viewBox="0 0 300 130" fill="none" aria-hidden="true">
+                <g class="b2viz__lines" stroke="rgba(201,162,75,.45)" stroke-width="1.2">
+                  <path pathLength="1" d="M78,65 L131,65"/>
+                  <path pathLength="1" d="M169,65 L222,65"/>
+                </g>
+                <g class="b2viz__layer">
+                  <rect x="40" y="35" width="38" height="60" rx="7" fill="rgba(11,12,14,.55)" stroke="rgba(201,162,75,.45)"/>
+                  <circle cx="59" cy="65" r="4" fill="#cfd2d8"/>
+                </g>
+                <g class="b2viz__layer">
+                  <rect x="131" y="35" width="38" height="60" rx="7" fill="rgba(11,12,14,.55)" stroke="rgba(201,162,75,.45)"/>
+                  <circle cx="150" cy="65" r="4" fill="#cfd2d8"/>
+                </g>
+                <g class="b2viz__layer">
+                  <rect x="222" y="35" width="38" height="60" rx="7" fill="rgba(11,12,14,.55)" stroke="rgba(216,38,44,.5)"/>
+                  <circle cx="241" cy="65" r="4" fill="#d8262c"/>
+                </g>
+              </svg>
+            </div>
+            <p class="b2card__desc">Корпоративные сайты, каталоги, личные кабинеты, административные панели, web-сервисы и&nbsp;цифровые экосистемы.</p>
+            <p class="b2card__tags">Frontend · Backend · CMS · API · интеграции</p>
+          </article>
+
+          <!-- 03 -->
+          <article class="b2card" data-b2card>
+            <div class="b2card__head">
+              <span class="b2card__num">03</span>
+              <h3 class="b2card__title">Автоматизация и&nbsp;AI</h3>
+            </div>
+            <div class="b2card__viz">
+              <svg class="b2viz" viewBox="0 0 300 130" fill="none" aria-hidden="true">
+                <path class="b2viz__track" pathLength="1" d="M32,65 L268,65" stroke="rgba(201,162,75,.4)" stroke-width="1.2"/>
+                <g class="b2viz__dots" fill="#cfd2d8">
+                  <circle cx="32" cy="65" r="4"/>
+                  <circle cx="91" cy="65" r="4"/>
+                  <circle cx="150" cy="65" r="4"/>
+                  <circle cx="209" cy="65" r="4"/>
+                  <circle cx="268" cy="65" r="4"/>
+                </g>
+                <circle class="b2viz__pulse" r="5" fill="#e6c877">
+                  <animateMotion dur="3.6s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" calcMode="linear" path="M32,65 L268,65"/>
+                </circle>
+              </svg>
+            </div>
+            <p class="b2card__desc">Сценарии, боты, Mini&nbsp;App, AI-агенты, обработка данных и&nbsp;связка сервисов.</p>
+            <p class="b2card__tags">AI · bots · Mini App · workflows · automation</p>
+          </article>
+
+          <!-- 04 -->
+          <article class="b2card" data-b2card>
+            <div class="b2card__head">
+              <span class="b2card__num">04</span>
+              <h3 class="b2card__title">Аналитика, исследования и&nbsp;риски</h3>
+            </div>
+            <div class="b2card__viz">
+              <svg class="b2viz" viewBox="0 0 300 130" fill="none" aria-hidden="true">
+                <g class="b2viz__lines" stroke="rgba(201,162,75,.45)" stroke-width="1.2">
+                  <path pathLength="1" d="M30,25 L148,65"/>
+                  <path pathLength="1" d="M30,52 L148,65"/>
+                  <path pathLength="1" d="M30,78 L148,65"/>
+                  <path pathLength="1" d="M30,105 L148,65"/>
+                  <path pathLength="1" d="M152,65 L242,65"/>
+                </g>
+                <g class="b2viz__dots" fill="#cfd2d8">
+                  <circle cx="30" cy="25" r="3"/>
+                  <circle cx="30" cy="52" r="3"/>
+                  <circle cx="30" cy="78" r="3"/>
+                  <circle cx="30" cy="105" r="3"/>
+                </g>
+                <g class="b2viz__mid">
+                  <circle cx="150" cy="65" r="9" fill="none" stroke="rgba(201,162,75,.6)" stroke-width="1.2"/>
+                  <circle cx="150" cy="65" r="3.5" fill="#cfd2d8"/>
+                </g>
+                <g class="b2viz__accent">
+                  <circle cx="255" cy="65" r="12" fill="none" stroke="rgba(216,38,44,.5)" stroke-width="1.2"/>
+                  <circle cx="255" cy="65" r="5.5" fill="#d8262c"/>
+                </g>
+              </svg>
+            </div>
+            <p class="b2card__desc">Бизнес-аналитика, конкурентный анализ, OSINT, аудит цифровых процессов, безопасности и&nbsp;рисков по&nbsp;152-ФЗ.</p>
+            <p class="b2card__tags">Analytics · OSINT · Security · Compliance</p>
+          </article>
+
+        </div><!-- /.b2__grid -->
+      </div><!-- /.b2__wrap -->
+    </section>
   </main>
 
   <script src="js/menu.js" defer></script>
   <script src="js/hero.js" defer></script>
   <script src="js/block1.js" defer></script>
+  <script src="js/block2.js" defer></script>
 </body>
 </html>

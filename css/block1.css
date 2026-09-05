@@ -21,7 +21,7 @@
 
 .b1__stage{
   position:static;
-  min-height:100svh;
+  min-height:auto;                 /* по контенту — линия-разделитель ложится вплотную */
   display:flex; align-items:center;
   overflow:hidden;
   color:var(--ink);
@@ -73,7 +73,7 @@
 .b1__lead{
   margin:0; font-family:'Geist', -apple-system, Arial, sans-serif;   /* заголовки с блока 1 — Geist */
   color:var(--silver);
-  font-size:clamp(30px,3.8vw,48px); line-height:1.12; font-weight:800;   /* h2, плотный Geist (+20%) */
+  font-size:clamp(26px,3.2vw,41px); line-height:1.12; font-weight:800;   /* h2, плотный Geist (−15%) */
   letter-spacing:-.02em;
   text-shadow:0 2px 18px rgba(0,0,0,.6);
 }
@@ -93,9 +93,9 @@
   background-image:image-set(url('../assets/black-suede.webp') type('image/webp'), url('../assets/black-suede.jpg') type('image/jpeg'));
   background-position:center; background-size:cover; background-repeat:no-repeat;
   border:1px solid rgba(201,162,75,.35);
-  border-radius:12px; padding:18px 24px;
+  border-radius:12px; padding:15px 20px;
   font-family:'Geist', -apple-system, Arial, sans-serif;
-  font-size:clamp(17px,1.45vw,23px); font-weight:600; letter-spacing:.01em;
+  font-size:clamp(15px,1.23vw,20px); font-weight:600; letter-spacing:.01em;
   -webkit-backdrop-filter:blur(4px); backdrop-filter:blur(4px);
   transition:color .2s ease, border-color .2s ease, box-shadow .3s ease;
 }

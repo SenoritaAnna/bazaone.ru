@@ -38,6 +38,10 @@
     setMenu(document.body.getAttribute('data-menu-open') !== 'true');
   });
 
+  // кнопка-крестик закрытия
+  var closeBtn = document.querySelector('[data-mmenu-close]');
+  if (closeBtn) closeBtn.addEventListener('click', function () { setMenu(false); });
+
   // клик по пункту — закрыть
   if (menu) menu.querySelectorAll('a').forEach(function (a) {
     a.addEventListener('click', function () { setMenu(false); });
