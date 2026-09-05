@@ -1,0 +1,21 @@
+/* ============================================================
+   БАЗА — Общее «появление при скролле» для любых элементов.
+   Помечаем элемент data-reveal — он въезжает снизу с фейдом,
+   когда попадает в зону видимости (класс .reveal-in вешает JS).
+   ============================================================ */
+[data-reveal]{
+  opacity:0; transform:translateY(18px);
+  transition:opacity .6s ease, transform .6s cubic-bezier(.22,1,.36,1);
+  will-change:opacity, transform;
+}
+[data-reveal].reveal-in{ opacity:1; transform:none; }
+
+/* небольшой стаггер, если у соседних элементов задан data-reveal-delay */
+[data-reveal][data-reveal-delay="1"]{ transition-delay:.08s; }
+[data-reveal][data-reveal-delay="2"]{ transition-delay:.16s; }
+[data-reveal][data-reveal-delay="3"]{ transition-delay:.24s; }
+
+/* уважение системной настройки — без анимации показываем сразу */
+@media (prefers-reduced-motion:reduce){
+  [data-reveal]{ opacity:1; transform:none; transition:none; }
+}
