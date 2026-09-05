@@ -21,7 +21,7 @@
 
 .b1__stage{
   position:static;
-  min-height:auto;                 /* по контенту — линия-разделитель ложится вплотную */
+  min-height:100svh;               /* блок 1 = один полный экран */
   display:flex; align-items:center;
   overflow:hidden;
   color:var(--ink);
@@ -73,7 +73,7 @@
 .b1__lead{
   margin:0; font-family:'Geist', -apple-system, Arial, sans-serif;   /* заголовки с блока 1 — Geist */
   color:var(--silver);
-  font-size:clamp(26px,3.2vw,41px); line-height:1.12; font-weight:800;   /* h2, плотный Geist (−15%) */
+  font-size:clamp(26px,3.2vw,40px); line-height:1.12; font-weight:800;   /* h2 = 40px (едино с блоком 2) */
   letter-spacing:-.02em;
   text-shadow:0 2px 18px rgba(0,0,0,.6);
 }
@@ -95,7 +95,7 @@
   border:1px solid rgba(201,162,75,.35);
   border-radius:12px; padding:15px 20px;
   font-family:'Geist', -apple-system, Arial, sans-serif;
-  font-size:clamp(15px,1.23vw,20px); font-weight:600; letter-spacing:.01em;
+  font-size:clamp(14px,1.15vw,16px); font-weight:600; letter-spacing:.01em;   /* текст = 16px */
   -webkit-backdrop-filter:blur(4px); backdrop-filter:blur(4px);
   transition:color .2s ease, border-color .2s ease, box-shadow .3s ease;
 }
@@ -108,7 +108,7 @@
 /* подпись внизу — серебро, Geist Mono */
 .b1__note{
   margin:4px 0 0; font-family:'Geist Mono','JetBrains Mono',ui-monospace,monospace;
-  color:#cfd2d8; font-size:clamp(15px,1.4vw,19px); letter-spacing:.06em; text-align:center;
+  color:#cfd2d8; font-size:clamp(12px,1vw,14px); letter-spacing:.06em; text-align:center;   /* мета = 14px */
   text-shadow:0 1px 8px rgba(0,0,0,.6);
 }
 

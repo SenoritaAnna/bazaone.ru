@@ -31,12 +31,12 @@
 .b2__title{
   margin:0 0 14px; font-family:'Geist',-apple-system,Arial,sans-serif;
   font-weight:800; letter-spacing:-.02em; line-height:1.05;
-  font-size:clamp(30px,4.4vw,52px); color:#f2f3f5;
+  font-size:clamp(26px,3.2vw,40px); color:#f2f3f5;   /* h2 = 40px (едино с блоком 1) */
 }
 .b2__sub{
   margin:0 0 clamp(34px,4.5vh,56px); max-width:60ch;
   font-family:'Onest',Arial,sans-serif; color:#b7bcc4;
-  font-size:clamp(16px,1.5vw,21px); line-height:1.5;
+  font-size:clamp(15px,1.3vw,18px); line-height:1.5;   /* подзаголовок = 18px */
 }
 
 /* --- Сетка карточек: 4 в ряд → 2×2 → 1 --- */
@@ -66,12 +66,13 @@
 .b2card__head{ display:flex; flex-direction:column; gap:8px; }
 .b2card__num{
   font-family:'Geist Mono','JetBrains Mono',ui-monospace,monospace;
-  font-size:15px; letter-spacing:.12em; color:var(--ink-dim);
+  font-size:14px; letter-spacing:.12em; color:var(--ink-dim);   /* мета = 14px */
 }
 .b2card__title{
   margin:0; font-family:'Geist',-apple-system,Arial,sans-serif;
-  font-weight:700; letter-spacing:-.01em; line-height:1.15;
-  font-size:clamp(20px,1.6vw,25px); color:#eef0f2;
+  font-weight:700; letter-spacing:-.01em; line-height:1.2;
+  font-size:clamp(17px,1.4vw,20px); color:#eef0f2;   /* заголовок карточки = 20px */
+  min-height:calc(1.2em * 2);   /* резерв под 2 строки — заголовки/схемы карточек на одном уровне */
 }
 
 /* --- Центральная схема в отдельном «экране» (рамка внутри карточки) --- */
@@ -86,12 +87,12 @@
 /* --- Низ карточки --- */
 .b2card__desc{
   margin:0 0 18px; font-family:'Onest',Arial,sans-serif;
-  color:#cdd0d6; font-size:clamp(16px,1.2vw,19px); line-height:1.5;
+  color:#cdd0d6; font-size:clamp(14px,1.15vw,16px); line-height:1.5;   /* текст = 16px */
 }
 .b2card__tags{
   margin:auto 0 0; padding-top:16px; border-top:1px solid rgba(201,162,75,.16);
   font-family:'Geist Mono','JetBrains Mono',ui-monospace,monospace;
-  font-size:clamp(13px,1.05vw,15px); letter-spacing:.05em; color:var(--ink-dim);
+  font-size:clamp(12px,1vw,14px); letter-spacing:.05em; color:var(--ink-dim);   /* мета = 14px */
 }
 
 /* ============ Анимация схем (лёгкая, при появлении) ============ */
