@@ -11,7 +11,7 @@ html {
   scroll-padding-top: var(--nav-h, 69px);
 }
 /* точки залипания — крупные секции (по одному экрану) */
-.hero, .b1, .b2, .b4 { scroll-snap-align: start; scroll-snap-stop: always; }
+.hero, .b1, .b2, .b4, .b5 { scroll-snap-align: start; scroll-snap-stop: always; }
 /* блок 3 длиннее экрана — верхушка выравнивается, но проскроллить можно свободно */
 .b3 { scroll-snap-align: start; }
 /* на мобиле контент высокий — без залипания */
