@@ -4,7 +4,16 @@
    ============================================================ */
 
 * { box-sizing: border-box; }
-html { -webkit-text-size-adjust: 100%; }
+html {
+  -webkit-text-size-adjust: 100%;
+  /* каждый блок «залипает» при прокрутке */
+  scroll-snap-type: y proximity;
+  scroll-padding-top: var(--nav-h, 69px);
+}
+/* точки залипания — крупные секции */
+.hero, .b1, .b2 { scroll-snap-align: start; scroll-snap-stop: always; }
+/* на мобиле контент высокий — без залипания */
+@media (max-width: 820px) { html { scroll-snap-type: none; } }
 
 /* ---------- Общая кожа крокодила: бесшовный тайл, адаптивный размер ----------
    Одна текстура тайлится на блок 0 и блок 1 → сплошная кожа без стыков.

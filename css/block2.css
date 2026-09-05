@@ -11,7 +11,6 @@
   --ink-dim:#8c8781;
   position:relative;
   background:transparent;
-  border-top:1px solid rgba(230,230,236,.16);   /* разделитель между блоками */
   padding:clamp(56px,8vh,110px) 0;
 }
 .b2__wrap{

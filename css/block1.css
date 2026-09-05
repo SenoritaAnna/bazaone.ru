@@ -32,7 +32,7 @@
 /* --- Сетка: слева визуал, справа контент --- */
 .b1__grid{
   width:100%; max-width:1360px; margin:0 auto;
-  display:grid; grid-template-columns:1.9fr 1fr; align-items:center;
+  display:grid; grid-template-columns:2.3fr 1fr; align-items:center;
   gap:clamp(20px,3vw,48px);
   padding:calc(var(--nav-h,92px) + 4vh) clamp(20px,3vw,48px) 6vh;
 }
@@ -93,7 +93,7 @@
   background-image:image-set(url('../assets/black-suede.webp') type('image/webp'), url('../assets/black-suede.jpg') type('image/jpeg'));
   background-position:center; background-size:cover; background-repeat:no-repeat;
   border:1px solid rgba(201,162,75,.35);
-  border-radius:12px; padding:15px 20px;
+  border-radius:12px; padding:12px 22px;
   font-family:'Geist', -apple-system, Arial, sans-serif;
   font-size:clamp(14px,1.15vw,16px); font-weight:600; letter-spacing:.01em;   /* текст = 16px */
   -webkit-backdrop-filter:blur(4px); backdrop-filter:blur(4px);
