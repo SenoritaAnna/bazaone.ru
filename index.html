@@ -6,7 +6,13 @@
   <title>БАЗА — CRM и автоматизация под ваш бизнес</title>
   <meta name="description" content="БАЗА — CRM и автоматизация под ваш бизнес: воронки, аналитика, ИИ-агенты, конкурентный и OSINT-анализ, аудит рисков по 152-ФЗ. Данные, процессы и команда в одной рабочей системе." />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2308080a'/%3E%3Ctext x='16' y='23' font-family='Arial,sans-serif' font-size='20' font-weight='900' fill='%23f5f5f7' text-anchor='middle'%3E%D0%91%3C/text%3E%3C/svg%3E" />
-  <link rel="stylesheet" href="css/hero.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..900&family=Onest:wght@400..700&family=Geist+Mono:wght@400..600&family=JetBrains+Mono:wght@400..600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/fonts.css?v=2" />
+  <link rel="stylesheet" href="css/menu.css?v=13" />
+  <link rel="stylesheet" href="css/hero.css?v=18" />
+  <link rel="stylesheet" href="css/block1.css?v=29" />
 </head>
 <body>
   <!--
@@ -16,56 +22,104 @@
     заезжают справа налево (первой появляется «Б»), на весь экран.
     Всё адаптивно; prefers-reduced-motion — статичные сцены без движения.
   -->
+  <!-- ============ Единая шапка (липкая, едет за страницей) ============ -->
+  <header class="nav" data-nav>
+    <div class="nav__inner">
+      <a class="nav__logo" href="#top" aria-label="БАЗА — наверх">
+        <img src="assets/logo-baza-header.svg" alt="БАЗА" />
+      </a>
+      <nav class="nav__links" aria-label="Основное меню">
+        <a href="#" class="is-active" aria-current="page">Возможности</a>
+        <a href="#">Кейсы</a>
+        <a href="#">О&nbsp;нас</a>
+        <a href="#">Контакты</a>
+      </nav>
+      <a class="nav__cta" href="#">Оставить заявку</a>
+      <button class="nav__burger" type="button" data-burger
+              aria-label="Открыть меню" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Полноэкранное мобильное меню -->
+  <div class="mmenu" id="mobile-menu" data-mobile-menu aria-hidden="true">
+    <nav class="mmenu__links" aria-label="Мобильное меню">
+      <a href="#">Возможности</a>
+      <a href="#">Кейсы</a>
+      <a href="#">О&nbsp;нас</a>
+      <a href="#">Контакты</a>
+    </nav>
+    <a class="mmenu__cta" href="#">Оставить заявку</a>
+  </div>
+
   <main id="top">
-    <section class="hero" data-hero aria-label="Вступление">
-      <div class="hero__track" data-hero-track>
-        <div class="hero__stage">
+    <!-- ============ БЛОК 0 — вступление (один экран, без анимации) ============ -->
+    <section class="hero" aria-label="Вступление">
+      <div class="hero__inner">
+        <img class="hero-logo" src="assets/logo.png"
+             alt="БАЗА — CRM и автоматизация под ваш бизнес" decoding="async" />
+        <div class="icons">
+          <img class="figure figure--man" src="assets/icon-artem.png"
+               width="675" height="900" alt="Артём" decoding="async" />
+          <span class="icons__amp" aria-hidden="true">&amp;</span>
+          <img class="figure figure--woman" src="assets/icon-anna.png"
+               width="720" height="900" alt="Анна" decoding="async" />
+        </div>
+        <div class="hero-copy">
+          <h1 class="hero-title">СОБИРАЕМ <span class="hl">БИЗНЕС</span> В&nbsp;СИСТЕМУ</h1>
+          <p class="hero-sub">CRM · автоматизация · AI · аналитика</p>
+        </div>
+      </div>
+    </section>
 
-          <!-- Подложка: кожа крокодила -->
-          <div class="hero__bg" aria-hidden="true"></div>
+    <!-- ============ БЛОК 1 — витрина (по мотивам vanlent.dev) ============ -->
+    <section class="b1" id="block1" aria-label="БАЗА — концепция">
+      <div class="b1__track">
+        <div class="b1__stage">
 
-          <!-- Сцена 1: логотип сверху + иконки по центру (уезжает влево) -->
-          <div class="scene scene--icons" data-scene="icons">
-            <img class="hero-logo" src="assets/logo.png"
-                 alt="БАЗА — CRM и автоматизация под ваш бизнес" decoding="async" />
-            <div class="icons">
-              <img class="figure figure--man" src="assets/icon-artem.png"
-                   width="675" height="900" alt="Артём" decoding="async" />
-              <span class="icons__amp" aria-hidden="true">&amp;</span>
-              <img class="figure figure--woman" src="assets/icon-anna.png"
-                   width="720" height="900" alt="Анна" decoding="async" />
+          <!-- Фон: единая кожа приходит с body -->
+          <div class="b1__bg" aria-hidden="true"></div>
+
+          <div class="b1__grid">
+
+            <!-- Слева: шар-ядро (частицы) -->
+            <div class="b1__visual">
+              <div class="b1__square" aria-hidden="true">
+                <span class="b1__corner b1__corner--tl"></span>
+                <span class="b1__corner b1__corner--tr"></span>
+                <span class="b1__corner b1__corner--bl"></span>
+                <span class="b1__corner b1__corner--br"></span>
+              </div>
+              <canvas class="b1__blob" data-b1-blob aria-hidden="true"></canvas>
             </div>
-          </div>
 
-          <!-- Сцена 2: гигантские буквы «БАЗА» из логотипа, проезжают по одной -->
-          <div class="scene scene--type" data-scene="type">
-            <svg class="baza" data-line viewBox="60 484 525 95" role="img" aria-label="БАЗА">
-              <g transform="translate(0,450)">
-                <path fill="#f6f4ef" fill-rule="evenodd"
-                  d="M65 39 H135 V53 H80 V72 H113 C130 72 141 83 141 98 C141 113 130 124 113 124 H65 Z
-                     M80 86 V110 H113 C122 110 127 105 127 98 C127 91 122 86 113 86 Z
-                     M202 124 L241 39 H256 L295 124 H279 L249 57 L218 124 Z
-                     M358 39 H424 V53 L398 74 H404 C418 74 427 84 427 98 C427 113 416 124 400 124 H358 V110 H399 C408 110 413 105 413 98 C413 90 407 86 398 86 H380 V74 L404 53 H358 Z
-                     M488 124 L526 39 H541 L580 124 H564 L534 57 L503 124 Z" />
-              </g>
-            </svg>
-          </div>
+            <!-- Справа: заголовок + текст -->
+            <div class="b1__content">
+              <p class="b1__lead"><span class="b1__ln"><span class="b1__r">БАЗА</span> <span class="b1__s">— цифровая архитектура</span></span><span class="b1__ln"><span class="b1__r">для&nbsp;бизнеса.</span></span></p>
 
-          <!-- Сцена 3: текст-описание (появляется после того как буквы ушли) -->
-          <div class="scene scene--text" data-scene="text">
-            <p class="hero-desc">
-              БАЗА — CRM и автоматизация, собранные под ваш бизнес.
-              Настраиваем воронки, аналитику и ИИ-агентов; проводим
-              конкурентный и OSINT-анализ, аудит рисков по 152‑ФЗ.
-              Собираем данные, процессы и команду в одну рабочую систему.
-            </p>
-          </div>
+              <ul class="b1__list">
+                <li>CRM и&nbsp;внутренние системы</li>
+                <li>Сайты и&nbsp;web-продукты</li>
+                <li>Автоматизация процессов</li>
+                <li>Аналитика и&nbsp;данные</li>
+                <li>AI-инструменты и&nbsp;агенты</li>
+                <li>Frontend и&nbsp;backend</li>
+                <li>Интеграции и&nbsp;связка сервисов</li>
+              </ul>
 
-        </div><!-- /.hero__stage -->
-      </div><!-- /.hero__track -->
+              <p class="b1__note">Архитектура под&nbsp;задачу. Система под&nbsp;процессы.</p>
+            </div>
+
+          </div><!-- /.b1__grid -->
+
+        </div><!-- /.b1__stage -->
+      </div><!-- /.b1__track -->
     </section>
   </main>
 
+  <script src="js/menu.js" defer></script>
   <script src="js/hero.js" defer></script>
+  <script src="js/block1.js" defer></script>
 </body>
 </html>

@@ -3,3 +3,7 @@ _agent_notes/
 ИКОНКИ/
 .DS_Store
 **/.DS_Store
+
+# неиспользуемые тяжёлые исходники текстур
+assets/croco-skin.png
+assets/suede-bordo.png

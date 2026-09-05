@@ -1,0 +1,157 @@
+/* ============================================================
+   БАЗА — единая шапка + мобильное полноэкранное меню.
+   Палитра: серебро (текст) + красный (акцент) + золото (детали).
+   ============================================================ */
+:root{
+  --silver:#bcc1c9;
+  --silver-dim:#9a9aa2;
+  --red:#d8262c;
+  --red-hi:#ec3b41;
+  --gold:#c9a24b;
+  --nav-h:92px;
+}
+
+/* ---------- Шапка ---------- */
+.nav{
+  position:fixed; top:0; left:0; right:0; z-index:50;
+  /* собственная текстура кожи на меню — поверх подложки, поэтому кожа тут чётко видна */
+  background-color:#0a0a0a;
+  background-image:url('../assets/croco-skin-seamless.png');
+  background-image:image-set(
+    url('../assets/croco-skin.webp') type('image/webp'),
+    url('../assets/croco-skin-seamless.png') type('image/png'));
+  background-position:center; background-size:cover; background-repeat:no-repeat;
+  border-bottom:1px solid rgba(201,162,75,.18);
+  font-family:'Geist', -apple-system, Arial, sans-serif;    /* меню — без засечек */
+}
+.nav__inner{
+  max-width:1280px; margin:0 auto;
+  height:var(--nav-h);
+  display:grid; grid-template-columns:1fr auto 1fr; align-items:center; gap:clamp(12px,2vw,28px);
+  padding:0 clamp(16px,4vw,44px);
+}
+/* Логотип в шапке виден всегда */
+.nav__logo{ grid-column:1; justify-self:start; display:inline-flex; line-height:0; }
+.nav__logo img{ height:70px; width:auto; display:block; filter:drop-shadow(0 4px 14px rgba(0,0,0,.6)); }
+
+/* пункты по центру шапки (независимо от логотипа и CTA) */
+.nav__links{
+  grid-column:2; justify-self:center;
+  display:flex; align-items:center; gap:12px;
+}
+/* пункты-плашки: КРАСНЫЙ текст, тёмный фон, ЗОЛОТАЯ рамка */
+.nav__links a{
+  color:var(--silver); text-decoration:none; white-space:nowrap;
+  background-color:#0b0c0e;
+  background-image:url('../assets/black-suede.jpg');
+  background-image:image-set(url('../assets/black-suede.webp') type('image/webp'), url('../assets/black-suede.jpg') type('image/jpeg'));
+  background-position:center; background-size:cover; background-repeat:no-repeat;
+  border:1px solid rgba(201,162,75,.35);
+  border-radius:14px;
+  padding:14px 27px;
+  font-size:22px; font-weight:600; letter-spacing:.01em;
+  -webkit-backdrop-filter:blur(4px); backdrop-filter:blur(4px);
+  transition:color .2s ease, border-color .2s ease, background .2s ease, box-shadow .3s ease;
+}
+/* активная плашка */
+.nav__links a.is-active{
+  color:#e6e9ee; border-color:rgba(201,162,75,.65);
+}
+/* ховер: ЗОЛОТАЯ обводка + мягкое рассеивающееся ЗОЛОТОЕ свечение (текст остаётся красным) */
+.nav__links a:hover{
+  color:#e6e9ee; border-color:var(--gold);
+  box-shadow:0 0 22px rgba(201,162,75,.5), 0 0 48px rgba(201,162,75,.28);
+}
+
+/* CTA-плашка со стрелкой → : красный текст, золотая обводка */
+.nav__cta{
+  grid-column:3; justify-self:end;
+  display:inline-flex; align-items:center; gap:13px;
+  color:var(--silver); text-decoration:none; white-space:nowrap;
+  background-color:#0b0c0e;
+  background-image:url('../assets/black-suede.jpg');
+  background-image:image-set(url('../assets/black-suede.webp') type('image/webp'), url('../assets/black-suede.jpg') type('image/jpeg'));
+  background-position:center; background-size:cover; background-repeat:no-repeat;
+  border:1px solid rgba(201,162,75,.5);
+  border-radius:14px; padding:14px 30px;
+  font-size:22px; font-weight:800; letter-spacing:.01em;
+  -webkit-backdrop-filter:blur(4px); backdrop-filter:blur(4px);
+  transition:color .2s ease, border-color .2s ease, box-shadow .3s ease;
+}
+.nav__cta::after{ content:"→"; color:var(--gold); font-weight:800; transition:color .2s ease; }
+.nav__cta:hover{
+  color:#e6e9ee; border-color:var(--gold);
+  box-shadow:0 0 22px rgba(201,162,75,.5), 0 0 48px rgba(201,162,75,.28);
+}
+.nav__cta:hover::after{ color:#f0d489; }
+
+/* шапка всегда без подложки — текстура крокодила остаётся видимой */
+
+/* ---------- Бургер (только мобилка) ---------- */
+.nav__burger{
+  display:none;
+  grid-column:3; justify-self:end;
+  width:54px; height:54px; padding:14px;
+  background:transparent; border:0; cursor:pointer;
+  flex-direction:column; justify-content:space-between;
+  position:relative; z-index:70;
+}
+.nav__burger span{
+  display:block; height:2px; width:100%; background:var(--silver);
+  border-radius:2px; transition:transform .3s ease, opacity .2s ease, background .2s ease;
+}
+
+/* ---------- Полноэкранное мобильное меню ---------- */
+.mmenu{
+  position:fixed; inset:0; z-index:60;
+  background:rgba(8,8,9,.98);
+  font-family:'Geist', -apple-system, Arial, sans-serif;   /* меню — без засечек */
+  -webkit-backdrop-filter:blur(6px); backdrop-filter:blur(6px);
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  gap:clamp(28px,5vh,52px);
+  opacity:0; visibility:hidden; transform:translateY(-8px);
+  transition:opacity .32s ease, transform .32s ease, visibility .32s;
+}
+.mmenu::before{
+  content:""; position:absolute; inset:0; z-index:-1; pointer-events:none;
+  background:#08080a url('../assets/croco-skin.webp') center top / cover no-repeat;
+  opacity:.22;
+}
+.mmenu__links{ display:flex; flex-direction:column; align-items:center; gap:clamp(18px,3.4vh,34px); }
+.mmenu__links a{
+  color:var(--silver); text-decoration:none;
+  font-size:clamp(26px,7vw,40px); font-weight:700; letter-spacing:.01em;
+  transition:color .2s ease, text-shadow .2s ease;
+}
+.mmenu__links a:hover, .mmenu__links a:active{
+  color:#e6e9ee;
+  text-shadow:0 0 22px rgba(201,162,75,.55), 0 0 40px rgba(201,162,75,.3);
+}
+.mmenu__cta{
+  color:var(--silver); text-decoration:none;
+  background-color:#0b0c0e;
+  background-image:url('../assets/black-suede.jpg');
+  background-image:image-set(url('../assets/black-suede.webp') type('image/webp'), url('../assets/black-suede.jpg') type('image/jpeg'));
+  background-position:center; background-size:cover; background-repeat:no-repeat; border:1px solid rgba(201,162,75,.6);
+  border-radius:999px; padding:14px 34px;
+  letter-spacing:.06em; font-size:15px; font-weight:800;
+  transition:color .2s ease, border-color .2s ease, box-shadow .3s ease;
+}
+.mmenu__cta:hover, .mmenu__cta:active{
+  color:#e6e9ee; border-color:var(--gold);
+  box-shadow:0 0 22px rgba(201,162,75,.5), 0 0 48px rgba(201,162,75,.28);
+}
+
+/* открытое состояние */
+body[data-menu-open="true"] .mmenu{ opacity:1; visibility:visible; transform:none; }
+body[data-menu-open="true"] .nav{ background:transparent; border-bottom-color:transparent; }
+/* бургер → крестик */
+body[data-menu-open="true"] .nav__burger span:nth-child(1){ transform:translateY(11px) rotate(45deg); }
+body[data-menu-open="true"] .nav__burger span:nth-child(2){ opacity:0; }
+body[data-menu-open="true"] .nav__burger span:nth-child(3){ transform:translateY(-11px) rotate(-45deg); }
+
+/* ---------- Переключение десктоп / мобилка ---------- */
+@media (max-width:860px){
+  .nav__links, .nav__cta{ display:none; }
+  .nav__burger{ display:flex; }
+}
