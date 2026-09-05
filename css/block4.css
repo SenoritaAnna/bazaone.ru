@@ -32,11 +32,16 @@
 }
 .b4__eyebrow::before{ content:""; width:26px; height:1px; background:var(--gold); opacity:.7; }
 .b4__title{
-  margin:0 0 clamp(34px,4.5vh,56px); font-family:'Geist',-apple-system,Arial,sans-serif;
+  margin:0 0 16px; font-family:'Geist',-apple-system,Arial,sans-serif;
   font-weight:800; letter-spacing:-.02em; line-height:1.05;
   font-size:clamp(26px,3.2vw,40px); color:#f2f3f5;
 }
 .b4__title .b4__accent{ color:var(--red); }
+.b4__intro{
+  margin:0 0 clamp(34px,4.5vh,56px); max-width:76ch;
+  font-family:'Onest',Arial,sans-serif; color:#b7bcc4;
+  font-size:clamp(15px,1.3vw,18px); line-height:1.6;
+}
 
 /* --- Сетка шагов: 4 в ряд → 2×2 → 1 --- */
 .b4__grid{
