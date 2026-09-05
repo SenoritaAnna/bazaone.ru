@@ -1,0 +1,107 @@
+/* ============================================================
+   БАЗА — Блок 4 «Процесс»: 4 шага от задачи к системе.
+   Нумерованные плашки в чёрной замше. Vanilla CSS.
+   ============================================================ */
+.b4{
+  --gold:#c9a24b;
+  --red:#d8262c;
+  --silver:#bcc1c9;
+  --ink:#e9e7e2;
+  --ink-dim:#8c8781;
+  position:relative;
+  background:transparent;
+  /* десктоп: блок = одно окно, содержимое по центру */
+  min-height:100svh;
+  display:flex; align-items:center;
+  padding:clamp(56px,8vh,110px) 0;
+  /* линии-разделители над блоком и под ним */
+  border-top:1px solid rgba(230,230,236,.16);
+  border-bottom:1px solid rgba(230,230,236,.16);
+}
+.b4__wrap{
+  width:100%; max-width:1360px; margin:0 auto;
+  padding:0 clamp(20px,3vw,48px);
+}
+
+/* --- Шапка блока (едино с блоками 2 и 3) --- */
+.b4__eyebrow{
+  margin:0 0 16px; display:inline-flex; align-items:center; gap:10px;
+  font-family:'Geist Mono','JetBrains Mono',ui-monospace,monospace;
+  text-transform:uppercase; letter-spacing:.22em; font-size:12px;
+  color:var(--ink-dim);
+}
+.b4__eyebrow::before{ content:""; width:26px; height:1px; background:var(--gold); opacity:.7; }
+.b4__title{
+  margin:0 0 clamp(34px,4.5vh,56px); font-family:'Geist',-apple-system,Arial,sans-serif;
+  font-weight:800; letter-spacing:-.02em; line-height:1.05;
+  font-size:clamp(26px,3.2vw,40px); color:#f2f3f5;
+}
+.b4__title .b4__accent{ color:var(--red); }
+
+/* --- Сетка шагов: 4 в ряд → 2×2 → 1 --- */
+.b4__grid{
+  display:grid; grid-template-columns:repeat(4,1fr);
+  gap:clamp(16px,1.4vw,22px);
+  align-items:stretch;
+}
+
+/* --- Шаг-плашка (чёрная замша) --- */
+.b4step{
+  position:relative; display:flex; flex-direction:column;
+  border:1px solid rgba(201,162,75,.28); border-radius:16px;
+  padding:clamp(24px,2vw,32px);
+  background-color:#0b0c0e;
+  background-image:url('../assets/black-suede.jpg');
+  background-image:image-set(url('../assets/black-suede.webp') type('image/webp'), url('../assets/black-suede.jpg') type('image/jpeg'));
+  background-position:center; background-size:cover; background-repeat:no-repeat;
+  box-shadow:0 24px 60px rgba(0,0,0,.35);
+  overflow:hidden;
+  /* появление */
+  opacity:0; transform:translateY(16px);
+  transition:opacity .5s ease, transform .5s cubic-bezier(.22,1,.36,1),
+             border-color .25s ease, box-shadow .35s ease;
+}
+.b4step--in{ opacity:1; transform:none; }
+.b4step:hover{
+  border-color:var(--gold); transform:translateY(-3px);
+  box-shadow:0 0 22px rgba(201,162,75,.28), 0 30px 70px rgba(0,0,0,.5);
+}
+/* крупный полупрозрачный номер-водяной знак в углу */
+.b4step__num{
+  font-family:'Geist',-apple-system,Arial,sans-serif;
+  font-weight:800; font-size:clamp(40px,4vw,58px); line-height:1;
+  color:transparent; -webkit-text-stroke:1px rgba(201,162,75,.55);
+  letter-spacing:-.02em; margin:0 0 14px;
+}
+.b4step__title{
+  margin:0 0 10px; font-family:'Geist',-apple-system,Arial,sans-serif;
+  font-weight:700; letter-spacing:.04em; text-transform:uppercase;
+  font-size:clamp(15px,1.25vw,18px); color:#eef0f2;
+}
+.b4step__desc{
+  margin:0; font-family:'Onest',Arial,sans-serif;
+  color:#c3c7ce; font-size:clamp(13.5px,1.05vw,15px); line-height:1.5;
+}
+
+/* стаггер появления */
+.b4step--in{ transition-delay:0s; }
+.b4__grid .b4step:nth-child(1).b4step--in{ transition-delay:0s; }
+.b4__grid .b4step:nth-child(2).b4step--in{ transition-delay:.1s; }
+.b4__grid .b4step:nth-child(3).b4step--in{ transition-delay:.2s; }
+.b4__grid .b4step:nth-child(4).b4step--in{ transition-delay:.3s; }
+
+/* --- Адаптив --- */
+@media (max-width:900px){
+  .b4__grid{ grid-template-columns:repeat(2,1fr); }
+}
+@media (max-width:820px){
+  .b4{ min-height:auto; display:block; }
+}
+@media (max-width:520px){
+  .b4__grid{ grid-template-columns:1fr; }
+}
+
+/* --- Без анимации: сразу показать --- */
+@media (prefers-reduced-motion:reduce){
+  .b4step{ opacity:1; transform:none; }
+}

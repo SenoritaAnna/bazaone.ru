@@ -11,10 +11,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..900&family=Onest:wght@400..700&family=Geist+Mono:wght@400..600&family=JetBrains+Mono:wght@400..600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/fonts.css?v=2" />
   <link rel="stylesheet" href="css/menu.css?v=14" />
-  <link rel="stylesheet" href="css/hero.css?v=21" />
+  <link rel="stylesheet" href="css/hero.css?v=22" />
   <link rel="stylesheet" href="css/block1.css?v=35" />
   <link rel="stylesheet" href="css/block2.css?v=7" />
   <link rel="stylesheet" href="css/block3.css?v=3" />
+  <link rel="stylesheet" href="css/block4.css?v=1" />
 </head>
 <body>
   <!--
@@ -297,19 +298,19 @@
           <article class="b3card" data-b3card data-i="2">
             <p class="b3card__cat">Создание сайтов</p>
             <h3 class="b3card__title">GORDIART</h3>
-            <p class="b3card__desc">Премиальный авторский сайт + CI/CD + автоматический watchdog.</p>
-            <p class="b3card__win">Деплой за&nbsp;минуты после push, проверки каждое утро</p>
+            <p class="b3card__desc">Премиальный авторский сайт цифрового бюро: single-file версия в&nbsp;продакшене, Next.js-версия в&nbsp;активной разработке — с&nbsp;CI/CD и&nbsp;автоматическим watchdog.</p>
+            <p class="b3card__win">CI/CD: GitHub Actions → rsync по&nbsp;SSH → nginx reload · деплой V2 «блок-по-блоку» с&nbsp;Lighthouse-гейтом 90/95 · revert блока без&nbsp;каскада · watchdog: ежедневная проверка на&nbsp;ошибки, уязвимости и&nbsp;регрессии + утренний отчёт</p>
             <a class="b3card__site" href="https://gordiart.ru" target="_blank" rel="noopener">gordiart.ru&nbsp;↗</a>
-            <div class="b3card__tags"><span>Web</span><span>DevOps</span><span>GitHub Actions</span></div>
+            <div class="b3card__tags"><span>Web</span><span>DevOps</span><span>GitHub Actions</span><span>nginx</span><span>Watchdog</span></div>
           </article>
 
           <article class="b3card" data-b3card data-i="0">
             <p class="b3card__cat">Создание сайтов</p>
             <h3 class="b3card__title">Mystery Kris</h3>
-            <p class="b3card__desc">Экосистема для&nbsp;международного DJ — от&nbsp;research до&nbsp;собственного плеера.</p>
-            <p class="b3card__win">Дизайн + фронт + бэк + музыка + защита</p>
+            <p class="b3card__desc">Личный сайт и&nbsp;экосистема для&nbsp;международного диджея: полный цикл от&nbsp;research топ-индустрии до&nbsp;собственного веб-плеера, мастеринга и&nbsp;постоянной защиты.</p>
+            <p class="b3card__win">Research топ-диджеев мира · собственный веб-плеер под&nbsp;DJ-формат (длинные треки, переходы, защита от&nbsp;скачивания) · мастеринг и&nbsp;продакшн релизов · watchdog: ежедневная проверка сайта и&nbsp;плеера + утренний отчёт</p>
             <a class="b3card__site" href="https://mysterykris.ru" target="_blank" rel="noopener">mysterykris.ru&nbsp;↗</a>
-            <div class="b3card__tags"><span>Research</span><span>Брендинг</span><span>Музыка / мастеринг</span></div>
+            <div class="b3card__tags"><span>Research</span><span>Брендинг</span><span>Музыка / мастеринг</span><span>Кастомный плеер</span><span>Watchdog</span></div>
           </article>
 
           <article class="b3card" data-b3card data-i="1">
@@ -324,86 +325,122 @@
           <article class="b3card" data-b3card data-i="2">
             <p class="b3card__cat">Создание сайтов</p>
             <h3 class="b3card__title">Soyuz Consult</h3>
-            <p class="b3card__desc">Редизайн, новая дизайн-система, инфраструктура на&nbsp;Cloudflare.</p>
-            <p class="b3card__win">Технический SEO-аудит вырос в&nbsp;полный продукт</p>
+            <p class="b3card__desc">Мультиязычный (RU/EN) сайт международного консалтингового агентства: технический SEO-аудит вырос в&nbsp;полную переработку — новая дизайн-система, анимированная инфографика, миграция инфраструктуры на&nbsp;Cloudflare.</p>
+            <p class="b3card__win">Полный ребрендинг в&nbsp;едином визуальном языке · изолированные CSS-компоненты внутри Tilda · двуязычные блоки на&nbsp;CSS&nbsp;Grid · оживающая инфографика на&nbsp;нативном IntersectionObserver (без&nbsp;jQuery) · SEO: сняты hreflang-конфликты, синхронизированы canonical RU/EN</p>
             <a class="b3card__site" href="https://soyuzconsult.com" target="_blank" rel="noopener">soyuzconsult.com&nbsp;↗</a>
-            <div class="b3card__tags"><span>Редизайн</span><span>SEO</span><span>Дизайн-система</span></div>
+            <div class="b3card__tags"><span>Редизайн</span><span>SEO</span><span>Дизайн-система</span><span>Анимация</span><span>Cloudflare</span><span>Кодовый арт</span></div>
           </article>
 
           <article class="b3card" data-b3card data-i="0">
             <p class="b3card__cat">Боты и mini apps</p>
             <h3 class="b3card__title">GORDIART omnibot</h3>
-            <p class="b3card__desc">Telegram + MAX — bot + mini&nbsp;app в&nbsp;одной экосистеме.</p>
-            <p class="b3card__win">4&nbsp;продукта, одна точка входа в&nbsp;любом мессенджере</p>
-            <div class="b3card__tags"><span>Telegram Bot</span><span>TG Mini App</span><span>MAX Bot</span></div>
+            <p class="b3card__desc">Связка из&nbsp;4&nbsp;продуктов GORDIART в&nbsp;Telegram и&nbsp;MAX: bot + mini&nbsp;app в&nbsp;каждом — единая точка входа в&nbsp;любом мессенджере.</p>
+            <p class="b3card__win">4&nbsp;продукта, одна точка входа · single-file портфолио на&nbsp;Telegram WebApp SDK и&nbsp;MAX SDK · автодеплой через GitHub Actions · TG-связка в&nbsp;продакшене, MAX — MVP</p>
+            <div class="b3card__tags"><span>Telegram Bot</span><span>TG Mini App</span><span>MAX Bot</span><span>MAX Mini App</span></div>
           </article>
 
           <article class="b3card" data-b3card data-i="1">
             <p class="b3card__cat">Боты и mini apps</p>
             <h3 class="b3card__title">Soyuz Consult — Telegram-экосистема</h3>
-            <p class="b3card__desc">Mini&nbsp;App + CustDev&nbsp;Bot + воронка заявок без&nbsp;лишних шагов.</p>
-            <p class="b3card__win">B2B-сервис в&nbsp;мессенджере, не&nbsp;игрушка</p>
-            <div class="b3card__tags"><span>TG Mini App</span><span>CustDev Bot</span><span>Воронка</span></div>
+            <p class="b3card__desc">Telegram-экосистема для&nbsp;консалтинга: мини-сайт внутри мессенджера + воронка заявок без&nbsp;лишних шагов + CustDev-бот для&nbsp;сбора данных о&nbsp;клиентах.</p>
+            <p class="b3card__win">Мини-сайт с&nbsp;услугами внутри Telegram · CustDev-бот собирает интересы, барьеры и&nbsp;портрет ЦА · единый бренд с&nbsp;основным сайтом · канал не&nbsp;дублирует сайт, а&nbsp;дополняет его</p>
+            <div class="b3card__tags"><span>TG Mini App</span><span>CustDev Bot</span><span>Воронка</span><span>B2B</span></div>
           </article>
 
           <article class="b3card" data-b3card data-i="2">
             <p class="b3card__cat">Software / SaaS</p>
             <h3 class="b3card__title">Avito-фид + дедуп</h3>
-            <p class="b3card__desc">Утилита для&nbsp;поставщика пиломатериалов — возможный SaaS.</p>
-            <p class="b3card__win">MVP в&nbsp;проде, путь к&nbsp;Google&nbsp;Sheets SaaS</p>
-            <div class="b3card__tags"><span>Python</span><span>Jaccard-сходство</span><span>Avito</span></div>
+            <p class="b3card__desc">Кастомная утилита для&nbsp;поставщика пиломатериалов: из&nbsp;CSV генерирует XML-фид для&nbsp;белой автозагрузки на&nbsp;Avito и&nbsp;ловит дубли до&nbsp;публикации — возможный SaaS.</p>
+            <p class="b3card__win">Аудит процесса (5&nbsp;отчётов) · CSV → XML-фид · детект дублей по&nbsp;Jaccard-сходству · валидация полей и&nbsp;детект SEO-хвостов · путь к&nbsp;Google&nbsp;Sheets + Apps&nbsp;Script SaaS</p>
+            <div class="b3card__tags"><span>Python</span><span>Jaccard-сходство</span><span>Avito</span><span>Маркетплейс</span></div>
           </article>
 
           <article class="b3card" data-b3card data-i="0">
             <p class="b3card__cat">Кибербезопасность</p>
             <h3 class="b3card__title">Авторский медиа-проект — кибербезопасность полного цикла</h3>
-            <p class="b3card__desc">Security baseline + 152-ФЗ + remediation + ongoing защита через&nbsp;watchdog.</p>
-            <p class="b3card__win">6-слойная защита, 24&nbsp;артефакта, аудитор и&nbsp;защитник в&nbsp;одном лице</p>
-            <div class="b3card__tags"><span>OWASP</span><span>Threat modeling</span><span>152-ФЗ</span></div>
+            <p class="b3card__desc">Полный цикл защиты аудио-медиа: internal baseline → external black-box аудит → 152-ФЗ → remediation → постоянный watchdog.</p>
+            <p class="b3card__win">6 слоёв защиты (UI, hotlink, CSP, fail2ban, Cloudflare, watermarking) · 24&nbsp;артефакта · OSINT + black-box аудит · приведение к&nbsp;152-ФЗ · ежедневный watchdog с&nbsp;утренним отчётом · аудитор и&nbsp;защитник в&nbsp;одном лице</p>
+            <div class="b3card__tags"><span>OWASP</span><span>Threat modeling</span><span>152-ФЗ</span><span>Defense-in-depth</span><span>Watchdog</span></div>
           </article>
 
           <article class="b3card" data-b3card data-i="1">
             <p class="b3card__cat">Кибербезопасность</p>
             <h3 class="b3card__title">Цветочный бутик — security без проникновения</h3>
-            <p class="b3card__desc">Только то, что&nbsp;видно снаружи — и&nbsp;что&nbsp;увидел бы атакующий за&nbsp;5&nbsp;минут.</p>
-            <p class="b3card__win">Без пентеста, без доступа к&nbsp;админке · разбор по&nbsp;OWASP Top&nbsp;10</p>
-            <div class="b3card__tags"><span>Security</span><span>OWASP</span><span>E-commerce</span></div>
+            <p class="b3card__desc">Security-аудит интернет-магазина без&nbsp;проникновения: только то, что&nbsp;видно снаружи — и&nbsp;что&nbsp;увидел бы атакующий за&nbsp;5&nbsp;минут.</p>
+            <p class="b3card__win">Без пентеста и&nbsp;доступа к&nbsp;админке · разбор по&nbsp;OWASP Top&nbsp;10 · слой оплаты и&nbsp;PII: канал до&nbsp;платёжного шлюза, изоляция cookie-сессий, утечки в&nbsp;сторонние пиксели · зависимости, CVE и&nbsp;WAF · находки по&nbsp;3&nbsp;пулам severity</p>
+            <div class="b3card__tags"><span>Security</span><span>OWASP</span><span>E-commerce</span><span>Платежи</span><span>PII</span><span>Black-box</span></div>
           </article>
 
           <article class="b3card" data-b3card data-i="2">
             <p class="b3card__cat">Compliance</p>
             <h3 class="b3card__title">Юр.&nbsp;компания, западная юрисдикция — банковский комплаенс пройден&nbsp;✓</h3>
-            <p class="b3card__desc">Комплаенс + полный маркетинг + 19+&nbsp;публикаций в&nbsp;СМИ + РК&nbsp;Яндекс + регулярная аналитика.</p>
-            <p class="b3card__win">71% «слепого» трафика стали видимыми · банковский комплаенс пройден</p>
-            <div class="b3card__tags"><span>Banking compliance</span><span>Remediation</span><span>UTM</span></div>
+            <p class="b3card__desc">Комплаенс + полный маркетинг + 19+&nbsp;публикаций в&nbsp;СМИ + РК&nbsp;Яндекс + регулярная аналитика — end-to-end одной парой рук.</p>
+            <p class="b3card__win">71% «слепого» трафика стали видимыми (переходы из&nbsp;мессенджеров без&nbsp;UTM) · банковский комплаенс пройден · реструктуризация РК&nbsp;Яндекс.Директ · сквозная аналитика по&nbsp;каналам</p>
+            <div class="b3card__tags"><span>Banking compliance</span><span>Remediation</span><span>UTM</span><span>РК Яндекс</span><span>PR-публикации</span><span>Аналитика</span></div>
           </article>
 
           <article class="b3card" data-b3card data-i="0">
             <p class="b3card__cat">Web-аудиты</p>
             <h3 class="b3card__title">Фитнес-клуб премиум-сегмента — Tilda full audit</h3>
-            <p class="b3card__desc">SEO + security + performance + conversion: 30&nbsp;находок, общая оценка 4/10.</p>
-            <p class="b3card__win">Critical&nbsp;3 / High&nbsp;12 / Medium-Low&nbsp;15+ · 27-страничный отчёт · 3-фазный roadmap</p>
-            <div class="b3card__tags"><span>Tilda</span><span>Black-box</span><span>CWV</span></div>
+            <p class="b3card__desc">Полный аудит Tilda-сайта фитнес-клуба: SEO + security + performance + conversion — 30&nbsp;находок, общая оценка 4/10.</p>
+            <p class="b3card__win">Critical&nbsp;3 / High&nbsp;12 / Medium-Low&nbsp;15+ · canonical на&nbsp;главную, дырявый sitemap, INP&nbsp;315мс · нет онлайн-записи и&nbsp;чата · 27-страничный отчёт · 3-фазный roadmap</p>
+            <div class="b3card__tags"><span>Tilda</span><span>Black-box</span><span>CWV</span><span>INP 315ms</span><span>Headers</span><span>Conversion</span></div>
           </article>
 
           <article class="b3card" data-b3card data-i="1">
             <p class="b3card__cat">Web-аудиты</p>
             <h3 class="b3card__title">Премиум-производитель света (40+&nbsp;лет) — бренд + SEO + security</h3>
-            <p class="b3card__desc">12&nbsp;страниц × 6&nbsp;слоёв, конкурентный бенчмарк, семантика — 25&nbsp;находок.</p>
-            <p class="b3card__win">4&nbsp;Critical / 7&nbsp;High / 9&nbsp;Medium / 5&nbsp;Low · 3-этапная стратегия позиционирования</p>
-            <div class="b3card__tags"><span>OSINT</span><span>Бренд-аудит</span><span>6 слоёв</span></div>
+            <p class="b3card__desc">Аудит lux-производителя авторского света (40+&nbsp;лет): 12&nbsp;страниц × 6&nbsp;слоёв, конкурентный бенчмарк по&nbsp;9&nbsp;premium-брендам, семантика по&nbsp;Wordstat — 25&nbsp;находок.</p>
+            <p class="b3card__win">4&nbsp;Critical / 7&nbsp;High / 9&nbsp;Medium / 5&nbsp;Low · продукт уровня топ-объектов при&nbsp;сайте-визитке · 3-этапная стратегия: закрытие критики → архитектура 2.0 → позиция лидера категории</p>
+            <div class="b3card__tags"><span>OSINT</span><span>Бренд-аудит</span><span>6 слоёв</span><span>Конкурентный анализ</span><span>Wordstat</span><span>Lux-сегмент</span></div>
           </article>
 
           <article class="b3card" data-b3card data-i="2">
             <p class="b3card__cat">Web-аудиты</p>
             <h3 class="b3card__title">Event-агентство ЮВА (NDA) — мульти-сущность + Google&nbsp;Maps</h3>
-            <p class="b3card__desc">Два связанных бренда одного владельца, 18&nbsp;противоречий, three-front strategy.</p>
-            <p class="b3card__win">8&nbsp;critical / 18&nbsp;total · восстановление Google&nbsp;Maps после отказа в&nbsp;апелляции</p>
-            <div class="b3card__tags"><span>Бренд-архитектура</span><span>Google Maps</span><span>Мульти-сущность</span></div>
+            <p class="b3card__desc">Два связанных бренда одного владельца (event + флористика) в&nbsp;ЮВА, NDA: Google видит две разные сущности — 18&nbsp;противоречий, three-front strategy.</p>
+            <p class="b3card__win">8&nbsp;critical / 18&nbsp;total · расходящийся NAP по&nbsp;8+&nbsp;каталогам, вторая витрина из&nbsp;снимка Wayback&nbsp;2018 · three-front strategy: гигиена основного сайта → пересборка второго (Tilda + schema&nbsp;LocalBusiness) → апелляция в&nbsp;Google&nbsp;Maps</p>
+            <div class="b3card__tags"><span>Бренд-архитектура</span><span>Google Maps</span><span>Мульти-сущность</span><span>OSINT</span><span>Wayback</span><span>NDA</span></div>
           </article>
 
         </div><!-- /.b3__grid -->
       </div><!-- /.b3__wrap -->
+    </section>
+
+    <!-- ============ БЛОК 4 — «Процесс»: 4 шага ============ -->
+    <section class="b4" id="block4" aria-label="Процесс">
+      <div class="b4__wrap">
+        <p class="b4__eyebrow">Процесс</p>
+        <h2 class="b4__title">От&nbsp;задачи — к&nbsp;работающей <span class="b4__accent">системе</span></h2>
+
+        <div class="b4__grid">
+
+          <article class="b4step" data-b4step>
+            <p class="b4step__num">01</p>
+            <h3 class="b4step__title">Разбираем</h3>
+            <p class="b4step__desc">Изучаем процессы, роли, данные и&nbsp;текущие инструменты.</p>
+          </article>
+
+          <article class="b4step" data-b4step>
+            <p class="b4step__num">02</p>
+            <h3 class="b4step__title">Проектируем</h3>
+            <p class="b4step__desc">Определяем архитектуру решения и&nbsp;связи между элементами.</p>
+          </article>
+
+          <article class="b4step" data-b4step>
+            <p class="b4step__num">03</p>
+            <h3 class="b4step__title">Собираем</h3>
+            <p class="b4step__desc">Разрабатываем frontend, backend, интеграции, автоматизацию и&nbsp;AI-функции.</p>
+          </article>
+
+          <article class="b4step" data-b4step>
+            <p class="b4step__num">04</p>
+            <h3 class="b4step__title">Внедряем</h3>
+            <p class="b4step__desc">Запускаем, проверяем в&nbsp;реальной работе и&nbsp;развиваем дальше.</p>
+          </article>
+
+        </div><!-- /.b4__grid -->
+      </div><!-- /.b4__wrap -->
     </section>
   </main>
 
@@ -412,5 +449,6 @@
   <script src="js/block1.js" defer></script>
   <script src="js/block2.js" defer></script>
   <script src="js/block3.js" defer></script>
+  <script src="js/block4.js" defer></script>
 </body>
 </html>
