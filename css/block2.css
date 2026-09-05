@@ -11,10 +11,16 @@
   --ink-dim:#8c8781;
   position:relative;
   background:transparent;
+  /* десктоп: блок = одно окно, содержимое по центру */
+  min-height:100svh;
+  display:flex; align-items:center;
   padding:clamp(56px,8vh,110px) 0;
+  /* линии-разделители над блоком и под ним (как между блоком 0 и 1) */
+  border-top:1px solid rgba(230,230,236,.16);
+  border-bottom:1px solid rgba(230,230,236,.16);
 }
 .b2__wrap{
-  max-width:1360px; margin:0 auto;
+  width:100%; max-width:1360px; margin:0 auto;
   padding:0 clamp(20px,3vw,48px);
 }
 
@@ -135,6 +141,10 @@
 /* --- Адаптив: 2×2, потом 1 колонка --- */
 @media (max-width:1080px){
   .b2__grid{ grid-template-columns:repeat(2,1fr); gap:clamp(16px,2vw,22px); }
+}
+/* планшет/мобилка: контент высокий — без принудительного одного экрана */
+@media (max-width:820px){
+  .b2{ min-height:auto; display:block; }
 }
 @media (max-width:600px){
   .b2__grid{ grid-template-columns:1fr; }

@@ -6,8 +6,8 @@
 * { box-sizing: border-box; }
 html {
   -webkit-text-size-adjust: 100%;
-  /* каждый блок «залипает» при прокрутке */
-  scroll-snap-type: y proximity;
+  /* каждый блок «залипает» при прокрутке (жёсткое залипание) */
+  scroll-snap-type: y mandatory;
   scroll-padding-top: var(--nav-h, 69px);
 }
 /* точки залипания — крупные секции */

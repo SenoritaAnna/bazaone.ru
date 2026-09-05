@@ -14,7 +14,9 @@
   --silver:#bcc1c9;
   position:relative;
   background:transparent;                 /* кожа идёт с body */
-  border-top:1px solid rgba(230,230,236,.16);   /* тонкая линия-разделитель между блоками */
+  /* линии-разделители над блоком и под ним (как между блоком 0 и 1) */
+  border-top:1px solid rgba(230,230,236,.16);
+  border-bottom:1px solid rgba(230,230,236,.16);
 }
 
 .b1__track{ position:relative; height:auto; }
@@ -83,6 +85,7 @@
 /* направления — одинаковые плашки как в меню (серебро, золотая обводка, свечение), 2 колонки */
 .b1__list{
   list-style:none; margin:0; padding:0;
+  width:85%; align-self:flex-start;              /* плашки уже на 15% — меньше пустоты по бокам */
   display:grid; grid-template-columns:1fr 1fr; gap:10px 12px;
 }
 .b1__list li{
@@ -93,7 +96,7 @@
   background-image:image-set(url('../assets/black-suede.webp') type('image/webp'), url('../assets/black-suede.jpg') type('image/jpeg'));
   background-position:center; background-size:cover; background-repeat:no-repeat;
   border:1px solid rgba(201,162,75,.35);
-  border-radius:12px; padding:12px 22px;
+  border-radius:12px; padding:14px 20px;   /* выше на ~15%, чуть уже — меньше пустоты */
   font-family:'Geist', -apple-system, Arial, sans-serif;
   font-size:clamp(14px,1.15vw,16px); font-weight:600; letter-spacing:.01em;   /* текст = 16px */
   -webkit-backdrop-filter:blur(4px); backdrop-filter:blur(4px);
@@ -122,6 +125,6 @@
   }
   .b1__content{ align-items:center; }
   .b1__lead{ max-width:24ch; }
-  .b1__list{ grid-template-columns:1fr; gap:9px; width:100%; max-width:360px; margin:0 auto; }
+  .b1__list{ grid-template-columns:1fr; gap:9px; width:100%; max-width:360px; margin:0 auto; align-self:center; }
   .b1__square, .b1__blob{ width:clamp(200px,58vw,300px); }
 }
