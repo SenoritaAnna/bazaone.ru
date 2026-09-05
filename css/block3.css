@@ -1,0 +1,124 @@
+/* ============================================================
+   БАЗА — Блок 3 «Кейсы и продукты». Карточки реальных проектов
+   (по мотивам gordiart.ru/projects), замша + золото + красный.
+   Может занимать ~1.5 экрана — это нормально. Vanilla CSS.
+   ============================================================ */
+.b3{
+  --gold:#c9a24b;
+  --red:#d8262c;
+  --silver:#bcc1c9;
+  --ink:#e9e7e2;
+  --ink-dim:#8c8781;
+  position:relative;
+  background:transparent;
+  padding:clamp(56px,8vh,110px) 0;
+  /* линии-разделители над блоком и под ним (как между блоком 0 и 1) */
+  border-top:1px solid rgba(230,230,236,.16);
+  border-bottom:1px solid rgba(230,230,236,.16);
+}
+.b3__wrap{
+  width:100%; max-width:1360px; margin:0 auto;
+  padding:0 clamp(20px,3vw,48px);
+}
+
+/* --- Шапка блока (едино с блоком 2) --- */
+.b3__eyebrow{
+  margin:0 0 16px; display:inline-flex; align-items:center; gap:10px;
+  font-family:'Geist Mono','JetBrains Mono',ui-monospace,monospace;
+  text-transform:uppercase; letter-spacing:.22em; font-size:12px;
+  color:var(--ink-dim);
+}
+.b3__eyebrow::before{ content:""; width:26px; height:1px; background:var(--gold); opacity:.7; }
+.b3__title{
+  margin:0 0 14px; font-family:'Geist',-apple-system,Arial,sans-serif;
+  font-weight:800; letter-spacing:-.02em; line-height:1.05;
+  font-size:clamp(26px,3.2vw,40px); color:#f2f3f5;
+}
+.b3__title .b3__accent{ color:var(--red); }
+.b3__sub{
+  margin:0 0 clamp(34px,4.5vh,56px); max-width:64ch;
+  font-family:'Onest',Arial,sans-serif; color:#b7bcc4;
+  font-size:clamp(15px,1.3vw,18px); line-height:1.5;
+}
+
+/* --- Сетка карточек: 3 в ряд → 2 → 1 --- */
+.b3__grid{
+  display:grid; grid-template-columns:repeat(3,1fr);
+  gap:clamp(16px,1.4vw,22px);
+  align-items:stretch;
+}
+
+/* --- Карточка кейса --- */
+.b3card{
+  display:flex; flex-direction:column;
+  border:1px solid rgba(201,162,75,.28); border-radius:16px;
+  padding:clamp(20px,1.6vw,28px);
+  /* замша, как на плашках сайта */
+  background-color:#0b0c0e;
+  background-image:url('../assets/black-suede.jpg');
+  background-image:image-set(url('../assets/black-suede.webp') type('image/webp'), url('../assets/black-suede.jpg') type('image/jpeg'));
+  background-position:center; background-size:cover; background-repeat:no-repeat;
+  box-shadow:0 24px 60px rgba(0,0,0,.35);
+  /* появление */
+  opacity:0; transform:translateY(16px);
+  transition:opacity .5s ease, transform .5s cubic-bezier(.22,1,.36,1),
+             border-color .25s ease, box-shadow .35s ease;
+}
+.b3card--in{ opacity:1; transform:none; }
+.b3card:hover{
+  border-color:var(--gold); transform:translateY(-3px);
+  box-shadow:0 0 22px rgba(201,162,75,.28), 0 30px 70px rgba(0,0,0,.5);
+}
+
+/* категория (eyebrow карточки) */
+.b3card__cat{
+  display:inline-flex; align-items:center; gap:8px; margin:0 0 12px;
+  font-family:'Geist Mono','JetBrains Mono',ui-monospace,monospace;
+  font-size:11px; letter-spacing:.16em; text-transform:uppercase;
+  color:var(--ink-dim);
+}
+.b3card__cat::before{ content:""; width:7px; height:7px; border-radius:50%; background:var(--gold); box-shadow:0 0 10px rgba(201,162,75,.6); }
+
+.b3card__title{
+  margin:0 0 10px; font-family:'Geist',-apple-system,Arial,sans-serif;
+  font-weight:700; letter-spacing:-.01em; line-height:1.2;
+  font-size:clamp(17px,1.35vw,20px); color:#eef0f2;
+}
+.b3card__desc{
+  margin:0 0 14px; font-family:'Onest',Arial,sans-serif;
+  color:#c3c7ce; font-size:clamp(13.5px,1.05vw,15px); line-height:1.5;
+}
+
+/* строка-достижение «→ …» */
+.b3card__win{
+  margin:0 0 16px; display:flex; gap:8px;
+  font-family:'Onest',Arial,sans-serif;
+  color:#dfe2e7; font-size:clamp(13px,1vw,14.5px); line-height:1.45;
+}
+.b3card__win::before{ content:"→"; color:var(--gold); flex:0 0 auto; font-weight:700; }
+
+/* теги-чипы (стек) — прижаты к низу */
+.b3card__tags{
+  margin:auto 0 0; padding-top:14px; border-top:1px solid rgba(201,162,75,.16);
+  display:flex; flex-wrap:wrap; gap:7px;
+}
+.b3card__tags span{
+  font-family:'Geist Mono','JetBrains Mono',ui-monospace,monospace;
+  font-size:11px; letter-spacing:.03em; color:#aeb2ba;
+  padding:4px 9px; border:1px solid rgba(201,162,75,.22); border-radius:999px;
+  background:rgba(0,0,0,.25);
+}
+.b3card__tags span.more{ color:var(--gold); border-color:rgba(201,162,75,.4); }
+
+/* --- Адаптив --- */
+@media (max-width:1080px){
+  .b3__grid{ grid-template-columns:repeat(2,1fr); }
+}
+@media (max-width:600px){
+  .b3__grid{ grid-template-columns:1fr; }
+}
+
+/* --- Без анимации: сразу показать --- */
+@media (prefers-reduced-motion:reduce){
+  .b3card{ opacity:1; transform:none; }
+}
