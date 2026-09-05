@@ -34,7 +34,7 @@
 /* --- Сетка: слева визуал, справа контент --- */
 .b1__grid{
   width:100%; max-width:1360px; margin:0 auto;
-  display:grid; grid-template-columns:2.3fr 1fr; align-items:center;
+  display:grid; grid-template-columns:2.3fr 1fr; align-items:start;   /* контент и шар — от верха, на одном уровне */
   gap:clamp(20px,3vw,48px);
   padding:calc(var(--nav-h,92px) + 4vh) clamp(20px,3vw,48px) 6vh;
 }
@@ -42,7 +42,7 @@
 /* --- Шар-ядро в рамке-квадрате (справа на десктопе) --- */
 .b1__visual{
   position:relative; display:grid; place-items:center; order:2;
-  align-self:start; margin-top:clamp(60px,10vh,120px);   /* опущен к уровню описания */
+  align-self:start; margin-top:0;                         /* верх шара = верх заголовка */
   justify-self:end; padding-left:clamp(8px,1.2vw,20px);  /* отодвинут правее от текста */
 }
 .b1__square{

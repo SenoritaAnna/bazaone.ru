@@ -38,6 +38,7 @@
   font-weight:800; letter-spacing:-.02em; line-height:1.05;
   font-size:clamp(26px,3.2vw,40px); color:#f2f3f5;   /* h2 = 40px (едино с блоком 1) */
 }
+.b2__accent{ color:var(--red); }   /* «собираем» — фирменный красный */
 .b2__sub{
   margin:0 0 clamp(34px,4.5vh,56px); max-width:60ch;
   font-family:'Onest',Arial,sans-serif; color:#b7bcc4;
