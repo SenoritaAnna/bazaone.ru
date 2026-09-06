@@ -18,7 +18,8 @@
   <link rel="stylesheet" href="css/block4.css?v=2" />
   <link rel="stylesheet" href="css/block5.css?v=1" />
   <link rel="stylesheet" href="css/block6.css?v=4" />
-  <link rel="stylesheet" href="css/footer.css?v=6" />
+  <link rel="stylesheet" href="css/footer.css?v=7" />
+  <link rel="stylesheet" href="css/cookie.css?v=2" />
   <link rel="stylesheet" href="css/reveal.css?v=1" />
 </head>
 <body>
@@ -549,6 +550,15 @@
     </section>
   </main>
 
+  <!-- Баннер согласия на cookie (появляется при первом заходе) -->
+  <div class="cookie" data-cookie hidden role="dialog" aria-label="Уведомление о файлах cookie">
+    <p class="cookie__text">Мы&nbsp;используем файлы cookie для&nbsp;корректной работы сайта и&nbsp;аналитики. Подробнее — в&nbsp;<a href="cookie.html">Политике&nbsp;cookie</a>.</p>
+    <div class="cookie__actions">
+      <button class="cookie__btn cookie__btn--accept" type="button" data-cookie-accept>Принять</button>
+      <button class="cookie__btn cookie__btn--decline" type="button" data-cookie-decline>Отклонить</button>
+    </div>
+  </div>
+
   <!-- Кнопка «наверх» (плавный подъём на главную) -->
   <button class="totop" data-totop type="button" aria-label="Наверх, на главную">
     <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg>
@@ -562,5 +572,6 @@
   <script src="js/block4.js" defer></script>
   <script src="js/reveal.js" defer></script>
   <script src="js/form.js?v=2" defer></script>
+  <script src="js/cookie.js?v=2" defer></script>
 </body>
 </html>

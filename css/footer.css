@@ -19,7 +19,7 @@
 .foot__col--mid{ align-items:center; text-align:center; }
 
 .foot__logo{
-  height:38px; width:auto; display:block;
+  height:44px; width:auto; display:block;   /* +15% к прежним 38px */
   filter:drop-shadow(0 4px 14px rgba(0,0,0,.6));
 }
 
