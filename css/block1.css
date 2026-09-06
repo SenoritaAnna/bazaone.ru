@@ -127,4 +127,6 @@
   .b1__lead{ max-width:24ch; }
   .b1__list{ grid-template-columns:1fr; gap:9px; width:100%; max-width:360px; margin:0 auto; align-self:center; }
   .b1__square, .b1__blob{ width:clamp(200px,58vw,300px); }
+  /* шар: строго по центру экрана по горизонтали (сброс десктопного justify-self:end + сдвига) */
+  .b1__visual{ justify-self:center; align-self:center; padding-left:0; }
 }
