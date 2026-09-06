@@ -15,6 +15,7 @@
   var mailEl = form.querySelector('input[name="email"]');
   var msgEl  = form.querySelector('textarea[name="message"]');
   var capEl  = form.querySelector('input[name="captcha"]');
+  var consEl = form.querySelector('[data-consent]');
 
   var answer = 0;
 
@@ -38,7 +39,11 @@
     if (kind) noteEl.classList.add(kind);
   }
   function markErr(el, on) { if (el) el.classList.toggle('is-error', !!on); }
-  function clearErr() { [nameEl, mailEl, msgEl, capEl].forEach(function (e) { markErr(e, false); }); }
+  function clearErr() {
+    [nameEl, mailEl, msgEl, capEl].forEach(function (e) { markErr(e, false); });
+    var cw = form.querySelector('.b6form__consent');
+    if (cw) cw.classList.remove('is-error');
+  }
 
   var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -54,6 +59,14 @@
     if (!name) { markErr(nameEl, true); nameEl.focus(); return setNote('Пожалуйста, укажите имя.', 'is-error'); }
     if (!EMAIL_RE.test(mail)) { markErr(mailEl, true); mailEl.focus(); return setNote('Проверьте адрес e-mail.', 'is-error'); }
     if (!msg) { markErr(msgEl, true); msgEl.focus(); return setNote('Напишите пару слов о задаче.', 'is-error'); }
+
+    // согласие на обработку персональных данных обязательно
+    if (consEl && !consEl.checked) {
+      var cw = consEl.closest('.b6form__consent');
+      if (cw) cw.classList.add('is-error');
+      consEl.focus();
+      return setNote('Отметьте согласие на обработку персональных данных.', 'is-error');
+    }
 
     // анти-бот: сверяем ответ на пример
     if (String(cap) !== String(answer)) {
@@ -76,13 +89,5 @@
 
     setNote('Открываем ваш почтовый клиент для отправки заявки…', 'is-ok');
     window.location.href = href;
-  });
-
-  // --- Кнопка «запросить реквизиты»: ведёт к форме и подставляет текст ---
-  var reqBtn = document.querySelector('[data-req-btn]');
-  if (reqBtn) reqBtn.addEventListener('click', function () {
-    if (msgEl) msgEl.value = 'Прошу выслать реквизиты компании.';
-    form.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    setTimeout(function () { if (nameEl) nameEl.focus(); }, 600);
   });
 })();

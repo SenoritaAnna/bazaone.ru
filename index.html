@@ -17,8 +17,9 @@
   <link rel="stylesheet" href="css/block3.css?v=3" />
   <link rel="stylesheet" href="css/block4.css?v=2" />
   <link rel="stylesheet" href="css/block5.css?v=1" />
-  <link rel="stylesheet" href="css/block6.css?v=3" />
-  <link rel="stylesheet" href="css/footer.css?v=1" />
+  <link rel="stylesheet" href="css/block6.css?v=4" />
+  <link rel="stylesheet" href="css/footer.css?v=2" />
+  <link rel="stylesheet" href="css/cookie.css?v=1" />
   <link rel="stylesheet" href="css/reveal.css?v=1" />
 </head>
 <body>
@@ -511,6 +512,10 @@
             <span class="b6form__label">Комментарий</span>
             <textarea class="b6form__input b6form__textarea" name="message" rows="4" required maxlength="1500" placeholder="Что хотите собрать, автоматизировать или связать"></textarea>
           </label>
+          <label class="b6form__consent">
+            <input type="checkbox" name="consent" data-consent required />
+            <span>Я&nbsp;ознакомлен(а) с&nbsp;<a href="privacy.html" target="_blank" rel="noopener">Политикой&nbsp;конфиденциальности</a> и&nbsp;даю <a href="consent.html" target="_blank" rel="noopener">согласие на&nbsp;обработку персональных данных</a>.</span>
+          </label>
           <div class="b6form__foot">
             <label class="b6form__field b6form__field--captcha">
               <span class="b6form__label">Проверка: сколько будет <b data-captcha-q>…</b></span>
@@ -529,16 +534,27 @@
           <div class="foot__col">
             <span class="foot__logo">БАЗА</span>
             <span class="foot__city">Санкт-Петербург</span>
+            <span class="foot__req">ИП&nbsp;Гордиенко А.&nbsp;Д. · ОГРНИП&nbsp;325784700359474 · ИНН&nbsp;780620653426</span>
           </div>
           <div class="foot__col foot__col--mid">
             <a class="foot__mail" href="mailto:go@bazaone.ru">go@bazaone.ru</a>
-            <span class="foot__req">Реквизитов пока нет&nbsp;— <button class="foot__reqbtn" type="button" data-req-btn>запросить реквизиты</button></span>
+            <nav class="foot__docs" aria-label="Правовые документы">
+              <a href="privacy.html">Политика конфиденциальности</a>
+              <a href="consent.html">Согласие на обработку ПД</a>
+              <a href="cookie.html">Файлы cookie</a>
+            </nav>
           </div>
           <p class="foot__copy">© 2026 БАЗА. Все права защищены.</p>
         </div>
       </footer>
     </section>
   </main>
+
+  <!-- Уведомление о cookie -->
+  <div class="cookie" data-cookie hidden role="dialog" aria-label="Уведомление о файлах cookie">
+    <p class="cookie__text">Мы&nbsp;используем файлы cookie, чтобы сайт работал корректно и&nbsp;удобно. Продолжая пользоваться сайтом, вы&nbsp;соглашаетесь с&nbsp;<a href="cookie.html">Политикой&nbsp;cookie</a> и&nbsp;<a href="privacy.html">Политикой&nbsp;конфиденциальности</a>.</p>
+    <button class="cookie__btn" type="button" data-cookie-accept>Принять</button>
+  </div>
 
   <script src="js/menu.js?v=2" defer></script>
   <script src="js/hero.js" defer></script>
@@ -547,6 +563,7 @@
   <script src="js/block3.js" defer></script>
   <script src="js/block4.js" defer></script>
   <script src="js/reveal.js" defer></script>
-  <script src="js/form.js?v=1" defer></script>
+  <script src="js/form.js?v=2" defer></script>
+  <script src="js/cookie.js?v=1" defer></script>
 </body>
 </html>

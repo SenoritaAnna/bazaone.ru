@@ -1,0 +1,37 @@
+/* ============================================================
+   БАЗА — уведомление о файлах cookie (нижняя плашка). Vanilla CSS.
+   ============================================================ */
+.cookie{
+  position:fixed; left:0; right:0; bottom:0; z-index:90;
+  display:flex; align-items:center; gap:clamp(12px,2vw,24px);
+  padding:14px clamp(16px,4vw,40px);
+  background:rgba(9,9,11,.94); -webkit-backdrop-filter:blur(10px); backdrop-filter:blur(10px);
+  border-top:1px solid rgba(201,162,75,.28);
+  font-family:'Onest',-apple-system,Arial,sans-serif;
+  transform:translateY(100%); opacity:0;
+  transition:transform .4s ease, opacity .4s ease;
+}
+.cookie[hidden]{ display:none; }
+.cookie.is-show{ transform:none; opacity:1; }
+.cookie__text{
+  margin:0; flex:1 1 auto;
+  font-size:13.5px; line-height:1.5; color:#c3c7ce;
+}
+.cookie__text a{ color:#e6c877; text-decoration:none; border-bottom:1px solid rgba(201,162,75,.4); }
+.cookie__text a:hover{ border-bottom-color:#e6c877; }
+.cookie__btn{
+  flex:0 0 auto; cursor:pointer;
+  padding:11px 26px; border-radius:999px; border:1px solid rgba(201,162,75,.6);
+  font-family:'Geist',-apple-system,Arial,sans-serif; font-size:15px; font-weight:700; letter-spacing:.01em;
+  color:#0b0c0e; background:linear-gradient(180deg,#e6c877,#c9a24b);
+  transition:transform .2s ease, box-shadow .3s ease, filter .2s ease;
+}
+.cookie__btn:hover{
+  transform:translateY(-1px); filter:brightness(1.05);
+  box-shadow:0 10px 26px rgba(201,162,75,.35);
+}
+
+@media (max-width:640px){
+  .cookie{ flex-direction:column; align-items:stretch; gap:10px; text-align:center; padding:14px 18px calc(14px + env(safe-area-inset-bottom,0px)); }
+  .cookie__btn{ width:100%; }
+}
