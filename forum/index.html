@@ -10,8 +10,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..900&family=Onest:wght@400..700&family=Geist+Mono:wght@400..600&family=JetBrains+Mono:wght@400..600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/menu.css?v=16" />
-  <link rel="stylesheet" href="/css/forum.css?v=1" />
-  <link rel="stylesheet" href="/css/footer.css?v=8" />
+  <link rel="stylesheet" href="/css/forum.css?v=2" />
+  <link rel="stylesheet" href="/css/footer.css?v=9" />
   <link rel="stylesheet" href="/css/cookie.css?v=2" />
 </head>
 <body>
@@ -56,7 +56,7 @@
       <div class="fx-wrap">
         <span class="fx-badge">БАЗА на&nbsp;«Мой Бизнес Форуме» <b>2026</b></span>
         <div class="fx-hero__meta"><span><b>9–10 сентября</b></span><span>Экспофорум · Санкт-Петербург</span></div>
-        <h1 class="fx-hero__title">Бесплатная экспресс-диагностика <span class="fx-r">компании</span></h1>
+        <h1 class="fx-hero__title"><span class="fx-r">Бесплатная</span> экспресс-<span class="fx-r">диагностика</span> компании</h1>
         <p class="fx-hero__sub">Встретились на&nbsp;форуме? Выберите бесплатную экспресс-диагностику для&nbsp;своей компании — покажем, где теряются деньги и&nbsp;время и&nbsp;что чинить в&nbsp;первую очередь.</p>
         <a class="fx-cta" href="#diag">Выбрать диагностику <span class="fx-arrow" aria-hidden="true">→</span></a>
       </div>
@@ -66,7 +66,7 @@
     <section class="fx-section" id="diag">
       <div class="fx-wrap">
         <p class="fx-eyebrow">Выберите, что проверить</p>
-        <h2 class="fx-h2">Пять быстрых <span class="fx-r">диагностик</span></h2>
+        <h2 class="fx-h2"><span class="fx-r">Шесть</span> быстрых диагностик</h2>
         <p class="fx-note">Одна компания — одна бесплатная экспресс-диагностика. Результат отправим на&nbsp;указанную почту после форума.</p>
 
         <div class="fx-cards">
@@ -82,22 +82,28 @@
             <p class="fx-card__desc">Где рутина съедает время и&nbsp;что автоматизировать в&nbsp;первую очередь.</p>
             <span class="fx-card__pick">Выбрать</span>
           </button>
-          <button type="button" class="fx-card" data-diag="Аудит CRM и внутренних систем">
-            <span class="fx-card__num">03</span>
-            <h3 class="fx-card__title">CRM и&nbsp;внутренние системы</h3>
-            <p class="fx-card__desc">Теряются ли заявки, как настроена воронка, чего не&nbsp;хватает.</p>
-            <span class="fx-card__pick">Выбрать</span>
-          </button>
           <button type="button" class="fx-card" data-diag="Диагностика аналитики и данных">
-            <span class="fx-card__num">04</span>
+            <span class="fx-card__num">03</span>
             <h3 class="fx-card__title">Аналитика и&nbsp;данные</h3>
             <p class="fx-card__desc">Что считается, каких данных нет для&nbsp;решений, какие дашборды нужны.</p>
             <span class="fx-card__pick">Выбрать</span>
           </button>
           <button type="button" class="fx-card" data-diag="Оценка потенциала AI-инструментов и агентов">
-            <span class="fx-card__num">05</span>
+            <span class="fx-card__num">04</span>
             <h3 class="fx-card__title">AI-инструменты и&nbsp;агенты</h3>
             <p class="fx-card__desc">Где ИИ-бот или&nbsp;агент даст эффект: поддержка, продажи, контент.</p>
+            <span class="fx-card__pick">Выбрать</span>
+          </button>
+          <button type="button" class="fx-card" data-diag="ОСИНТ — разведка по открытым источникам">
+            <span class="fx-card__num">05</span>
+            <h3 class="fx-card__title">ОСИНТ — по&nbsp;открытым источникам</h3>
+            <p class="fx-card__desc">Что о&nbsp;компании, сотрудниках и&nbsp;конкурентах видно из&nbsp;открытых данных: упоминания, утечки, цифровые следы, риски. Покажем, что о&nbsp;вас видно снаружи.</p>
+            <span class="fx-card__pick">Выбрать</span>
+          </button>
+          <button type="button" class="fx-card" data-diag="SEO-видимость в поиске">
+            <span class="fx-card__num">06</span>
+            <h3 class="fx-card__title">SEO-видимость в&nbsp;поиске</h3>
+            <p class="fx-card__desc">Находят ли вас в&nbsp;Яндекс и&nbsp;Google, что мешает попадать выше и&nbsp;приводить клиентов из&nbsp;поиска.</p>
             <span class="fx-card__pick">Выбрать</span>
           </button>
         </div>
@@ -105,7 +111,7 @@
     </section>
 
     <!-- 4. Короткая форма -->
-    <section class="fx-section" id="free-form">
+    <section class="fx-section fx-section--center" id="free-form">
       <div class="fx-wrap">
         <p class="fx-eyebrow">Заявка на диагностику</p>
         <h2 class="fx-h2">Оставьте <span class="fx-r">контакты</span></h2>
@@ -130,9 +136,10 @@
             <div class="fx-choose" data-choose>
               <label class="fx-choice"><input type="radio" name="Диагностика" value="Экспресс-аудит сайта / web-продукта" required /><span class="fx-choice__t">Экспресс-аудит сайта / web-продукта</span></label>
               <label class="fx-choice"><input type="radio" name="Диагностика" value="Диагностика автоматизации процессов" /><span class="fx-choice__t">Автоматизация процессов</span></label>
-              <label class="fx-choice"><input type="radio" name="Диагностика" value="Аудит CRM и внутренних систем" /><span class="fx-choice__t">CRM и внутренние системы</span></label>
               <label class="fx-choice"><input type="radio" name="Диагностика" value="Диагностика аналитики и данных" /><span class="fx-choice__t">Аналитика и данные</span></label>
               <label class="fx-choice"><input type="radio" name="Диагностика" value="Оценка потенциала AI-инструментов и агентов" /><span class="fx-choice__t">AI-инструменты и агенты</span></label>
+              <label class="fx-choice"><input type="radio" name="Диагностика" value="ОСИНТ — разведка по открытым источникам" /><span class="fx-choice__t">ОСИНТ — по открытым источникам</span></label>
+              <label class="fx-choice"><input type="radio" name="Диагностика" value="SEO-видимость в поиске" /><span class="fx-choice__t">SEO-видимость в поиске</span></label>
             </div>
           </div>
 
@@ -156,7 +163,7 @@
     <section class="fx-section">
       <div class="fx-wrap">
         <p class="fx-eyebrow">Что вы получите</p>
-        <h2 class="fx-h2">Коротко и&nbsp;по&nbsp;делу</h2>
+        <h2 class="fx-h2">Коротко и&nbsp;<span class="fx-r">по&nbsp;делу</span></h2>
         <div class="fx-get">
           <div class="fx-get__item">
             <h3>Разбор по выбранному направлению</h3>
@@ -175,7 +182,7 @@
     </section>
 
     <!-- Платный блок: пентест −50% -->
-    <section class="fx-section fx-pentest" id="pentest">
+    <section class="fx-section fx-pentest fx-section--center" id="pentest">
       <div class="fx-wrap">
         <p class="fx-eyebrow">Участникам форума — скидка 50%</p>
         <h2 class="fx-h2">Пентест сайта или&nbsp;<span class="fx-r">веб-приложения</span> −50%</h2>
