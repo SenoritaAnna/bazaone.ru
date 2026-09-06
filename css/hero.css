@@ -6,12 +6,18 @@
 * { box-sizing: border-box; }
 html {
   -webkit-text-size-adjust: 100%;
+  /* плавный скролл «как на лифте» при клике по пунктам меню */
+  scroll-behavior: smooth;
   /* каждый блок «залипает» при прокрутке (жёсткое залипание) */
   scroll-snap-type: y mandatory;
   scroll-padding-top: var(--nav-h, 69px);
 }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 /* точки залипания — крупные секции (по одному экрану) */
 .hero, .b1, .b2, .b4, .b5, .b6 { scroll-snap-align: start; scroll-snap-stop: always; }
+/* подвал — отдельная нижняя snap-точка, чтобы он был доступен под формой
+   даже если контакт-экран выше вьюпорта (иначе mandatory прячет его за сгибом) */
+.foot { scroll-snap-align: end; }
 /* блок 3 длиннее экрана — верхушка выравнивается, но проскроллить можно свободно */
 .b3 { scroll-snap-align: start; }
 /* на мобиле контент высокий — без залипания */

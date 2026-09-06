@@ -10,14 +10,15 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..900&family=Onest:wght@400..700&family=Geist+Mono:wght@400..600&family=JetBrains+Mono:wght@400..600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/fonts.css?v=2" />
-  <link rel="stylesheet" href="css/menu.css?v=14" />
-  <link rel="stylesheet" href="css/hero.css?v=24" />
+  <link rel="stylesheet" href="css/menu.css?v=15" />
+  <link rel="stylesheet" href="css/hero.css?v=27" />
   <link rel="stylesheet" href="css/block1.css?v=36" />
   <link rel="stylesheet" href="css/block2.css?v=7" />
   <link rel="stylesheet" href="css/block3.css?v=3" />
   <link rel="stylesheet" href="css/block4.css?v=2" />
   <link rel="stylesheet" href="css/block5.css?v=1" />
-  <link rel="stylesheet" href="css/block6.css?v=1" />
+  <link rel="stylesheet" href="css/block6.css?v=3" />
+  <link rel="stylesheet" href="css/footer.css?v=1" />
   <link rel="stylesheet" href="css/reveal.css?v=1" />
 </head>
 <body>
@@ -35,12 +36,14 @@
         <img src="assets/logo-baza-header.svg" alt="БАЗА" />
       </a>
       <nav class="nav__links" aria-label="Основное меню">
-        <a href="#" class="is-active" aria-current="page">Возможности</a>
-        <a href="#">Кейсы</a>
-        <a href="#">О&nbsp;нас</a>
-        <a href="#">Контакты</a>
+        <a href="#top" data-spy="top" class="is-active" aria-current="page">Главная</a>
+        <a href="#block2" data-spy="block2">Возможности</a>
+        <a href="#block3" data-spy="block3">Кейсы</a>
+        <a href="#block4" data-spy="block4">Процесс</a>
+        <a href="#block5" data-spy="block5">О&nbsp;нас</a>
+        <a href="#block6" data-spy="block6">Контакты</a>
       </nav>
-      <a class="nav__cta" href="#">Оставить заявку</a>
+      <a class="nav__cta" href="#block6">Оставить заявку</a>
       <button class="nav__burger" type="button" data-burger
               aria-label="Открыть меню" aria-expanded="false" aria-controls="mobile-menu">
         <span></span><span></span><span></span>
@@ -52,12 +55,14 @@
   <div class="mmenu" id="mobile-menu" data-mobile-menu aria-hidden="true">
     <button class="mmenu__close" type="button" data-mmenu-close aria-label="Закрыть меню">&times;</button>
     <nav class="mmenu__links" aria-label="Мобильное меню">
-      <a href="#">Возможности</a>
-      <a href="#">Кейсы</a>
-      <a href="#">О&nbsp;нас</a>
-      <a href="#">Контакты</a>
+      <a href="#top">Главная</a>
+      <a href="#block2">Возможности</a>
+      <a href="#block3">Кейсы</a>
+      <a href="#block4">Процесс</a>
+      <a href="#block5">О&nbsp;нас</a>
+      <a href="#block6">Контакты</a>
     </nav>
-    <a class="mmenu__cta" href="#">Оставить заявку</a>
+    <a class="mmenu__cta" href="#block6">Оставить заявку</a>
   </div>
 
   <main id="top">
@@ -490,17 +495,58 @@
         <p class="b6__eyebrow" data-reveal>Контакт</p>
         <h2 class="b6__title" data-reveal data-reveal-delay="1">Начнём с&nbsp;<span class="b6__accent">задачи</span>.</h2>
         <p class="b6__text" data-reveal data-reveal-delay="2">Расскажите, что хотите собрать, автоматизировать или&nbsp;связать. Мы&nbsp;разберём контекст и&nbsp;предложим архитектуру решения.</p>
-        <a class="b6__cta" href="#" data-reveal data-reveal-delay="3">Обсудить проект <span class="b6__arrow" aria-hidden="true">→</span></a>
+
+        <form class="b6form" id="lead-form" data-lead-form novalidate data-reveal data-reveal-delay="3">
+          <div class="b6form__row">
+            <label class="b6form__field">
+              <span class="b6form__label">Имя</span>
+              <input class="b6form__input" type="text" name="name" autocomplete="name" required maxlength="80" placeholder="Как к&nbsp;вам обращаться" />
+            </label>
+            <label class="b6form__field">
+              <span class="b6form__label">E-mail</span>
+              <input class="b6form__input" type="email" name="email" autocomplete="email" required maxlength="120" placeholder="you@example.com" />
+            </label>
+          </div>
+          <label class="b6form__field">
+            <span class="b6form__label">Комментарий</span>
+            <textarea class="b6form__input b6form__textarea" name="message" rows="4" required maxlength="1500" placeholder="Что хотите собрать, автоматизировать или связать"></textarea>
+          </label>
+          <div class="b6form__foot">
+            <label class="b6form__field b6form__field--captcha">
+              <span class="b6form__label">Проверка: сколько будет <b data-captcha-q>…</b></span>
+              <input class="b6form__input" type="text" inputmode="numeric" name="captcha" required autocomplete="off" placeholder="Ответ" />
+            </label>
+            <button class="b6__cta b6form__submit" type="submit">Отправить заявку <span class="b6__arrow" aria-hidden="true">→</span></button>
+          </div>
+          <p class="b6form__note" data-form-note role="status" aria-live="polite"></p>
+        </form>
+
+        <p class="b6__direct">или&nbsp;напишите напрямую: <a href="mailto:go@bazaone.ru">go@bazaone.ru</a></p>
       </div>
+
+      <footer class="foot" aria-label="Подвал сайта">
+        <div class="foot__inner">
+          <div class="foot__col">
+            <span class="foot__logo">БАЗА</span>
+            <span class="foot__city">Санкт-Петербург</span>
+          </div>
+          <div class="foot__col foot__col--mid">
+            <a class="foot__mail" href="mailto:go@bazaone.ru">go@bazaone.ru</a>
+            <span class="foot__req">Реквизитов пока нет&nbsp;— <button class="foot__reqbtn" type="button" data-req-btn>запросить реквизиты</button></span>
+          </div>
+          <p class="foot__copy">© 2026 БАЗА. Все права защищены.</p>
+        </div>
+      </footer>
     </section>
   </main>
 
-  <script src="js/menu.js" defer></script>
+  <script src="js/menu.js?v=2" defer></script>
   <script src="js/hero.js" defer></script>
   <script src="js/block1.js" defer></script>
   <script src="js/block2.js" defer></script>
   <script src="js/block3.js" defer></script>
   <script src="js/block4.js" defer></script>
   <script src="js/reveal.js" defer></script>
+  <script src="js/form.js?v=1" defer></script>
 </body>
 </html>

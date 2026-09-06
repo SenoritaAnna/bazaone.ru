@@ -37,7 +37,7 @@
 /* пункты по центру шапки (независимо от логотипа и CTA) */
 .nav__links{
   grid-column:2; justify-self:center;
-  display:flex; align-items:center; gap:9px;
+  display:flex; align-items:center; gap:7px;
 }
 /* пункты-плашки: КРАСНЫЙ текст, тёмный фон, ЗОЛОТАЯ рамка */
 .nav__links a{
@@ -48,8 +48,8 @@
   background-position:center; background-size:cover; background-repeat:no-repeat;
   border:1px solid rgba(201,162,75,.35);
   border-radius:11px;
-  padding:10px 20px;
-  font-size:17px; font-weight:600; letter-spacing:.01em;
+  padding:9px 15px;
+  font-size:15px; font-weight:600; letter-spacing:.01em;
   -webkit-backdrop-filter:blur(4px); backdrop-filter:blur(4px);
   transition:color .2s ease, border-color .2s ease, background .2s ease, box-shadow .3s ease;
 }

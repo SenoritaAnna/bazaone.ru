@@ -56,4 +56,48 @@
   window.addEventListener('resize', function () {
     if (window.innerWidth > 860 && document.body.getAttribute('data-menu-open') === 'true') setMenu(false);
   });
+
+  /* --- Scrollspy: подсветка активного пункта меню по секции на экране --- */
+  var spyLinks = Array.prototype.slice.call(document.querySelectorAll('.nav__links a[data-spy]'));
+  if (spyLinks.length && 'IntersectionObserver' in window) {
+    var navH = 69;
+    var byEl = new Map();     // секция -> ссылка
+    var sections = [];
+    spyLinks.forEach(function (a) {
+      var id = a.getAttribute('data-spy');
+      var el = id === 'top' ? document.querySelector('.hero') : document.getElementById(id);
+      if (el) { byEl.set(el, a); sections.push(el); }
+    });
+
+    function setActive(link) {
+      spyLinks.forEach(function (a) {
+        var on = a === link;
+        a.classList.toggle('is-active', on);
+        if (on) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current');
+      });
+    }
+
+    var visible = new Set();
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) visible.add(e.target); else visible.delete(e.target);
+      });
+      var arr = Array.prototype.slice.call(visible);
+      if (!arr.length) return;
+      // самая верхняя из видимых в активной полосе под шапкой
+      arr.sort(function (a, b) { return a.getBoundingClientRect().top - b.getBoundingClientRect().top; });
+      var chosen = arr[0];
+      for (var i = 0; i < arr.length; i++) {
+        if (arr[i].getBoundingClientRect().top <= navH + 80) chosen = arr[i];
+      }
+      setActive(byEl.get(chosen));
+    }, { rootMargin: '-' + navH + 'px 0px -55% 0px', threshold: [0, 0.25, 0.5, 1] });
+
+    sections.forEach(function (s) { io.observe(s); });
+
+    // мгновенная подсветка при клике
+    spyLinks.forEach(function (a) {
+      a.addEventListener('click', function () { setActive(a); });
+    });
+  }
 })();
