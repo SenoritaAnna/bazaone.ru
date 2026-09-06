@@ -49,9 +49,9 @@
 .foot__docs a:hover{ color:#e6c877; border-bottom-color:var(--gold); }
 
 .foot__copy{
-  grid-column:3; justify-self:end; margin:0;
+  max-width:1160px; margin:8px auto 0; padding:0 clamp(16px,4vw,48px);
   font-family:'Geist Mono','JetBrains Mono',ui-monospace,monospace;
-  font-size:12px; letter-spacing:.06em; color:#6f747c; text-align:right;
+  font-size:12px; letter-spacing:.06em; color:#6f747c; text-align:center;
 }
 
 /* строка про cookie — под всем подвалом, мелким шрифтом */
@@ -70,5 +70,4 @@
     grid-template-columns:1fr; justify-items:center; text-align:center; gap:16px;
   }
   .foot__col, .foot__col--mid{ align-items:center; }
-  .foot__copy{ grid-column:1; justify-self:center; text-align:center; }
 }
