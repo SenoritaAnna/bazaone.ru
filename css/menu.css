@@ -160,6 +160,29 @@ body[data-menu-open="true"] .nav__burger span:nth-child(1){ transform:translateY
 body[data-menu-open="true"] .nav__burger span:nth-child(2){ opacity:0; }
 body[data-menu-open="true"] .nav__burger span:nth-child(3){ transform:translateY(-8px) rotate(-45deg); }
 
+/* ---------- Кнопка «наверх» ---------- */
+.totop{
+  position:fixed; right:clamp(14px,2.4vw,28px); bottom:clamp(14px,2.4vw,28px); z-index:55;
+  width:52px; height:52px; border-radius:50%;
+  display:flex; align-items:center; justify-content:center; cursor:pointer;
+  color:#e6c877;
+  background-color:#0b0c0e;
+  background-image:url('../assets/black-suede.jpg');
+  background-image:image-set(url('../assets/black-suede.webp') type('image/webp'), url('../assets/black-suede.jpg') type('image/jpeg'));
+  background-position:center; background-size:cover; background-repeat:no-repeat;
+  border:1px solid rgba(201,162,75,.5);
+  -webkit-backdrop-filter:blur(4px); backdrop-filter:blur(4px);
+  box-shadow:0 8px 24px rgba(0,0,0,.4);
+  opacity:0; visibility:hidden; transform:translateY(10px);
+  transition:opacity .3s ease, transform .3s ease, visibility .3s, border-color .2s ease, box-shadow .3s ease, color .2s ease;
+}
+.totop.is-show{ opacity:1; visibility:visible; transform:none; }
+.totop:hover{
+  color:#f0d489; border-color:var(--gold);
+  box-shadow:0 0 22px rgba(201,162,75,.5), 0 0 48px rgba(201,162,75,.28);
+}
+@media (prefers-reduced-motion: reduce){ .totop{ transition:opacity .2s ease, visibility .2s; } }
+
 /* ---------- Переключение десктоп / мобилка ---------- */
 @media (max-width:860px){
   .nav__links, .nav__cta{ display:none; }

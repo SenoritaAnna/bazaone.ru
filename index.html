@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..900&family=Onest:wght@400..700&family=Geist+Mono:wght@400..600&family=JetBrains+Mono:wght@400..600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/fonts.css?v=2" />
-  <link rel="stylesheet" href="css/menu.css?v=15" />
+  <link rel="stylesheet" href="css/menu.css?v=16" />
   <link rel="stylesheet" href="css/hero.css?v=27" />
   <link rel="stylesheet" href="css/block1.css?v=36" />
   <link rel="stylesheet" href="css/block2.css?v=7" />
@@ -18,8 +18,7 @@
   <link rel="stylesheet" href="css/block4.css?v=2" />
   <link rel="stylesheet" href="css/block5.css?v=1" />
   <link rel="stylesheet" href="css/block6.css?v=4" />
-  <link rel="stylesheet" href="css/footer.css?v=2" />
-  <link rel="stylesheet" href="css/cookie.css?v=1" />
+  <link rel="stylesheet" href="css/footer.css?v=6" />
   <link rel="stylesheet" href="css/reveal.css?v=1" />
 </head>
 <body>
@@ -532,9 +531,7 @@
       <footer class="foot" aria-label="Подвал сайта">
         <div class="foot__inner">
           <div class="foot__col">
-            <span class="foot__logo">БАЗА</span>
-            <span class="foot__city">Санкт-Петербург</span>
-            <span class="foot__req">ИП&nbsp;Гордиенко А.&nbsp;Д. · ОГРНИП&nbsp;325784700359474 · ИНН&nbsp;780620653426</span>
+            <img class="foot__logo" src="assets/logo-baza-header.svg" alt="БАЗА" />
           </div>
           <div class="foot__col foot__col--mid">
             <a class="foot__mail" href="mailto:go@bazaone.ru">go@bazaone.ru</a>
@@ -546,17 +543,18 @@
           </div>
           <p class="foot__copy">© 2026 БАЗА. Все права защищены.</p>
         </div>
+        <p class="foot__req">ИП&nbsp;Гордиенко А.&nbsp;Д. · ОГРНИП 325784700359474 · ИНН 780620653426</p>
+        <p class="foot__cookie">Мы&nbsp;используем файлы cookie, чтобы сайт работал корректно и&nbsp;удобно. Продолжая пользоваться сайтом, вы&nbsp;соглашаетесь с&nbsp;использованием cookie в&nbsp;соответствии с&nbsp;<a href="cookie.html">Политикой&nbsp;cookie</a>.</p>
       </footer>
     </section>
   </main>
 
-  <!-- Уведомление о cookie -->
-  <div class="cookie" data-cookie hidden role="dialog" aria-label="Уведомление о файлах cookie">
-    <p class="cookie__text">Мы&nbsp;используем файлы cookie, чтобы сайт работал корректно и&nbsp;удобно. Продолжая пользоваться сайтом, вы&nbsp;соглашаетесь с&nbsp;<a href="cookie.html">Политикой&nbsp;cookie</a> и&nbsp;<a href="privacy.html">Политикой&nbsp;конфиденциальности</a>.</p>
-    <button class="cookie__btn" type="button" data-cookie-accept>Принять</button>
-  </div>
+  <!-- Кнопка «наверх» (плавный подъём на главную) -->
+  <button class="totop" data-totop type="button" aria-label="Наверх, на главную">
+    <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg>
+  </button>
 
-  <script src="js/menu.js?v=2" defer></script>
+  <script src="js/menu.js?v=3" defer></script>
   <script src="js/hero.js" defer></script>
   <script src="js/block1.js" defer></script>
   <script src="js/block2.js" defer></script>
@@ -564,6 +562,5 @@
   <script src="js/block4.js" defer></script>
   <script src="js/reveal.js" defer></script>
   <script src="js/form.js?v=2" defer></script>
-  <script src="js/cookie.js?v=1" defer></script>
 </body>
 </html>

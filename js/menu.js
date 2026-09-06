@@ -12,12 +12,21 @@
   var burger = document.querySelector('[data-burger]');
   var menu = document.querySelector('[data-mobile-menu]');
 
+  var toTop = document.querySelector('[data-totop]');
+
   /* --- Липкая шапка: тёмный фон + логотип после небольшого скролла --- */
   var ticking = false;
   function applyScroll() {
     nav.classList.toggle('is-scrolled', window.scrollY > 10);
+    // кнопка «наверх» — после прокрутки на ~пол-экрана
+    if (toTop) toTop.classList.toggle('is-show', window.scrollY > window.innerHeight * 0.6);
     ticking = false;
   }
+
+  /* --- Кнопка «наверх»: плавный подъём на главную «как лифт» --- */
+  if (toTop) toTop.addEventListener('click', function () {
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+  });
   window.addEventListener('scroll', function () {
     if (!ticking) { ticking = true; requestAnimationFrame(applyScroll); }
   }, { passive: true });
