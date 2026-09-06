@@ -63,6 +63,16 @@
   box-shadow:0 0 22px rgba(201,162,75,.5), 0 0 48px rgba(201,162,75,.28);
 }
 
+/* временная промо-кнопка «Форум» — золотая заливка, выделяется */
+.nav__links a.nav__promo{
+  color:#0b0c0e; background:linear-gradient(180deg,#e6c877,#c9a24b); background-image:none;
+  border-color:rgba(201,162,75,.7); font-weight:800;
+}
+.nav__links a.nav__promo:hover{
+  color:#0b0c0e; filter:brightness(1.06);
+  box-shadow:0 0 22px rgba(201,162,75,.5), 0 0 48px rgba(201,162,75,.28);
+}
+
 /* CTA-плашка со стрелкой → : красный текст, золотая обводка */
 .nav__cta{
   grid-column:3; justify-self:end;
@@ -137,6 +147,15 @@
   color:#e6e9ee;
   text-shadow:0 0 22px rgba(201,162,75,.55), 0 0 40px rgba(201,162,75,.3);
 }
+/* промо-кнопка «Форум» в мобильном меню — золотая */
+.mmenu__links a.mmenu__promo{
+  color:#0b0c0e; background:linear-gradient(180deg,#e6c877,#c9a24b);
+  padding:10px 30px; border-radius:999px; font-size:clamp(18px,4.5vw,24px); font-weight:800;
+}
+.mmenu__links a.mmenu__promo:hover, .mmenu__links a.mmenu__promo:active{
+  color:#0b0c0e; text-shadow:none; box-shadow:0 0 22px rgba(201,162,75,.5);
+}
+
 .mmenu__cta{
   color:var(--silver); text-decoration:none;
   background-color:#0b0c0e;
