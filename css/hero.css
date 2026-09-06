@@ -83,7 +83,7 @@ body::before {
   flex-direction: column;
   align-items: center;
   gap: clamp(20px, 4vh, 48px);
-  max-width: 100%;
+  width: 100%; max-width: 100%; min-width: 0;   /* не растягиваться шире экрана */
   text-align: center;
   /* мягкое появление */
   animation: hero-in .7s cubic-bezier(.22,1,.36,1) both;
@@ -104,7 +104,7 @@ body::before {
   align-items: center;
   justify-content: center;
   gap: clamp(16px, 6vw, 80px);
-  max-width: 100%;
+  max-width: 100%; min-width: 0;
 }
 .figure {
   height: clamp(170px, 34vh, 380px);
@@ -156,9 +156,10 @@ body::before {
 /* ---------- Мобильные / узкие экраны ---------- */
 @media (max-width: 680px) {
   .icons { gap: clamp(8px, 3vw, 24px); }
-  .figure { height: clamp(130px, 26vh, 240px); max-width: 44vw; }
+  .figure { height: clamp(130px, 26vh, 240px); max-width: 38vw; }   /* 2×38vw+амп+гэпы влезают в экран */
   .icons__amp { font-size: clamp(20px, 6vw, 36px); }
   .hero-logo { height: clamp(52px, 8vh, 88px); }
+  .hero-sub { letter-spacing: .1em; max-width: 100%; overflow-wrap: anywhere; }
 }
 /* Низкие экраны (ландшафт телефона): компактнее, чтобы всё влезло */
 @media (max-height: 520px) {
