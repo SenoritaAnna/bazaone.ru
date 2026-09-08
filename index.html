@@ -13,9 +13,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..900&family=Onest:wght@400..700&family=Geist+Mono:wght@400..600&family=JetBrains+Mono:wght@400..600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/fonts.css?v=2" />
   <link rel="stylesheet" href="css/menu.css?v=18" />
-  <link rel="stylesheet" href="css/hero.css?v=30" />
+  <link rel="stylesheet" href="css/hero.css?v=31" />
   <link rel="stylesheet" href="css/block1.css?v=47" />
   <link rel="stylesheet" href="css/why.css?v=7" />
+  <link rel="stylesheet" href="css/how.css?v=1" />
   <link rel="stylesheet" href="css/block2.css?v=7" />
   <link rel="stylesheet" href="css/block3.css?v=3" />
   <link rel="stylesheet" href="css/block4.css?v=2" />
@@ -213,6 +214,58 @@
               </div>
             </div>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ БЛОК «Как собирается БАЗА» — воронка 1→3→1 ============ -->
+    <section class="how" id="how" aria-label="Как собирается БАЗА">
+      <div class="how__wrap">
+        <p class="how__eyebrow" data-reveal>Как собирается БАЗА</p>
+        <h2 class="how__title" data-reveal data-reveal-delay="1">Как БАЗА собирается вокруг вашей компании</h2>
+        <p class="how__sub" data-reveal data-reveal-delay="2">Сначала проводим аудит процессов, данных, ролей сотрудников и&nbsp;используемых инструментов. Затем определяем, что&nbsp;имеет смысл связать, перенести внутрь БАЗЫ или&nbsp;создать заново.</p>
+
+        <div class="how__flow" data-reveal data-reveal-delay="2">
+          <div class="how__node">Ваша компания</div>
+          <span class="how__down" aria-hidden="true"></span>
+
+          <div class="how__node how__node--audit">
+            <b>Аудит</b>
+            <span>процессы · данные · сотрудники · инструменты · связи</span>
+          </div>
+
+          <!-- веер: аудит определяет, что делать с каждой функцией -->
+          <svg class="how__split" viewBox="0 0 620 36" aria-hidden="true" preserveAspectRatio="none">
+            <path d="M310,2 L110,34"/><path d="M310,2 L310,34"/><path d="M310,2 L510,34"/>
+            <circle cx="310" cy="2" r="3"/>
+          </svg>
+
+          <div class="how__routes">
+            <article class="how__route">
+              <span class="how__cond">Уже работает</span>
+              <b class="how__act">Связываем</b>
+              <p class="how__desc">существующая система остаётся источником данных и&nbsp;подключается к&nbsp;БАЗЕ</p>
+              <span class="how__api">API / интеграция</span>
+            </article>
+            <article class="how__route">
+              <span class="how__cond">Функцию нужно перенести</span>
+              <b class="how__act">Переносим</b>
+              <p class="how__desc">необходимая функция становится частью БАЗЫ</p>
+            </article>
+            <article class="how__route">
+              <span class="how__cond">Функции не&nbsp;хватает</span>
+              <b class="how__act">Создаём</b>
+              <p class="how__desc">добавляем необходимый функциональный блок</p>
+            </article>
+          </div>
+
+          <!-- сбор: всё сходится в БАЗУ -->
+          <svg class="how__gather" viewBox="0 0 620 36" aria-hidden="true" preserveAspectRatio="none">
+            <path d="M110,2 L310,34"/><path d="M310,2 L310,34"/><path d="M510,2 L310,34"/>
+            <circle cx="310" cy="34" r="3"/>
+          </svg>
+
+          <div class="how__node how__node--base">БАЗА</div>
         </div>
       </div>
     </section>
