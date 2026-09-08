@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="css/menu.css?v=18" />
   <link rel="stylesheet" href="css/hero.css?v=30" />
   <link rel="stylesheet" href="css/block1.css?v=47" />
-  <link rel="stylesheet" href="css/why.css?v=4" />
+  <link rel="stylesheet" href="css/why.css?v=7" />
   <link rel="stylesheet" href="css/block2.css?v=7" />
   <link rel="stylesheet" href="css/block3.css?v=3" />
   <link rel="stylesheet" href="css/block4.css?v=2" />
@@ -143,77 +143,76 @@
     <section class="why" id="why" aria-label="Почему это нужно">
       <div class="why__wrap">
         <p class="why__eyebrow" data-reveal>Почему это нужно</p>
-        <h2 class="why__title" data-reveal data-reveal-delay="1">Работа компании состоит из&nbsp;множества <span class="why__accent">связанных процессов</span></h2>
-        <p class="why__sub" data-reveal data-reveal-delay="2">Клиенты, договорённости, задачи, сроки, документы, деньги и&nbsp;следующие действия связаны между собой. При&nbsp;этом информация о&nbsp;них может находиться у&nbsp;разных людей и&nbsp;в&nbsp;разных инструментах.</p>
+        <h2 class="why__title" data-reveal data-reveal-delay="1">От&nbsp;множества процессов — <span class="why__accent-g">к&nbsp;единой картине компании</span></h2>
 
-        <!-- цепочка связанных процессов -->
-        <div class="why__chain" data-reveal data-reveal-delay="2" role="list" aria-label="Цепочка связанных процессов">
-          <span class="why__node" role="listitem">Клиент</span>
-          <span class="why__arr" aria-hidden="true"></span>
-          <span class="why__node" role="listitem">Договорённость</span>
-          <span class="why__arr" aria-hidden="true"></span>
-          <span class="why__node" role="listitem">Задача</span>
-          <span class="why__arr" aria-hidden="true"></span>
-          <span class="why__node" role="listitem">Срок</span>
-          <span class="why__arr" aria-hidden="true"></span>
-          <span class="why__node" role="listitem">Документ</span>
-          <span class="why__arr" aria-hidden="true"></span>
-          <span class="why__node" role="listitem">Оплата</span>
-          <span class="why__arr" aria-hidden="true"></span>
-          <span class="why__node why__node--last" role="listitem">Следующий&nbsp;шаг</span>
-        </div>
+        <div class="why__cards">
+          <!-- ===== ПРОБЛЕМА ===== -->
+          <article class="why__card why__card--problem" data-reveal>
+            <span class="why__label why__label--problem">Проблема</span>
+            <h3 class="why__ctitle">Работа компании состоит из&nbsp;множества связанных процессов</h3>
+            <p class="why__ctext">Клиенты, договорённости, задачи, сроки, документы, деньги и&nbsp;следующие действия связаны между собой. При&nbsp;этом информация о&nbsp;них может находиться у&nbsp;разных людей и&nbsp;в&nbsp;разных инструментах.</p>
 
-        <!-- та же информация — разбросана по инструментам -->
-        <div class="why__distr" data-reveal data-reveal-delay="3">
-          <span class="why__distr-cap">а данные о&nbsp;них — в&nbsp;разных местах</span>
-          <div class="why__tools">
-            <span class="why__chip">сотрудники</span>
-            <span class="why__chip">Excel</span>
-            <span class="why__chip">Telegram</span>
-            <span class="why__chip">почта</span>
-            <span class="why__chip">календари</span>
-            <span class="why__chip">CRM</span>
-            <span class="why__chip">1С</span>
-            <span class="why__chip">другие системы</span>
-          </div>
-        </div>
+            <div class="why__chain" role="list" aria-label="Цепочка связанных процессов">
+              <span class="why__node" role="listitem">Клиент</span><span class="why__sep" aria-hidden="true">→</span>
+              <span class="why__node" role="listitem">Договорённость</span><span class="why__sep" aria-hidden="true">→</span>
+              <span class="why__node" role="listitem">Задача</span><span class="why__sep" aria-hidden="true">→</span>
+              <span class="why__node" role="listitem">Срок</span><span class="why__sep" aria-hidden="true">→</span>
+              <span class="why__node" role="listitem">Документ</span><span class="why__sep" aria-hidden="true">→</span>
+              <span class="why__node" role="listitem">Оплата</span><span class="why__sep" aria-hidden="true">→</span>
+              <span class="why__node why__node--last" role="listitem">Следующий&nbsp;шаг</span>
+            </div>
 
-        <p class="why__punch" data-reveal data-reveal-delay="3">Чем больше становится компания, тем сложнее удерживать все связи и&nbsp;<span class="why__hl">вовремя</span> замечать то, что&nbsp;требует внимания.</p>
+            <div class="why__distr">
+              <span class="why__distr-cap">а данные о&nbsp;них — в&nbsp;разных местах</span>
+              <div class="why__tools">
+                <span class="why__chip">сотрудники</span>
+                <span class="why__chip">Excel</span>
+                <span class="why__chip">Telegram</span>
+                <span class="why__chip">почта</span>
+                <span class="why__chip">календари</span>
+                <span class="why__chip">CRM</span>
+                <span class="why__chip">1С</span>
+                <span class="why__chip">другие системы</span>
+              </div>
+            </div>
 
-        <!-- переход: проблема → потребность -->
-        <div class="why__bridge" data-reveal aria-hidden="true">
-          <span class="why__bridge-line"></span>
-          <span class="why__bridge-chev"></span>
-        </div>
+            <p class="why__punch">Чем больше становится компания, тем сложнее удерживать все связи и&nbsp;<span class="why__hl">вовремя</span> замечать то, что&nbsp;требует внимания.</p>
+          </article>
 
-        <!-- потребность руководителя -->
-        <h3 class="why__need-title" data-reveal>Руководителю нужна <span class="why__accent-g">связанная картина компании</span></h3>
-        <p class="why__need-sub" data-reveal data-reveal-delay="1">В одном месте видеть, что происходит, что требует внимания сейчас и&nbsp;какое действие должно произойти дальше.</p>
+          <!-- стрелка проблема → решение -->
+          <div class="why__mid" aria-hidden="true"><span class="why__mid-arrow"></span></div>
 
-        <!-- финальная инфографика: распределённость → БАЗА связывает → единая картина → управленческий смысл -->
-        <div class="why__converge" data-reveal data-reveal-delay="2">
-          <div class="why__conv-src">
-            <span class="why__conv-chip">разные люди</span>
-            <span class="why__conv-chip">данные</span>
-            <span class="why__conv-chip">системы</span>
-            <span class="why__conv-chip">процессы</span>
-          </div>
-          <svg class="why__gather" viewBox="0 0 360 46" aria-hidden="true" preserveAspectRatio="none">
-            <path d="M30,4 L180,44"/><path d="M130,4 L180,44"/>
-            <path d="M230,4 L180,44"/><path d="M330,4 L180,44"/>
-            <circle cx="180" cy="44" r="3"/>
-          </svg>
-          <span class="why__conv-connect">БАЗА связывает</span>
-          <span class="why__down" aria-hidden="true"></span>
-          <div class="why__conv-core">Единая картина компании</div>
-          <span class="why__down" aria-hidden="true"></span>
-          <div class="why__conv-flow">
-            <span class="why__conv-q">Что происходит?</span>
-            <span class="why__conv-sep" aria-hidden="true">→</span>
-            <span class="why__conv-q">Что требует внимания?</span>
-            <span class="why__conv-sep" aria-hidden="true">→</span>
-            <span class="why__conv-q">Что делать дальше?</span>
-          </div>
+          <!-- ===== РЕШЕНИЕ ===== -->
+          <article class="why__card why__card--solution" data-reveal data-reveal-delay="1">
+            <span class="why__label why__label--solution">Решение</span>
+            <h3 class="why__ctitle">Руководителю нужна <span class="why__accent-g">связанная картина компании</span></h3>
+            <p class="why__ctext">В одном месте видеть, что происходит, что требует внимания сейчас и&nbsp;какое действие должно произойти дальше.</p>
+
+            <div class="why__converge">
+              <div class="why__conv-src">
+                <span class="why__conv-chip">разные люди</span>
+                <span class="why__conv-chip">данные</span>
+                <span class="why__conv-chip">системы</span>
+                <span class="why__conv-chip">процессы</span>
+              </div>
+              <svg class="why__gather" viewBox="0 0 360 40" aria-hidden="true" preserveAspectRatio="none">
+                <path d="M30,4 L180,38"/><path d="M130,4 L180,38"/>
+                <path d="M230,4 L180,38"/><path d="M330,4 L180,38"/>
+                <circle cx="180" cy="38" r="3"/>
+              </svg>
+              <span class="why__conv-connect">БАЗА связывает</span>
+              <span class="why__down" aria-hidden="true"></span>
+              <div class="why__conv-core">Единая картина компании</div>
+              <span class="why__down" aria-hidden="true"></span>
+              <div class="why__conv-flow">
+                <span class="why__conv-q">Что происходит?</span>
+                <span class="why__conv-sep" aria-hidden="true">→</span>
+                <span class="why__conv-q">Что требует внимания?</span>
+                <span class="why__conv-sep" aria-hidden="true">→</span>
+                <span class="why__conv-q">Что делать дальше?</span>
+              </div>
+            </div>
+          </article>
         </div>
       </div>
     </section>
