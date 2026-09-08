@@ -129,9 +129,9 @@
 }
 /* цитата-акцент под текстом */
 .b1__quote{
-  margin:8px 0 2px; padding-left:16px; position:relative; max-width:42ch;
+  margin:14px 0 2px; padding-left:16px; position:relative; max-width:42ch;
   font-family:'Onest', -apple-system, Arial, sans-serif; font-weight:400; font-style:italic;
-  font-size:clamp(16px,1.6vw,20px); line-height:1.35; color:#cfd3da;
+  font-size:clamp(14px,1.4vw,18px); line-height:1.35; color:#cfd3da;
 }
 .b1__quote::before{ content:""; position:absolute; left:0; top:2px; bottom:2px; width:3px; border-radius:2px;
   background:linear-gradient(180deg, var(--gold), #a9822f); }
