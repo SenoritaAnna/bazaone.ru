@@ -89,6 +89,19 @@
       });
     }
 
+    // мягкий спрайт частицы — рисуется одинаково в Chrome и Safari/WebKit,
+    // убирает муар («отпечаток») от резких мелких кружков
+    var SPR = 32;
+    var sprite = document.createElement('canvas');
+    sprite.width = sprite.height = SPR;
+    var sctx = sprite.getContext('2d');
+    var grad = sctx.createRadialGradient(SPR / 2, SPR / 2, 0, SPR / 2, SPR / 2, SPR / 2);
+    grad.addColorStop(0, 'rgba(238,236,231,1)');
+    grad.addColorStop(0.45, 'rgba(238,236,231,0.7)');
+    grad.addColorStop(1, 'rgba(238,236,231,0)');
+    sctx.fillStyle = grad;
+    sctx.fillRect(0, 0, SPR, SPR);
+
     function size() {
       var rect = canvas.getBoundingClientRect();
       canvas.width = Math.max(1, Math.round(rect.width * dpr));
@@ -128,11 +141,11 @@
         var depth = (z2 + 1) / 2;                 // 0..1
         var alpha = 0.28 + depth * 0.7;
         var rr = (0.65 + depth * 1.7) * dpr;
-        ctx.beginPath();
-        ctx.arc(sx, sy, rr, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(238,236,231,' + alpha.toFixed(3) + ')';
-        ctx.fill();
+        var s = rr * 3.4;                         // мягкий диаметр спрайта
+        ctx.globalAlpha = alpha;
+        ctx.drawImage(sprite, sx - s / 2, sy - s / 2, s, s);
       }
+      ctx.globalAlpha = 1;
       raf = requestAnimationFrame(frame);
     }
 
