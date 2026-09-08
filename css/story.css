@@ -1,0 +1,86 @@
+/* ============================================================
+   БАЗА — Блок «От идеи — к реальному проекту».
+   История + кейс «Арсенал»: Bitrix24/МойСклад → БАЗА ← 1С/внешние
+   → единый пульт. Замшевые карточки, движение по связям.
+   ============================================================ */
+.story{
+  --gold:#c9a24b; --red:#d8262c; --silver:#bcc1c9; --ink:#e9e7e2; --ink-dim:#8c8781;
+  position:relative; background:transparent;
+  min-height:100svh; display:flex; align-items:center;
+  padding:clamp(44px,6vh,90px) 0;
+  border-top:1px solid rgba(230,230,236,.16);
+}
+.story__wrap{ width:100%; max-width:1200px; margin:0 auto; padding:0 clamp(20px,3vw,48px); }
+
+.story__eyebrow{
+  margin:0 0 14px; display:inline-flex; align-items:center; gap:10px;
+  font-family:'Geist Mono','JetBrains Mono',ui-monospace,monospace;
+  text-transform:uppercase; letter-spacing:.22em; font-size:12px; color:var(--ink-dim);
+}
+.story__eyebrow::before{ content:""; width:26px; height:1px; background:var(--gold); opacity:.7; }
+.story__title{
+  margin:0 0 clamp(22px,3.5vh,38px); max-width:24ch;
+  font-family:'Geist',-apple-system,Arial,sans-serif; font-weight:800;
+  letter-spacing:-.02em; line-height:1.08; font-size:clamp(24px,2.8vw,36px); color:#f2f3f5;
+}
+
+.story__grid{ display:grid; grid-template-columns:1fr 1fr; gap:clamp(16px,2vw,30px); align-items:stretch; }
+
+/* левая колонка — история */
+.story__text{ display:flex; flex-direction:column; gap:14px; }
+.story__text p{ margin:0; font-family:'Onest',Arial,sans-serif; color:#b7bcc4; font-size:clamp(14px,1.15vw,16px); line-height:1.6; }
+.story__text p:last-child{ color:#d7dae0; }
+
+/* правая колонка — кейс «Арсенал» (замша) */
+.story__case{
+  display:flex; flex-direction:column; gap:12px;
+  padding:clamp(18px,1.8vw,28px); border-radius:16px;
+  border:1px solid rgba(201,162,75,.3);
+  background-color:#0b0c0e;
+  background-image:url('../assets/black-suede.jpg');
+  background-image:image-set(url('../assets/black-suede.webp') type('image/webp'), url('../assets/black-suede.jpg') type('image/jpeg'));
+  background-position:center; background-size:cover; background-repeat:no-repeat;
+  box-shadow:0 20px 50px rgba(0,0,0,.4);
+}
+.story__badge{
+  align-self:flex-start; padding:5px 13px; border-radius:999px;
+  font-family:'Geist Mono','JetBrains Mono',ui-monospace,monospace;
+  text-transform:uppercase; letter-spacing:.1em; font-size:10.5px; color:#7fd6a0;
+  background:rgba(74,222,128,.1); border:1px solid rgba(74,222,128,.35);
+}
+.story__case-t{ margin:0; font-family:'Geist',-apple-system,Arial,sans-serif; font-weight:800; font-size:clamp(18px,1.6vw,22px); color:#f2f3f5; }
+
+.story__ars{ display:grid; grid-template-columns:1fr auto 1fr; align-items:center; gap:10px; margin-top:4px; }
+.story__col{ display:flex; flex-direction:column; gap:8px; }
+.story__s{
+  padding:9px 12px; border-radius:10px;
+  background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.015)), rgba(12,12,14,.5);
+  border:1px solid rgba(230,230,236,.15);
+}
+.story__s .name{ font-family:'Geist',-apple-system,Arial,sans-serif; font-weight:600; font-size:14px; color:#eceef1; }
+.story__s .op{ font-family:'Geist Mono','JetBrains Mono',ui-monospace,monospace; font-size:10px; letter-spacing:.04em; color:#cbb784; margin-top:2px; }
+.story__center{
+  padding:12px 18px; border-radius:12px; text-align:center;
+  font-family:'Geist',-apple-system,Arial,sans-serif; font-weight:800; font-size:16px; color:#fff;
+  background:linear-gradient(180deg, rgba(216,38,44,.18), rgba(201,162,75,.08)), rgba(12,12,14,.62);
+  border:1px solid rgba(201,162,75,.5);
+  box-shadow:0 0 22px rgba(216,38,44,.14);
+}
+.story__adn{ text-align:center; color:var(--gold); font-size:16px; opacity:.85; }
+.story__res{
+  text-align:center; padding:11px 16px; border-radius:11px;
+  font-family:'Geist',-apple-system,Arial,sans-serif; font-weight:700; font-size:clamp(14px,1.2vw,16px); color:#e6c877;
+  background:rgba(201,162,75,.08); border:1px solid rgba(201,162,75,.4);
+}
+.story__must{ margin:0; font-family:'Onest',Arial,sans-serif; font-size:12.5px; line-height:1.5; color:#9aa0a8; text-align:center; }
+
+.story__last{
+  margin:clamp(18px,2.6vh,28px) 0 0; text-align:center;
+  font-family:'Geist',-apple-system,Arial,sans-serif; font-weight:700;
+  font-size:clamp(16px,1.6vw,21px); line-height:1.3; color:#eef0f2; letter-spacing:-.01em;
+}
+
+@media (max-width:860px){
+  .story{ min-height:auto; padding:clamp(44px,6vh,72px) 0; }
+  .story__grid{ grid-template-columns:1fr; }
+}
