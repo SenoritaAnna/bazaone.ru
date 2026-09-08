@@ -1,0 +1,161 @@
+/* ============================================================
+   БАЗА — Блок «Модульный конструктор».
+   БАЗА в центре: добавляемые модули сходятся в ядро сверху,
+   внешний слой подключается снизу через API. Плашки — замша.
+   Движение: ток по линиям, пульс ядра. Vanilla CSS.
+   ============================================================ */
+.kit{
+  --gold:#c9a24b;
+  --red:#d8262c;
+  --silver:#bcc1c9;
+  --ink:#e9e7e2;
+  --ink-dim:#8c8781;
+  position:relative; background:transparent;
+  min-height:100svh; display:flex; align-items:center;
+  padding:clamp(40px,6vh,88px) 0;
+  border-top:1px solid rgba(230,230,236,.16);
+}
+.kit__wrap{ width:100%; max-width:1040px; margin:0 auto; padding:0 clamp(20px,3vw,48px); }
+
+/* шапка */
+.kit__eyebrow{
+  margin:0 0 14px; display:inline-flex; align-items:center; gap:10px;
+  font-family:'Geist Mono','JetBrains Mono',ui-monospace,monospace;
+  text-transform:uppercase; letter-spacing:.22em; font-size:12px; color:var(--ink-dim);
+}
+.kit__eyebrow::before{ content:""; width:26px; height:1px; background:var(--gold); opacity:.7; }
+.kit__title{
+  margin:0 0 14px; max-width:24ch;
+  font-family:'Geist',-apple-system,Arial,sans-serif; font-weight:800;
+  letter-spacing:-.02em; line-height:1.08; font-size:clamp(24px,2.8vw,36px); color:#f2f3f5;
+}
+.kit__sub{
+  margin:0 0 clamp(22px,3.5vh,38px); max-width:70ch;
+  font-family:'Onest',Arial,sans-serif; color:#b7bcc4;
+  font-size:clamp(15px,1.3vw,18px); line-height:1.55;
+}
+
+/* конструктор */
+.kit__build{ display:flex; flex-direction:column; align-items:center; gap:clamp(8px,1.3vh,14px); }
+
+/* --- общий замшевый фон плашек --- */
+.kit__core, .kit__mod, .kit__add, .kit__chip, .kit__ext{
+  background-color:#0b0c0e;
+  background-image:url('../assets/black-suede.jpg');
+  background-image:image-set(url('../assets/black-suede.webp') type('image/webp'), url('../assets/black-suede.jpg') type('image/jpeg'));
+  background-position:center; background-size:cover; background-repeat:no-repeat;
+}
+
+/* --- добавляемые модули --- */
+.kit__addlab{
+  position:relative; margin:0; padding:0 26px;
+  font-family:'Geist Mono','JetBrains Mono',ui-monospace,monospace;
+  text-transform:uppercase; letter-spacing:.14em; font-size:11px; color:#cbb784;
+}
+.kit__avail{ display:flex; flex-wrap:wrap; justify-content:center; gap:9px; max-width:760px; }
+.kit__add{
+  position:relative; padding:9px 15px 9px 28px; border-radius:10px;
+  font-family:'Onest',Arial,sans-serif; font-size:13.5px; color:#c8ccd3;
+  border:1px dashed rgba(201,162,75,.45);
+  box-shadow:0 6px 16px rgba(0,0,0,.3);
+}
+.kit__add::before{ content:"+"; position:absolute; left:12px; top:50%; transform:translateY(-50%);
+  font-family:'Geist',sans-serif; font-weight:700; color:var(--gold); font-size:14px; }
+.kit__add--more{ color:#e6c877; border-style:solid; border-color:rgba(201,162,75,.55); }
+
+/* модули сходятся в ядро (веер вниз) */
+.kit__into{ width:min(560px,90%); height:40px; display:block; }
+.kit__into path{ stroke:rgba(201,162,75,.45); stroke-width:1.4; fill:none;
+  vector-effect:non-scaling-stroke; stroke-dasharray:4 9; animation:kitflow 1.4s linear infinite; }
+.kit__into circle{ fill:var(--gold); }
+@keyframes kitflow{ to{ stroke-dashoffset:-26; } }
+
+/* --- ядро БАЗА --- */
+.kit__core{
+  position:relative; overflow:hidden;
+  width:min(640px,100%); border-radius:18px; padding:clamp(18px,2vw,26px);
+  border:1px solid rgba(201,162,75,.5);
+  box-shadow:0 20px 50px rgba(0,0,0,.5), inset 0 1px 0 rgba(255,255,255,.05);
+  animation:kitpulse 3.6s ease-in-out infinite;
+}
+.kit__core::before{ /* золотой налёт поверх замши */
+  content:""; position:absolute; inset:0; pointer-events:none;
+  background:linear-gradient(180deg, rgba(201,162,75,.12), rgba(216,38,44,.04));
+}
+.kit__core::after{ /* мягкий блик */
+  content:""; position:absolute; top:0; left:-60%; width:45%; height:100%; pointer-events:none;
+  background:linear-gradient(90deg, transparent, rgba(255,255,255,.08), transparent);
+  transform:skewX(-20deg); animation:kitsheen 6.5s ease-in-out infinite;
+}
+@keyframes kitpulse{
+  0%,100%{ box-shadow:0 20px 50px rgba(0,0,0,.5), 0 0 20px rgba(201,162,75,.14), inset 0 1px 0 rgba(255,255,255,.05); }
+  50%{ box-shadow:0 20px 50px rgba(0,0,0,.5), 0 0 32px rgba(201,162,75,.3), inset 0 1px 0 rgba(255,255,255,.05); }
+}
+@keyframes kitsheen{ 0%,14%{ left:-60% } 54%,100%{ left:150% } }
+.kit__core-head{ position:relative; display:flex; align-items:baseline; justify-content:center; gap:12px; flex-wrap:wrap; margin-bottom:14px; }
+.kit__core-name{ font-family:'Geist',-apple-system,Arial,sans-serif; font-weight:800;
+  font-size:clamp(20px,2vw,26px); color:#e6c877; letter-spacing:.01em; text-shadow:0 0 14px rgba(201,162,75,.35); }
+.kit__core-sub{ font-family:'Geist Mono','JetBrains Mono',ui-monospace,monospace; font-size:12px; letter-spacing:.02em; color:var(--ink-dim); }
+.kit__base{ position:relative; display:flex; flex-wrap:wrap; justify-content:center; gap:10px; }
+.kit__mod{
+  padding:10px 18px; border-radius:11px;
+  font-family:'Geist',-apple-system,Arial,sans-serif; font-weight:600; font-size:14.5px; color:#eceef1;
+  border:1px solid rgba(201,162,75,.4);
+  box-shadow:0 6px 16px rgba(0,0,0,.4), inset 0 1px 0 rgba(255,255,255,.05);
+}
+
+/* --- подключение внешнего слоя (снизу вверх в ядро) --- */
+.kit__link{ display:flex; flex-direction:column; align-items:center; gap:6px; }
+.kit__up{ width:11px; height:11px; border-top:2px solid rgba(201,162,75,.75); border-right:2px solid rgba(201,162,75,.75);
+  transform:rotate(-45deg); opacity:.9; }
+.kit__link-line{ width:2px; height:26px; border-radius:2px;
+  background:repeating-linear-gradient(180deg, rgba(201,162,75,.65) 0 5px, transparent 5px 12px);
+  animation:kitup 1s linear infinite; }
+@keyframes kitup{ to{ background-position:0 -12px; } }
+.kit__api{
+  padding:5px 12px; border-radius:999px;
+  font-family:'Geist Mono','JetBrains Mono',ui-monospace,monospace;
+  text-transform:uppercase; letter-spacing:.08em; font-size:10.5px; color:#cbb784;
+  background:rgba(201,162,75,.1); border:1px solid rgba(201,162,75,.35);
+}
+
+/* --- внешний слой --- */
+.kit__ext{
+  width:min(560px,100%);
+  border:1px solid rgba(230,230,236,.16); border-radius:14px;
+  padding:clamp(13px,1.5vh,18px) clamp(16px,1.6vw,22px);
+}
+.kit__ext-lab{
+  display:block; margin-bottom:10px; text-align:center;
+  font-family:'Geist Mono','JetBrains Mono',ui-monospace,monospace;
+  text-transform:uppercase; letter-spacing:.14em; font-size:10.5px; color:var(--ink-dim);
+}
+.kit__ext-row{ display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:10px; }
+.kit__chip{
+  padding:8px 15px; border-radius:9px;
+  font-family:'Onest',Arial,sans-serif; font-size:13.5px; color:#c3c7cf;
+  border:1px solid rgba(230,230,236,.16);
+}
+
+/* --- финал --- */
+.kit__final{
+  margin:clamp(16px,2.6vh,26px) 0 0; text-align:center;
+  font-family:'Geist',-apple-system,Arial,sans-serif; font-weight:700;
+  font-size:clamp(17px,1.8vw,24px); line-height:1.3; color:#eef0f2; letter-spacing:-.01em;
+}
+.kit__final-r{ color:var(--red); }
+
+/* --- планшет / мобилка --- */
+@media (max-width:820px){
+  .kit{ min-height:auto; padding:clamp(40px,6vh,72px) 0; }
+  .kit__into{ display:none; }         /* веер не совпадает со свёрнутыми в столбик модулями */
+  .kit__addlab::after{ content:"↓"; display:block; text-align:center; color:var(--gold); margin-top:8px; font-size:15px; }
+  .kit__ext-row{ gap:8px; }
+}
+
+@media (prefers-reduced-motion: reduce){
+  .kit__into path{ animation:none; stroke-dasharray:none; }
+  .kit__link-line{ animation:none; }
+  .kit__core{ animation:none; }
+  .kit__core::after{ display:none; }
+}

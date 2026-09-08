@@ -13,10 +13,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..900&family=Onest:wght@400..700&family=Geist+Mono:wght@400..600&family=JetBrains+Mono:wght@400..600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/fonts.css?v=2" />
   <link rel="stylesheet" href="css/menu.css?v=18" />
-  <link rel="stylesheet" href="css/hero.css?v=31" />
+  <link rel="stylesheet" href="css/hero.css?v=32" />
   <link rel="stylesheet" href="css/block1.css?v=47" />
   <link rel="stylesheet" href="css/why.css?v=7" />
   <link rel="stylesheet" href="css/how.css?v=3" />
+  <link rel="stylesheet" href="css/kit.css?v=2" />
   <link rel="stylesheet" href="css/block2.css?v=7" />
   <link rel="stylesheet" href="css/block3.css?v=3" />
   <link rel="stylesheet" href="css/block4.css?v=2" />
@@ -267,6 +268,65 @@
 
           <div class="how__node how__node--base">БАЗА</div>
         </div>
+      </div>
+    </section>
+
+    <!-- ============ БЛОК «Модульный конструктор» ============ -->
+    <section class="kit" id="kit" aria-label="Модульный конструктор">
+      <div class="kit__wrap">
+        <p class="kit__eyebrow" data-reveal>Модульный конструктор</p>
+        <h2 class="kit__title" data-reveal data-reveal-delay="1">БАЗА собирается под&nbsp;задачи конкретной компании</h2>
+        <p class="kit__sub" data-reveal data-reveal-delay="2">Нужные функции объединяются в&nbsp;рабочую конфигурацию, которую можно расширять по&nbsp;мере развития бизнеса.</p>
+
+        <div class="kit__build" data-reveal data-reveal-delay="2">
+          <!-- добавляемые модули сверху -->
+          <p class="kit__addlab">добавляется по&nbsp;мере необходимости</p>
+          <div class="kit__avail">
+            <span class="kit__add">Финансы</span>
+            <span class="kit__add">Склад</span>
+            <span class="kit__add">Проекты</span>
+            <span class="kit__add">Маркетинг</span>
+            <span class="kit__add">Аналитика</span>
+            <span class="kit__add kit__add--more">другие функции</span>
+          </div>
+
+          <!-- модули сходятся в ядро -->
+          <svg class="kit__into" viewBox="0 0 600 46" aria-hidden="true" preserveAspectRatio="none">
+            <path d="M60,4 L300,42"/><path d="M164,4 L300,42"/><path d="M256,4 L300,42"/>
+            <path d="M344,4 L300,42"/><path d="M436,4 L300,42"/><path d="M540,4 L300,42"/>
+            <circle cx="300" cy="42" r="3"/>
+          </svg>
+
+          <!-- ядро БАЗА: базовая конфигурация -->
+          <div class="kit__core">
+            <div class="kit__core-head">
+              <b class="kit__core-name">БАЗА</b>
+              <span class="kit__core-sub">конфигурация вашей компании</span>
+            </div>
+            <div class="kit__base">
+              <span class="kit__mod">Клиенты</span>
+              <span class="kit__mod">Продажи</span>
+              <span class="kit__mod">Задачи</span>
+              <span class="kit__mod">Документы</span>
+            </div>
+          </div>
+
+          <!-- внешний слой подключается снизу через API -->
+          <div class="kit__link">
+            <span class="kit__up" aria-hidden="true"></span>
+            <span class="kit__link-line" aria-hidden="true"></span>
+            <span class="kit__api">API / интеграции</span>
+          </div>
+          <div class="kit__ext">
+            <span class="kit__ext-lab">внешний слой</span>
+            <div class="kit__ext-row">
+              <span class="kit__chip">1С</span>
+              <span class="kit__chip">другие сервисы</span>
+            </div>
+          </div>
+        </div>
+
+        <p class="kit__final" data-reveal data-reveal-delay="3">Одна платформа. <span class="kit__final-r">Своя конфигурация</span> для&nbsp;каждой компании.</p>
       </div>
     </section>
 
