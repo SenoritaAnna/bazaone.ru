@@ -13,8 +13,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..900&family=Onest:wght@400..700&family=Geist+Mono:wght@400..600&family=JetBrains+Mono:wght@400..600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/fonts.css?v=2" />
   <link rel="stylesheet" href="css/menu.css?v=18" />
-  <link rel="stylesheet" href="css/hero.css?v=28" />
+  <link rel="stylesheet" href="css/hero.css?v=29" />
   <link rel="stylesheet" href="css/block1.css?v=47" />
+  <link rel="stylesheet" href="css/why.css?v=2" />
   <link rel="stylesheet" href="css/block2.css?v=7" />
   <link rel="stylesheet" href="css/block3.css?v=3" />
   <link rel="stylesheet" href="css/block4.css?v=2" />
@@ -136,6 +137,49 @@
 
         </div><!-- /.b1__stage -->
       </div><!-- /.b1__track -->
+    </section>
+
+    <!-- ============ БЛОК «Почему это нужно» — цепочка процессов + разброс данных ============ -->
+    <section class="why" id="why" aria-label="Почему это нужно">
+      <div class="why__wrap">
+        <p class="why__eyebrow" data-reveal>Почему это нужно</p>
+        <h2 class="why__title" data-reveal data-reveal-delay="1">Работа компании состоит из&nbsp;множества <span class="why__accent">связанных процессов</span></h2>
+        <p class="why__sub" data-reveal data-reveal-delay="2">Клиенты, договорённости, задачи, сроки, документы, деньги и&nbsp;следующие действия связаны между собой. При&nbsp;этом информация о&nbsp;них может находиться у&nbsp;разных людей и&nbsp;в&nbsp;разных инструментах.</p>
+
+        <!-- цепочка связанных процессов -->
+        <div class="why__chain" data-reveal data-reveal-delay="2" role="list" aria-label="Цепочка связанных процессов">
+          <span class="why__node" role="listitem">Клиент</span>
+          <span class="why__arr" aria-hidden="true"></span>
+          <span class="why__node" role="listitem">Договорённость</span>
+          <span class="why__arr" aria-hidden="true"></span>
+          <span class="why__node" role="listitem">Задача</span>
+          <span class="why__arr" aria-hidden="true"></span>
+          <span class="why__node" role="listitem">Срок</span>
+          <span class="why__arr" aria-hidden="true"></span>
+          <span class="why__node" role="listitem">Документ</span>
+          <span class="why__arr" aria-hidden="true"></span>
+          <span class="why__node" role="listitem">Оплата</span>
+          <span class="why__arr" aria-hidden="true"></span>
+          <span class="why__node why__node--last" role="listitem">Следующий&nbsp;шаг</span>
+        </div>
+
+        <!-- та же информация — разбросана по инструментам -->
+        <div class="why__distr" data-reveal data-reveal-delay="3">
+          <span class="why__distr-cap">а данные о&nbsp;них — в&nbsp;разных местах</span>
+          <div class="why__tools">
+            <span class="why__chip">сотрудники</span>
+            <span class="why__chip">Excel</span>
+            <span class="why__chip">Telegram</span>
+            <span class="why__chip">почта</span>
+            <span class="why__chip">календари</span>
+            <span class="why__chip">CRM</span>
+            <span class="why__chip">1С</span>
+            <span class="why__chip">другие системы</span>
+          </div>
+        </div>
+
+        <p class="why__punch" data-reveal data-reveal-delay="3">Чем больше становится компания, тем сложнее удерживать все связи и&nbsp;<span class="why__hl">вовремя</span> замечать то, что&nbsp;требует внимания.</p>
+      </div>
     </section>
 
     <!-- ============ БЛОК 2 — «Что мы собираем»: 4 продуктовые карточки ============ -->

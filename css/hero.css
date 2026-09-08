@@ -14,7 +14,7 @@ html {
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 /* точки залипания — крупные секции (по одному экрану) */
-.hero, .b1, .b2, .b4, .b5, .b6 { scroll-snap-align: start; scroll-snap-stop: always; }
+.hero, .b1, .why, .b2, .b4, .b5, .b6 { scroll-snap-align: start; scroll-snap-stop: always; }
 /* подвал — отдельная нижняя snap-точка, чтобы он был доступен под формой
    даже если контакт-экран выше вьюпорта (иначе mandatory прячет его за сгибом) */
 .foot { scroll-snap-align: end; }
