@@ -163,6 +163,7 @@
   background:var(--gold); box-shadow:0 0 12px var(--gold), 0 0 4px #fff; animation:b1flow 2.4s cubic-bezier(.4,0,.2,1) infinite; }
 .b1__flow--2::after{ animation-delay:1.2s; }
 @keyframes b1flow{ 0%{left:0;opacity:0;transform:scale(.6)} 10%{opacity:1;transform:scale(1)} 85%{opacity:1} 100%{left:100%;opacity:0;transform:scale(.6)} }
+@keyframes b1flowV{ 0%{top:0;opacity:0;transform:scale(.6)} 10%{opacity:1;transform:scale(1)} 85%{opacity:1} 100%{top:100%;opacity:0;transform:scale(.6)} }
 
 /* центральный узел БАЗА — пульс + вращающееся кольцо */
 .b1__hub{ position:relative; display:grid; place-items:center; width:96px; height:96px; border-radius:50%; flex:0 0 auto;
@@ -179,7 +180,7 @@
 @keyframes b1spin{ to{ transform:rotate(360deg) } }
 
 /* результат — единый пульт, золотой с бликом */
-.b1__out{ position:relative; padding:14px 20px; border-radius:14px; text-align:center; flex:0 0 auto; overflow:hidden;
+.b1__out{ position:relative; padding:28px 40px; border-radius:18px; text-align:center; flex:0 0 auto; overflow:hidden;
   background:linear-gradient(180deg, rgba(201,162,75,.10), rgba(255,255,255,.03));
   border:1px solid rgba(201,162,75,.5);
   box-shadow:0 10px 30px rgba(0,0,0,.4), inset 0 1px 0 rgba(255,255,255,.06);
@@ -187,9 +188,9 @@
 .b1__out::after{ content:""; position:absolute; top:0; left:-60%; width:40%; height:100%;
   background:linear-gradient(90deg, transparent, rgba(255,255,255,.14), transparent); transform:skewX(-20deg);
   animation:b1sheen 5s ease-in-out infinite; }
-.b1__out b{ display:block; font-family:'Geist', -apple-system, Arial, sans-serif; font-weight:800; font-size:19px; color:#e6c877;
+.b1__out b{ display:block; font-family:'Geist', -apple-system, Arial, sans-serif; font-weight:800; font-size:34px; color:#e6c877;
   text-shadow:0 0 12px rgba(201,162,75,.35); }
-.b1__out span{ display:block; margin-top:3px; font-size:12.5px; color:var(--ink-dim); }
+.b1__out span{ display:block; margin-top:6px; font-size:20px; color:var(--ink-dim); }
 .b1__out:hover{ transform:translateY(-2px); box-shadow:0 16px 40px rgba(0,0,0,.5), 0 0 26px rgba(201,162,75,.28); }
 @keyframes b1sheen{ 0%,20%{ left:-60% } 60%,100%{ left:140% } }
 
@@ -210,8 +211,18 @@
   .b1__sub{ margin-left:auto; margin-right:auto; }
   .b1__quote{ text-align:left; margin-left:auto; margin-right:auto; }
   .b1__scheme{ flex-direction:column; align-items:center; gap:12px; }
-  .b1__src{ flex-direction:row; flex-wrap:wrap; justify-content:center; }
-  .b1__flow{ transform:rotate(90deg); margin:10px 0; }
+  /* плашку увеличили только на десктопе — на мобилке возвращаем исходный размер */
+  .b1__out{ padding:14px 20px; border-radius:14px; }
+  .b1__out b{ font-size:19px; }
+  .b1__out span{ margin-top:3px; font-size:12.5px; }
+  /* источники — ровная сетка 2×2 одинаковой ширины, по центру */
+  .b1__src{ display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:10px;
+            width:min(320px,100%); margin:0 auto; }
+  .b1__chip{ width:auto; white-space:nowrap; }
+  /* коннекторы — честная вертикальная линия по центру, точка бежит сверху вниз */
+  .b1__flow{ transform:none; width:2px; height:46px; margin:6px auto;
+             background:linear-gradient(180deg, rgba(201,162,75,.12), rgba(201,162,75,.45), rgba(201,162,75,.12)); }
+  .b1__flow::after{ top:0; left:50%; margin-left:-4px; margin-top:-4px; animation-name:b1flowV; }
   .b1__list{ grid-template-columns:1fr; gap:9px; width:100%; max-width:360px; margin:0 auto; align-self:center; }
   .b1__square, .b1__blob{ width:clamp(200px,58vw,300px); }
   /* шар: строго по центру экрана по горизонтали (сброс десктопного justify-self:end + сдвига) */
