@@ -73,7 +73,7 @@
   var canvas = document.querySelector('[data-b1-blob]');
   if (canvas && canvas.getContext) {
     var ctx = canvas.getContext('2d');
-    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    var dpr = Math.min(window.devicePixelRatio || 1, 1.5);
     var N = 1600;                       // число частиц
     var pts = [];
     var GOLDEN = Math.PI * (3 - Math.sqrt(5));
@@ -110,7 +110,7 @@
     size();
     window.addEventListener('resize', size);
 
-    var t = 0;
+    var t = 0, raf = null, paused = false;
     function frame() {
       t += 0.006;
       var w = canvas.width, h = canvas.height;
@@ -146,11 +146,22 @@
         ctx.drawImage(sprite, sx - s / 2, sy - s / 2, s, s);
       }
       ctx.globalAlpha = 1;
-      raf = requestAnimationFrame(frame);
+      raf = paused ? null : requestAnimationFrame(frame);
     }
 
-    var raf;
-    if (reduce) { frame(); cancelAnimationFrame(raf); }   // один статичный кадр
-    else raf = requestAnimationFrame(frame);
+    // крутим частицы только когда шар в зоне видимости — экономим CPU на остальных экранах
+    if (reduce) {
+      paused = true; frame();                              // один статичный кадр
+    } else if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { paused = false; if (!raf) raf = requestAnimationFrame(frame); }
+          else { paused = true; }
+        });
+      }, { threshold: 0 });
+      io.observe(canvas);
+    } else {
+      raf = requestAnimationFrame(frame);
+    }
   }
 })();

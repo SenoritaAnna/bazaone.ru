@@ -124,6 +124,73 @@
 }
 .why__hl{ color:var(--gold); }
 
+/* ===== переход: проблема → потребность → решение ===== */
+.why__bridge{
+  display:flex; flex-direction:column; align-items:center; gap:0;
+  margin:clamp(28px,5vh,52px) auto clamp(20px,3.4vh,32px);
+}
+.why__bridge-line{ width:2px; height:clamp(34px,5vh,52px); border-radius:2px;
+  background:linear-gradient(180deg, rgba(201,162,75,0), rgba(201,162,75,.6)); }
+.why__bridge-chev{ width:11px; height:11px; margin-top:-3px;
+  border-right:2px solid var(--gold); border-bottom:2px solid var(--gold);
+  transform:rotate(45deg); opacity:.85; }
+
+/* потребность руководителя — слева, как остальной текст */
+.why__need-title{
+  margin:0 0 12px; max-width:24ch;
+  font-family:'Geist',-apple-system,Arial,sans-serif; font-weight:800;
+  letter-spacing:-.02em; line-height:1.1; font-size:clamp(22px,2.6vw,32px);
+  color:#f2f3f5;
+}
+.why__accent-g{ color:var(--gold); }
+.why__need-sub{
+  margin:0 0 clamp(26px,4vh,42px); max-width:60ch;
+  font-family:'Onest',Arial,sans-serif; color:#b7bcc4;
+  font-size:clamp(15px,1.3vw,18px); line-height:1.55;
+}
+
+/* финальная инфографика: распределённость → БАЗА связывает → единая картина → смысл */
+.why__converge{
+  margin:0 auto; max-width:820px; text-align:center;
+  display:flex; flex-direction:column; align-items:center; gap:clamp(10px,1.6vh,15px);
+}
+.why__conv-src{ display:flex; flex-wrap:wrap; justify-content:center; gap:8px; }
+.why__conv-chip{
+  padding:8px 15px; border-radius:9px;
+  font-family:'Onest',Arial,sans-serif; font-size:14px; color:#aeb2ba;
+  background:rgba(255,255,255,.03); border:1px solid rgba(230,230,236,.14);
+}
+.why__gather{ width:min(360px,82%); height:44px; display:block; }
+.why__gather path{ stroke:rgba(201,162,75,.45); stroke-width:1.2; fill:none; }
+.why__gather circle{ fill:var(--gold); }
+
+.why__conv-connect{
+  padding:9px 20px; border-radius:999px;
+  font-family:'Geist',-apple-system,Arial,sans-serif; font-weight:700; font-size:15px;
+  color:#0c0c0e; background:linear-gradient(180deg,#d8b25c,#c9a24b);
+  box-shadow:0 8px 22px rgba(201,162,75,.28);
+}
+.why__down{ width:11px; height:11px; border-right:2px solid rgba(201,162,75,.7);
+  border-bottom:2px solid rgba(201,162,75,.7); transform:rotate(45deg); opacity:.8; }
+
+.why__conv-core{
+  padding:16px 30px; border-radius:14px;
+  font-family:'Geist',-apple-system,Arial,sans-serif; font-weight:800;
+  font-size:clamp(17px,1.9vw,23px); color:#fff; letter-spacing:-.01em;
+  background:linear-gradient(180deg, rgba(216,38,44,.16), rgba(201,162,75,.08)), rgba(14,14,16,.6);
+  border:1px solid rgba(201,162,75,.5);
+  box-shadow:0 12px 34px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.06);
+}
+
+.why__conv-flow{ display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:8px; }
+.why__conv-q{
+  padding:9px 16px; border-radius:10px;
+  font-family:'Geist',-apple-system,Arial,sans-serif; font-weight:600; font-size:14px; color:#e9ebef;
+  background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02)), rgba(14,14,16,.35);
+  border:1px solid rgba(201,162,75,.28);
+}
+.why__conv-sep{ color:var(--gold); font-weight:700; font-size:16px; }
+
 /* --- Планшет / мобилка --- */
 @media (max-width:820px){
   .why{ min-height:auto; padding:clamp(48px,7vh,80px) 0; }
@@ -139,6 +206,10 @@
     background:linear-gradient(180deg, rgba(201,162,75,.15), rgba(201,162,75,.5), rgba(201,162,75,.15)); }
   .why__arr::before{ right:50%; top:auto; bottom:-1px; transform:translateX(50%) rotate(135deg); }
   .why__arr::after{ left:50%; top:0; margin-left:-3.5px; margin-top:0; animation-name:whyflowV; }
+  /* нижняя инфографика: вопросы в столбик, «→» становится «↓» */
+  .why__conv-flow{ flex-direction:column; gap:8px; }
+  .why__conv-q{ width:min(260px,86%); }
+  .why__conv-sep{ transform:rotate(90deg); }
 }
 @keyframes whyflowV{ 0%{top:0;opacity:0;transform:scale(.5)} 12%{opacity:1;transform:scale(1)} 80%{opacity:1} 100%{top:100%;opacity:0;transform:scale(.5)} }
 

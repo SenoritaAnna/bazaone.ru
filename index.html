@@ -13,9 +13,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..900&family=Onest:wght@400..700&family=Geist+Mono:wght@400..600&family=JetBrains+Mono:wght@400..600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/fonts.css?v=2" />
   <link rel="stylesheet" href="css/menu.css?v=18" />
-  <link rel="stylesheet" href="css/hero.css?v=29" />
+  <link rel="stylesheet" href="css/hero.css?v=30" />
   <link rel="stylesheet" href="css/block1.css?v=47" />
-  <link rel="stylesheet" href="css/why.css?v=3" />
+  <link rel="stylesheet" href="css/why.css?v=4" />
   <link rel="stylesheet" href="css/block2.css?v=7" />
   <link rel="stylesheet" href="css/block3.css?v=3" />
   <link rel="stylesheet" href="css/block4.css?v=2" />
@@ -179,6 +179,42 @@
         </div>
 
         <p class="why__punch" data-reveal data-reveal-delay="3">Чем больше становится компания, тем сложнее удерживать все связи и&nbsp;<span class="why__hl">вовремя</span> замечать то, что&nbsp;требует внимания.</p>
+
+        <!-- переход: проблема → потребность -->
+        <div class="why__bridge" data-reveal aria-hidden="true">
+          <span class="why__bridge-line"></span>
+          <span class="why__bridge-chev"></span>
+        </div>
+
+        <!-- потребность руководителя -->
+        <h3 class="why__need-title" data-reveal>Руководителю нужна <span class="why__accent-g">связанная картина компании</span></h3>
+        <p class="why__need-sub" data-reveal data-reveal-delay="1">В одном месте видеть, что происходит, что требует внимания сейчас и&nbsp;какое действие должно произойти дальше.</p>
+
+        <!-- финальная инфографика: распределённость → БАЗА связывает → единая картина → управленческий смысл -->
+        <div class="why__converge" data-reveal data-reveal-delay="2">
+          <div class="why__conv-src">
+            <span class="why__conv-chip">разные люди</span>
+            <span class="why__conv-chip">данные</span>
+            <span class="why__conv-chip">системы</span>
+            <span class="why__conv-chip">процессы</span>
+          </div>
+          <svg class="why__gather" viewBox="0 0 360 46" aria-hidden="true" preserveAspectRatio="none">
+            <path d="M30,4 L180,44"/><path d="M130,4 L180,44"/>
+            <path d="M230,4 L180,44"/><path d="M330,4 L180,44"/>
+            <circle cx="180" cy="44" r="3"/>
+          </svg>
+          <span class="why__conv-connect">БАЗА связывает</span>
+          <span class="why__down" aria-hidden="true"></span>
+          <div class="why__conv-core">Единая картина компании</div>
+          <span class="why__down" aria-hidden="true"></span>
+          <div class="why__conv-flow">
+            <span class="why__conv-q">Что происходит?</span>
+            <span class="why__conv-sep" aria-hidden="true">→</span>
+            <span class="why__conv-q">Что требует внимания?</span>
+            <span class="why__conv-sep" aria-hidden="true">→</span>
+            <span class="why__conv-q">Что делать дальше?</span>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -618,7 +654,7 @@
 
   <script src="js/menu.js?v=3" defer></script>
   <script src="js/hero.js" defer></script>
-  <script src="js/block1.js?v=2" defer></script>
+  <script src="js/block1.js?v=3" defer></script>
   <script src="js/block2.js" defer></script>
   <script src="js/block3.js" defer></script>
   <script src="js/block4.js" defer></script>
