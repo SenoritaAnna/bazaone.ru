@@ -1,8 +1,8 @@
 /* ============================================================
    БАЗА — Блок «Как собирается БАЗА».
-   Поток: Ваша компания → Аудит → 3 пути (Связываем /
-   Переносим / Создаём) → БАЗА. Воронка 1→3→1.
-   Стиль сайта: графит, серебро, золото, дозированный красный.
+   Горизонтальный поток: Ваша компания → Аудит → 3 пути
+   (Связываем / Переносим / Создаём) → БАЗА. Воронка 1→3→1.
+   Плашки — замша, как в блоке «Возможности».
    Шрифты Geist / Onest / Geist Mono. Vanilla CSS.
    ============================================================ */
 .how{
@@ -17,7 +17,7 @@
   border-top:1px solid rgba(230,230,236,.16);
 }
 .how__wrap{
-  width:100%; max-width:1120px; margin:0 auto;
+  width:100%; max-width:1280px; margin:0 auto;
   padding:0 clamp(20px,3vw,48px);
 }
 
@@ -29,78 +29,118 @@
 }
 .how__eyebrow::before{ content:""; width:26px; height:1px; background:var(--gold); opacity:.7; }
 .how__title{
-  margin:0 0 14px; max-width:22ch;
+  margin:0 0 14px; max-width:24ch;
   font-family:'Geist',-apple-system,Arial,sans-serif; font-weight:800;
   letter-spacing:-.02em; line-height:1.08; font-size:clamp(24px,2.8vw,36px); color:#f2f3f5;
 }
 .how__sub{
-  margin:0 0 clamp(26px,4vh,44px); max-width:72ch;
+  margin:0 0 clamp(28px,4.5vh,50px); max-width:74ch;
   font-family:'Onest',Arial,sans-serif; color:#b7bcc4;
   font-size:clamp(15px,1.3vw,18px); line-height:1.55;
 }
 
-/* поток-воронка */
-.how__flow{ display:flex; flex-direction:column; align-items:center; gap:clamp(8px,1.4vh,14px); }
+/* ===== горизонтальный поток ===== */
+.how__flow{
+  display:flex; align-items:stretch; justify-content:center; flex-wrap:nowrap;
+  gap:clamp(6px,0.9vw,14px);
+}
 
+/* общий замшевый фон плашек */
+.how__node, .how__route{
+  background-color:#0b0c0e;
+  background-image:url('../assets/black-suede.jpg');
+  background-image:image-set(url('../assets/black-suede.webp') type('image/webp'), url('../assets/black-suede.jpg') type('image/jpeg'));
+  background-position:center; background-size:cover; background-repeat:no-repeat;
+}
+
+/* узлы: компания / аудит / база */
 .how__node{
-  padding:12px 22px; border-radius:12px; text-align:center;
-  font-family:'Geist',-apple-system,Arial,sans-serif; font-weight:600; font-size:15px; color:#eceef1;
-  background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02)), rgba(11,12,14,.5);
+  align-self:center; text-align:center; border-radius:13px;
+  font-family:'Geist',-apple-system,Arial,sans-serif; font-weight:600; color:#eceef1;
   border:1px solid rgba(201,162,75,.3);
-  box-shadow:0 8px 22px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.05);
+  box-shadow:0 14px 34px rgba(0,0,0,.4), inset 0 1px 0 rgba(255,255,255,.05);
 }
-.how__node--audit{ display:flex; flex-direction:column; gap:4px; padding:14px 28px; }
-.how__node--audit b{ font-family:'Geist',-apple-system,Arial,sans-serif; font-weight:800; font-size:17px; color:#f2f3f5; }
-.how__node--audit span{ font-family:'Geist Mono','JetBrains Mono',ui-monospace,monospace; font-size:11.5px; letter-spacing:.02em; color:#cbb784; }
+.how__node--company{ padding:16px 20px; font-size:15px; max-width:150px; }
+.how__node--audit{
+  display:flex; flex-direction:column; gap:5px; padding:16px 22px; max-width:230px;
+}
+.how__node--audit b{ font-weight:800; font-size:17px; color:#f2f3f5; }
+.how__node--audit span{ font-family:'Geist Mono','JetBrains Mono',ui-monospace,monospace;
+  font-size:11px; letter-spacing:.02em; line-height:1.5; color:#cbb784; }
 .how__node--base{
-  font-family:'Geist',-apple-system,Arial,sans-serif; font-weight:800; letter-spacing:.01em;
-  font-size:clamp(18px,2vw,24px); color:#fff; padding:14px 36px; border-radius:13px;
-  background:linear-gradient(180deg, rgba(216,38,44,.18), rgba(201,162,75,.08)), rgba(12,12,14,.62);
-  border:1px solid rgba(201,162,75,.5);
-  box-shadow:0 12px 32px rgba(0,0,0,.5), inset 0 1px 0 rgba(255,255,255,.06);
+  font-weight:800; letter-spacing:.02em; font-size:clamp(19px,1.9vw,25px); color:#fff;
+  padding:20px 30px; border-radius:14px; max-width:140px;
+  border:1px solid rgba(201,162,75,.55);
+  box-shadow:0 16px 40px rgba(0,0,0,.55), 0 0 26px rgba(216,38,44,.18), inset 0 1px 0 rgba(255,255,255,.06);
+}
+.how__node--base::after{ /* лёгкий красно-золотой налёт поверх замши */
+  content:""; position:absolute; inset:0; border-radius:14px; pointer-events:none;
+  background:linear-gradient(180deg, rgba(216,38,44,.16), rgba(201,162,75,.06));
+}
+.how__node--base{ position:relative; overflow:hidden; animation:howbase 3.6s ease-in-out infinite; }
+@keyframes howbase{
+  0%,100%{ box-shadow:0 16px 40px rgba(0,0,0,.55), 0 0 22px rgba(216,38,44,.15), inset 0 1px 0 rgba(255,255,255,.06); }
+  50%{ box-shadow:0 16px 40px rgba(0,0,0,.55), 0 0 36px rgba(216,38,44,.34), inset 0 1px 0 rgba(255,255,255,.06); }
 }
 
-.how__down{ width:11px; height:11px; border-right:2px solid rgba(201,162,75,.7);
-  border-bottom:2px solid rgba(201,162,75,.7); transform:rotate(45deg); opacity:.8; }
+/* стрелка → между компанией и аудитом */
+.how__arrow{ align-self:center; flex:0 0 auto; width:12px; height:12px;
+  border-top:2px solid rgba(201,162,75,.7); border-right:2px solid rgba(201,162,75,.7);
+  transform:rotate(45deg); opacity:.85; }
 
-/* веер 1→3 и сбор 3→1 */
-.how__split, .how__gather{ width:min(620px,92%); height:36px; display:block; }
-.how__split path, .how__gather path{ stroke:rgba(201,162,75,.4); stroke-width:1.2; fill:none; }
-.how__split circle, .how__gather circle{ fill:var(--gold); }
+/* веер 1→3 и сбор 3→1 (тянутся по высоте колонки путей) */
+.how__fan, .how__gather{ align-self:stretch; flex:0 0 auto; width:clamp(34px,3.4vw,52px); }
+.how__fan path, .how__gather path{ stroke:rgba(201,162,75,.42); stroke-width:1.4; fill:none;
+  vector-effect:non-scaling-stroke; stroke-dasharray:4 9; animation:howflow 1.4s linear infinite; }
+.how__fan circle, .how__gather circle{ fill:var(--gold); }
+@keyframes howflow{ to{ stroke-dashoffset:-26; } }
 
-/* три пути */
-.how__routes{
-  display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(12px,1.4vw,20px);
-  width:100%; max-width:980px;
-}
+/* три пути — замшевые карточки в столбик */
+.how__routes{ display:flex; flex-direction:column; gap:clamp(10px,1.4vh,16px);
+  flex:0 1 clamp(300px,30vw,380px); }
 .how__route{
-  display:flex; flex-direction:column; gap:8px;
-  padding:clamp(16px,1.6vw,22px);
+  position:relative; overflow:hidden;
+  display:flex; flex-direction:column; gap:6px;
+  padding:clamp(13px,1.2vw,18px) clamp(15px,1.3vw,20px);
   border:1px solid rgba(201,162,75,.28); border-radius:14px;
-  background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.01)), rgba(10,11,13,.55);
-  box-shadow:0 14px 34px rgba(0,0,0,.35);
+  box-shadow:0 18px 44px rgba(0,0,0,.4);
   transition:border-color .25s ease, transform .3s ease, box-shadow .3s ease;
 }
-.how__route:hover{ border-color:var(--gold); transform:translateY(-3px);
-  box-shadow:0 0 20px rgba(201,162,75,.2), 0 22px 46px rgba(0,0,0,.5); }
+.how__route:hover{ border-color:var(--gold); transform:translateY(-2px);
+  box-shadow:0 0 20px rgba(201,162,75,.2), 0 24px 50px rgba(0,0,0,.5); }
+/* проблеск-сияние по замше (по очереди) */
+.how__route::after{ content:""; position:absolute; top:0; left:-60%; width:45%; height:100%;
+  background:linear-gradient(90deg, transparent, rgba(255,255,255,.07), transparent);
+  transform:skewX(-20deg); pointer-events:none; animation:howsheen 6.5s ease-in-out infinite; }
+.how__route:nth-child(2)::after{ animation-delay:1.6s; }
+.how__route:nth-child(3)::after{ animation-delay:3.2s; }
+@keyframes howsheen{ 0%,12%{ left:-60% } 52%,100%{ left:150% } }
 .how__cond{
   font-family:'Geist Mono','JetBrains Mono',ui-monospace,monospace;
-  text-transform:uppercase; letter-spacing:.12em; font-size:11px; color:var(--ink-dim);
+  text-transform:uppercase; letter-spacing:.12em; font-size:10.5px; color:var(--ink-dim);
 }
 .how__act{ font-family:'Geist',-apple-system,Arial,sans-serif; font-weight:800;
-  font-size:clamp(17px,1.5vw,21px); color:#e6c877; letter-spacing:-.01em; }
-.how__desc{ margin:0; font-family:'Onest',Arial,sans-serif; font-size:14px; color:#b7bcc4; line-height:1.45; }
+  font-size:clamp(17px,1.4vw,20px); color:#e6c877; letter-spacing:-.01em; }
+.how__desc{ margin:0; font-family:'Onest',Arial,sans-serif; font-size:13.5px; color:#b7bcc4; line-height:1.45; }
 .how__api{
-  margin-top:auto; align-self:flex-start; padding:4px 11px; border-radius:999px;
+  margin-top:4px; align-self:flex-start; padding:4px 11px; border-radius:999px;
   font-family:'Geist Mono','JetBrains Mono',ui-monospace,monospace;
   text-transform:uppercase; letter-spacing:.1em; font-size:10.5px; color:#cbb784;
   background:rgba(201,162,75,.1); border:1px solid rgba(201,162,75,.35);
 }
 
-/* планшет / мобилка */
-@media (max-width:820px){
+/* ===== планшет / мобилка: поток в столбик ===== */
+@media (max-width:900px){
   .how{ min-height:auto; padding:clamp(40px,6vh,72px) 0; }
-  .how__routes{ grid-template-columns:1fr; max-width:420px; }
-  .how__split, .how__gather{ display:none; }        /* веер/сбор не имеют смысла в столбик */
-  .how__routes{ position:relative; }
+  .how__flow{ flex-direction:column; align-items:center; gap:clamp(9px,1.6vh,16px); }
+  .how__node--company, .how__node--audit, .how__node--base{ max-width:min(420px,90%); }
+  .how__routes{ flex:none; width:min(420px,92%); }
+  .how__arrow{ transform:rotate(135deg); }              /* стрелка вниз */
+  .how__fan, .how__gather{ display:none; }              /* веер/сбор не нужны в столбик */
+}
+
+@media (prefers-reduced-motion: reduce){
+  .how__fan path, .how__gather path{ animation:none; stroke-dasharray:none; }
+  .how__route::after{ animation:none; display:none; }
+  .how__node--base{ animation:none; }
 }
