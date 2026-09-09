@@ -78,3 +78,11 @@
 .mmenu__links a{ color:#20201d !important; }
 .mmenu__links a:hover, .mmenu__links a:active{ color:#161512 !important; text-shadow:0 0 20px rgba(177,135,58,.4) !important; }
 .mmenu__links a.mmenu__promo{ color:#3a2b06 !important; }
+/* кнопка «Оставить заявку» в мобильном меню — серебряная */
+.mmenu__cta{
+  color:#2a2620 !important;
+  background-color:transparent !important;
+  background-image:linear-gradient(135deg,#f6f6f8 0%,#dcdce1 38%,#c7c7cd 52%,#eaeaef 72%,#f6f6f8 100%) !important;
+  border-color:rgba(30,26,20,.2) !important;
+  box-shadow:0 8px 20px rgba(60,48,30,.16), inset 0 1px 0 rgba(255,255,255,.75) !important;
+}
