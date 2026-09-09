@@ -1,0 +1,58 @@
+/* ============================================================
+   БАЗА — Блок 3 «03 · Аналитика и разведка». Светлая тема.
+   Каталог 12 направлений (3×2 + переключение 01–06/07–12),
+   выбор нескольких + CTA. Скоуп: #analytics.
+   ============================================================ */
+#analytics{
+  --card:#fbf8f2; --ink:#20201d; --ink-2:#4a463f; --ink-dim:#8a8477;
+  --gold:#b1873a; --red:#c0392b; --line:rgba(30,26,20,.12); --line-soft:rgba(30,26,20,.08);
+  --shadow:0 10px 24px rgba(60,48,30,.09), 0 2px 5px rgba(60,48,30,.05);
+  position:relative; background:transparent; min-height:100svh; display:flex; align-items:center;
+}
+#analytics .wrap{ width:100%; max-width:1240px; margin:0 auto; padding:clamp(76px,11vh,120px) clamp(20px,3.5vw,48px) clamp(18px,3vh,40px);
+  display:flex; flex-direction:column; justify-content:center; gap:clamp(12px,2vh,22px); }
+#analytics h1{ font-family:'Geist',-apple-system,Arial,sans-serif; letter-spacing:-.02em; color:var(--ink); margin:0; }
+
+#analytics .head{ text-align:left; }
+#analytics .eyebrow{ display:inline-flex; align-items:center; gap:9px; margin:0 0 12px;
+  font-family:'Geist Mono',ui-monospace,monospace; text-transform:uppercase; letter-spacing:.22em; font-size:11.5px; color:var(--gold); }
+#analytics .eyebrow::before,#analytics .eyebrow::after{ content:""; width:22px; height:1px; background:var(--gold); opacity:.7; }
+#analytics .title{ font-weight:800; line-height:1.05; font-size:clamp(26px,3.4vw,42px); }
+#analytics .sub{ margin:12px 0 0; max-width:76ch; font-family:'Lora',Georgia,serif; font-size:clamp(13.5px,1.1vw,16px); line-height:1.5; color:var(--ink-2); }
+
+#analytics .pager{ display:flex; align-items:center; justify-content:center; gap:12px; }
+#analytics .pgbtn{ padding:7px 16px; border-radius:999px; border:1px solid var(--line); background:var(--card); cursor:pointer;
+  font-family:'Geist Mono',ui-monospace,monospace; font-size:11px; letter-spacing:.08em; color:var(--ink-2); box-shadow:var(--shadow); transition:all .2s ease; }
+#analytics .pgbtn.on{ border-color:var(--gold); color:var(--gold); background:rgba(201,162,75,.08); }
+
+#analytics .grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(10px,1.2vw,16px); }
+#analytics .page{ display:none; }
+#analytics .page.on{ display:contents; }
+#analytics .card{ position:relative; display:flex; flex-direction:column; gap:6px; padding:clamp(14px,1.4vw,20px);
+  background:var(--card); border:1px solid var(--line); border-radius:15px; box-shadow:var(--shadow); cursor:pointer; transition:border-color .2s ease, transform .25s ease, box-shadow .3s ease; }
+#analytics .card:hover{ transform:translateY(-3px); border-color:rgba(201,162,75,.5); box-shadow:0 20px 40px rgba(60,48,30,.13); }
+#analytics .card.sel{ border-color:var(--gold); box-shadow:0 0 0 2px rgba(201,162,75,.35), 0 18px 38px rgba(177,135,58,.16); background:linear-gradient(180deg,#fffdf8,#fbf6ea); }
+#analytics .card .n{ font-family:'Geist Mono',ui-monospace,monospace; font-size:11px; letter-spacing:.1em; color:var(--gold); }
+#analytics .card .nm{ font-family:'Geist',sans-serif; font-weight:800; font-size:clamp(13.5px,1.2vw,15.5px); color:var(--ink); line-height:1.15; text-transform:uppercase; letter-spacing:.01em; }
+#analytics .card .ds{ font-family:'Lora',Georgia,serif; font-size:12px; line-height:1.4; color:var(--ink-2); }
+#analytics .card .pick{ margin-top:auto; display:inline-flex; align-items:center; gap:6px; align-self:flex-start; padding-top:6px;
+  font-family:'Geist',sans-serif; font-weight:700; font-size:12.5px; color:var(--gold); }
+#analytics .card .pick::after{ content:"→"; transition:transform .2s ease; }
+#analytics .card:hover .pick::after{ transform:translateX(3px); }
+#analytics .card.sel .pick{ color:var(--red); }
+#analytics .card.sel .pick::before{ content:"✓ "; }
+#analytics .card .tick{ position:absolute; top:12px; right:12px; width:18px; height:18px; border-radius:50%; border:1.5px solid var(--line); display:grid; place-items:center; font-size:11px; color:#fff; }
+#analytics .card.sel .tick{ background:var(--gold); border-color:var(--gold); }
+#analytics .card.sel .tick::after{ content:"✓"; }
+
+#analytics .bar{ display:flex; align-items:center; justify-content:center; gap:18px; flex-wrap:wrap; }
+#analytics .chosen{ font-family:'Geist Mono',ui-monospace,monospace; font-size:12px; letter-spacing:.06em; color:var(--ink-2); }
+#analytics .chosen b{ color:var(--gold); }
+#analytics .cta{ position:relative; overflow:hidden; padding:13px 30px; border-radius:12px; font-family:'Geist',sans-serif; font-weight:700; font-size:15px; text-decoration:none; cursor:pointer; color:#3a2b06;
+  border:1px solid rgba(177,135,58,.55); background:linear-gradient(135deg,#ecc878 0%,#c9a24b 48%,#b1873a 100%);
+  box-shadow:0 8px 20px rgba(177,135,58,.26), inset 0 1px 0 rgba(255,255,255,.5); transition:box-shadow .3s ease, background .3s ease, transform .2s ease; }
+#analytics .cta:hover{ transform:translateY(-2px); background:linear-gradient(135deg,#f6dc94 0%,#dcb75f 48%,#c9a24b 100%);
+  box-shadow:0 14px 34px 4px rgba(214,178,92,.72), 0 0 26px rgba(201,162,75,.6); }
+
+@media (max-width:900px){ #analytics{ min-height:auto; } #analytics .wrap{ padding-top:clamp(90px,13vh,120px); } #analytics .grid{ grid-template-columns:1fr 1fr; } }
+@media (max-width:560px){ #analytics .grid{ grid-template-columns:1fr; } }
