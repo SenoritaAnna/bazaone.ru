@@ -1,0 +1,39 @@
+/* ============================================================
+   БАЗА — СВЕТЛАЯ ТЕМА. Только: шапка (nav) + Блок 0 (hero) + Блок 1.
+   Остальные блоки НЕ трогаем (они пока в тёмной теме).
+   Грузится последним — переопределяет тёмные стили.
+   ============================================================ */
+
+/* ---------- шапка / меню — светлая ---------- */
+.nav{
+  background-color:rgba(250,247,240,.86) !important;
+  background-image:none !important;
+  -webkit-backdrop-filter:blur(12px) saturate(1.08); backdrop-filter:blur(12px) saturate(1.08);
+  border-bottom:1px solid rgba(30,26,20,.10) !important;
+  box-shadow:0 6px 24px rgba(60,48,30,.06) !important;
+}
+.nav__logo img{ filter:none !important; }
+.nav__links a, .nav__cta{
+  color:#20201d !important;
+  background-color:rgba(255,255,255,.55) !important;
+  background-image:none !important;
+  border-color:rgba(30,26,20,.14) !important;
+}
+.nav__links a.is-active, .nav__links a:hover, .nav__cta:hover{ color:#161512 !important; border-color:#b1873a !important; }
+.nav__links a.nav__promo{ color:#3a2b06 !important; background-color:#c9a24b !important; background-image:linear-gradient(180deg,#e6c877,#c9a24b) !important; }
+.nav__cta::after{ color:#b1873a !important; }
+.nav__burger span{ background:#20201d !important; }
+
+/* ---------- Блок 0 — hero: заголовки чёрные, описание чёрное + Lora ---------- */
+.hero .hero-title{
+  background:none !important;
+  -webkit-text-fill-color:#161512 !important; color:#161512 !important;
+  filter:none !important;
+}
+.hero .hero-title .hl{ -webkit-text-fill-color:#c0392b !important; color:#c0392b !important; }
+.hero .hero-sub{ color:#2a2620 !important; font-family:'Lora',Georgia,serif !important; }
+
+/* ---------- Блок 1 — описания шрифтом Lora ---------- */
+#block1 .sub,
+#block1 .answer-sub,
+#block1 .tc span{ font-family:'Lora',Georgia,serif !important; }

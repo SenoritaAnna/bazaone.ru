@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="650" height="710" viewBox="0 0 650 710">
+<rect width="650" height="710" fill="#0B0B0C"/>
+<g id="symbol">
+ <path id="silver-top" d="M157 49 H459 L390 120 H157 Z" fill="#C4C5C7"/>
+ <path id="silver-body" d="M157 139 L157 219 L193 259 L367 259 C398 259 421 280 421 312 C421 343 399 366 368 366 L292 366 L354 433 C430 433 491 378 491 312 C491 243 437 188 368 188 L214 188 C199 188 190 181 179 170 L157 139 Z" fill="#C4C5C7"/>
+ <path id="red-accent" d="M157 269 L231 343 L320 433 H231 L157 359 Z" fill="#F01208"/>
+</g>
+<g id="wordmark" transform="translate(0,450)">
+ <path d="M65 39 H135 V53 H80 V72 H113 C130 72 141 83 141 98 C141 113 130 124 113 124 H65 Z M80 86 V110 H113 C122 110 127 105 127 98 C127 91 122 86 113 86 Z M202 124 L241 39 H256 L295 124 H279 L249 57 L218 124 Z M358 39 H424 V53 L398 74 H404 C418 74 427 84 427 98 C427 113 416 124 400 124 H358 V110 H399 C408 110 413 105 413 98 C413 90 407 86 398 86 H380 V74 L404 53 H358 Z M488 124 L526 39 H541 L580 124 H564 L534 57 L503 124 Z" fill="#D0D0D2" fill-rule="evenodd"/>
+</g>
+<text x="325" y="637" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" letter-spacing="5.1" fill="#A7A7AA">ПЛАТФОРМА ДЛЯ РЕШЕНИЙ БИЗНЕСА</text>
+</svg>
