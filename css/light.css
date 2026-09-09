@@ -42,3 +42,13 @@
 #block1 .sub,
 #block1 .answer-sub,
 #block1 .tc span{ font-family:'Lora',Georgia,serif !important; }
+
+/* ---------- О нас (#block5) — светлая тема ---------- */
+#block5 .b5__title, #block5 .b5card__name{ color:#161512 !important; }
+#block5 .b5__eyebrow{ color:#8a8477 !important; }
+#block5 .b5__intro, #block5 .b5card__text, #block5 .b5card__role{ color:#4a463f !important; font-family:'Lora',Georgia,serif !important; }
+#block5 .b5card{ background-color:#fbf8f2 !important; background-image:none !important;
+  border-color:rgba(30,26,20,.12) !important; box-shadow:0 12px 30px rgba(60,48,30,.10), 0 2px 6px rgba(60,48,30,.05) !important; }
+#block5 .b5card__ava{ background:#fff !important; border-color:rgba(30,26,20,.12) !important; }
+#block5 .b5card__ava img{ filter:none !important; }
+#block5 .b5card__tags span{ color:#4a463f !important; background:rgba(30,26,20,.04) !important; border-color:rgba(30,26,20,.14) !important; }
