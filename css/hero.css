@@ -19,7 +19,7 @@ html {
    даже если контакт-экран выше вьюпорта (иначе mandatory прячет его за сгибом) */
 .foot { scroll-snap-align: end; }
 /* блок 3, «Почему это нужно» и «Как собирается БАЗА» длиннее экрана — верхушка выравнивается, но проскроллить можно свободно */
-.b3, .why, .how, .kit, .res, .story, .grow, .faq { scroll-snap-align: start; }
+.b3, .why, .persn, .how, .kit, .res, .story, .grow, .faq { scroll-snap-align: start; }
 /* на мобиле контент высокий — без залипания */
 @media (max-width: 820px) { html { scroll-snap-type: none; } }
 

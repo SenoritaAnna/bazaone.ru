@@ -13,8 +13,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..900&family=Lora:ital,wght@0,400..600;1,400&family=Onest:wght@400..700&family=Geist+Mono:wght@400..600&family=JetBrains+Mono:wght@400..600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/fonts.css?v=2" />
   <link rel="stylesheet" href="css/menu.css?v=18" />
-  <link rel="stylesheet" href="css/hero.css?v=34" />
+  <link rel="stylesheet" href="css/hero.css?v=35" />
   <link rel="stylesheet" href="css/block1.css?v=48" />
+  <link rel="stylesheet" href="css/persn.css?v=3" />
   <link rel="stylesheet" href="css/why.css?v=7" />
   <link rel="stylesheet" href="css/how.css?v=3" />
   <link rel="stylesheet" href="css/kit.css?v=2" />
@@ -30,7 +31,7 @@
   <link rel="stylesheet" href="css/footer.css?v=10" />
   <link rel="stylesheet" href="css/cookie.css?v=2" />
   <link rel="stylesheet" href="css/reveal.css?v=1" />
-  <link rel="stylesheet" href="css/light.css?v=2" />
+  <link rel="stylesheet" href="css/light.css?v=3" />
 </head>
 <body>
   <!--
@@ -161,80 +162,64 @@
       </div>
     </section>
 
-    <!-- ============ БЛОК «Почему это нужно» — цепочка процессов + разброс данных ============ -->
-    <section class="why" id="why" aria-label="Почему это нужно">
-      <div class="why__wrap">
-        <p class="why__eyebrow" data-reveal>Почему это нужно</p>
-        <h2 class="why__title" data-reveal data-reveal-delay="1">От&nbsp;множества процессов — <span class="why__accent-g">к&nbsp;единой картине компании</span></h2>
+    <!-- ============ БЛОК 2 — «02 · Персонализация» (светлая тема) ============ -->
+    <section class="persn" id="personalization" aria-label="Персонализация">
+      <div class="wrap">
+        <p class="eyebrow">02 · Персонализация</p>
+        <h1 class="ptitle">БАЗА начинается с&nbsp;<span class="r">вашей</span> компании</h1>
+        <p class="psub">Сначала изучаем, как устроена работа: процессы, роли, данные, инструменты и&nbsp;связи между ними. Затем определяем, какая конфигурация БАЗЫ нужна именно этой компании.</p>
 
-        <div class="why__cards">
-          <!-- ===== ПРОБЛЕМА ===== -->
-          <article class="why__card why__card--problem" data-reveal>
-            <span class="why__label why__label--problem">Проблема</span>
-            <h3 class="why__ctitle">Работа компании состоит из&nbsp;множества связанных процессов</h3>
-            <p class="why__ctext">Клиенты, договорённости, задачи, сроки, документы, деньги и&nbsp;следующие действия связаны между собой. При&nbsp;этом информация о&nbsp;них может находиться у&nbsp;разных людей и&nbsp;в&nbsp;разных инструментах.</p>
+        <div class="research">
+          <div class="in5">
+            <div class="inrow"><b>Процессы</b><span>как устроена работа</span></div>
+            <div class="inrow"><b>Люди и роли</b><span>кто за что отвечает</span></div>
+            <div class="inrow"><b>Данные</b><span>где находится информация</span></div>
+            <div class="inrow"><b>Инструменты</b><span>чем уже пользуются</span></div>
+            <div class="inrow"><b>Связи</b><span>как всё переходит между собой</span></div>
+          </div>
+          <svg class="gather" viewBox="0 0 46 220" aria-hidden="true" preserveAspectRatio="none">
+            <path d="M2,22 L44,110"/><path d="M2,66 L44,110"/><path d="M2,110 L44,110"/><path d="M2,154 L44,110"/><path d="M2,198 L44,110"/>
+            <circle cx="44" cy="110" r="3.2"/>
+          </svg>
+          <div class="audit"><b>Аудит и&nbsp;анализ</b><span>исследуем компанию</span></div>
+          <span class="rar">&rarr;</span>
+          <div class="underst">
+            <b>Понимаем, что нужно конкретной компании</b>
+            <div class="actions">связать &middot; перенести &middot; создать &middot; автоматизировать</div>
+          </div>
+        </div>
 
-            <div class="why__chain" role="list" aria-label="Цепочка связанных процессов">
-              <span class="why__node" role="listitem">Клиент</span><span class="why__sep" aria-hidden="true">→</span>
-              <span class="why__node" role="listitem">Договорённость</span><span class="why__sep" aria-hidden="true">→</span>
-              <span class="why__node" role="listitem">Задача</span><span class="why__sep" aria-hidden="true">→</span>
-              <span class="why__node" role="listitem">Срок</span><span class="why__sep" aria-hidden="true">→</span>
-              <span class="why__node" role="listitem">Документ</span><span class="why__sep" aria-hidden="true">→</span>
-              <span class="why__node" role="listitem">Оплата</span><span class="why__sep" aria-hidden="true">→</span>
-              <span class="why__node why__node--last" role="listitem">Следующий&nbsp;шаг</span>
-            </div>
-
-            <div class="why__distr">
-              <span class="why__distr-cap">а данные о&nbsp;них — в&nbsp;разных местах</span>
-              <div class="why__tools">
-                <span class="why__chip">сотрудники</span>
-                <span class="why__chip">Excel</span>
-                <span class="why__chip">Telegram</span>
-                <span class="why__chip">почта</span>
-                <span class="why__chip">календари</span>
-                <span class="why__chip">CRM</span>
-                <span class="why__chip">1С</span>
-                <span class="why__chip">другие системы</span>
-              </div>
-            </div>
-
-            <p class="why__punch">Чем больше становится компания, тем сложнее удерживать все связи и&nbsp;<span class="why__hl">вовремя</span> замечать то, что&nbsp;требует внимания.</p>
+        <p class="branch-lab">Одна методика — три компании — три конфигурации</p>
+        <div class="examples">
+          <article class="ex">
+            <div class="num">01</div>
+            <div class="type">Сложившаяся цифровая среда</div>
+            <div class="k">Исходные</div>
+            <div class="chips"><span class="chip">CRM</span><span class="chip">складская система</span><span class="chip">1С</span><span class="chip">почта</span><span class="chip">документы</span><span class="chip">сотрудники</span></div>
+            <div class="exres">После анализа: <b>переносим</b> необходимые функции, <b>связываем</b> 1С и&nbsp;внешние системы, собираем процессы в&nbsp;едином пространстве.</div>
+            <div class="baza"><span class="contour"><i></i><i></i><i></i><i></i></span><span class="bl">БАЗА 01</span></div>
           </article>
-
-          <!-- стрелка проблема → решение -->
-          <div class="why__mid" aria-hidden="true"><span class="why__mid-arrow"></span></div>
-
-          <!-- ===== РЕШЕНИЕ ===== -->
-          <article class="why__card why__card--solution" data-reveal data-reveal-delay="1">
-            <span class="why__label why__label--solution">Решение</span>
-            <h3 class="why__ctitle">Руководителю нужна <span class="why__accent-g">связанная картина компании</span></h3>
-            <p class="why__ctext">В одном месте видеть, что происходит, что требует внимания сейчас и&nbsp;какое действие должно произойти дальше.</p>
-
-            <div class="why__converge">
-              <div class="why__conv-src">
-                <span class="why__conv-chip">разные люди</span>
-                <span class="why__conv-chip">данные</span>
-                <span class="why__conv-chip">системы</span>
-                <span class="why__conv-chip">процессы</span>
-              </div>
-              <svg class="why__gather" viewBox="0 0 360 40" aria-hidden="true" preserveAspectRatio="none">
-                <path d="M30,4 L180,38"/><path d="M130,4 L180,38"/>
-                <path d="M230,4 L180,38"/><path d="M330,4 L180,38"/>
-                <circle cx="180" cy="38" r="3"/>
-              </svg>
-              <span class="why__conv-connect">БАЗА связывает</span>
-              <span class="why__down" aria-hidden="true"></span>
-              <div class="why__conv-core">Единая картина компании</div>
-              <span class="why__down" aria-hidden="true"></span>
-              <div class="why__conv-flow">
-                <span class="why__conv-q">Что происходит?</span>
-                <span class="why__conv-sep" aria-hidden="true">→</span>
-                <span class="why__conv-q">Что требует внимания?</span>
-                <span class="why__conv-sep" aria-hidden="true">→</span>
-                <span class="why__conv-q">Что делать дальше?</span>
-              </div>
-            </div>
+          <article class="ex">
+            <div class="num">02</div>
+            <div class="type">Юридическая компания</div>
+            <div class="k">Исходная работа</div>
+            <div class="chips"><span class="chip">клиенты</span><span class="chip">дела</span><span class="chip">документы</span><span class="chip">судебные сроки</span><span class="chip">задачи</span><span class="chip">сотрудники</span></div>
+            <div class="exres">Конфигурация строится вокруг связей: <b>клиент &harr; дело &harr; документы &harr; сроки &harr; задачи</b>.</div>
+            <div class="baza"><span class="contour"><i></i><i></i><i></i></span><span class="bl">БАЗА 02</span></div>
           </article>
+          <article class="ex">
+            <div class="num">03</div>
+            <div class="type">Ручные процессы</div>
+            <div class="k">Исходная работа</div>
+            <div class="chips"><span class="chip">Excel</span><span class="chip">Telegram</span><span class="chip">почта</span><span class="chip">документы</span><span class="chip">сотрудники</span><span class="chip">ручные действия</span></div>
+            <div class="exres">После анализа: <b>структурируем</b> процессы, собираем данные, <b>создаём</b> нужные функции и&nbsp;<b>автоматизируем</b> повторяющееся.</div>
+            <div class="baza"><span class="contour"><i></i><i></i><i></i><i></i><i></i></span><span class="bl">БАЗА 03</span></div>
+          </article>
+        </div>
+
+        <div class="final">
+          <div class="ft">Одна БАЗА. <span class="g">Разные конфигурации.</span></div>
+          <div class="fs">Функции определяются устройством и&nbsp;задачами конкретной компании.</div>
         </div>
       </div>
     </section>

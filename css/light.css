@@ -34,6 +34,10 @@
 .hero .hero-sub{ color:#2a2620 !important; font-family:'Lora',Georgia,serif !important; }
 .hero .icons__amp{ color:#161512 !important; text-shadow:none !important; }
 
+/* ---------- временно скрытые блоки (ещё тёмная тема, вернём по мере перевода) ----------
+   Видны: hero, Продукт (#block1), Персонализация (#personalization), О нас (#block5), Контакты (#block6). */
+#how, #kit, #result, #story, #grow, #faq, #block2, #block3, #block4 { display:none !important; }
+
 /* ---------- Блок 1 — описания шрифтом Lora ---------- */
 #block1 .sub,
 #block1 .answer-sub,

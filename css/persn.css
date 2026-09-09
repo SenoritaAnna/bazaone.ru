@@ -1,0 +1,67 @@
+/* ============================================================
+   БАЗА — Блок 2 «02 · Персонализация». Светлая тема.
+   Аудит компании → понимаем потребности → персональная
+   конфигурация (3 обезличенные модели). Скоуп: #personalization.
+   ============================================================ */
+#personalization{
+  --card:#fbf8f2; --ink:#20201d; --ink-2:#4a463f; --ink-dim:#8a8477;
+  --gold:#b1873a; --red:#c0392b; --line:rgba(30,26,20,.12); --line-soft:rgba(30,26,20,.08);
+  --shadow:0 10px 24px rgba(60,48,30,.09), 0 2px 5px rgba(60,48,30,.05);
+  position:relative; background:transparent; min-height:100svh; display:flex; align-items:center;
+}
+#personalization .wrap{ width:100%; max-width:1220px; margin:0 auto; padding:clamp(76px,11vh,120px) clamp(20px,3.5vw,48px) clamp(18px,3vh,40px);
+  display:flex; flex-direction:column; justify-content:center; gap:clamp(10px,1.7vh,20px); text-align:center; }
+#personalization h1{ font-family:'Geist',-apple-system,Arial,sans-serif; letter-spacing:-.02em; color:var(--ink); margin:0; }
+
+#personalization .eyebrow{ display:inline-flex; align-items:center; gap:9px; margin:0 auto;
+  font-family:'Geist Mono',ui-monospace,monospace; text-transform:uppercase; letter-spacing:.22em; font-size:11.5px; color:var(--gold); }
+#personalization .eyebrow::before,#personalization .eyebrow::after{ content:""; width:22px; height:1px; background:var(--gold); opacity:.7; }
+#personalization .ptitle{ font-weight:800; line-height:1.05; font-size:clamp(26px,3.4vw,42px); }
+#personalization .ptitle .r{ color:var(--red); }
+#personalization .psub{ margin:0 auto; max-width:78ch; font-family:'Lora',Georgia,serif; font-size:clamp(13.5px,1.1vw,16px); line-height:1.5; color:var(--ink-2); }
+
+#personalization .research{ display:flex; align-items:center; justify-content:center; gap:clamp(10px,1.4vw,20px); flex-wrap:nowrap; margin:2px auto 0; }
+#personalization .in5{ display:flex; flex-direction:column; gap:5px; }
+#personalization .inrow{ display:flex; align-items:baseline; gap:7px; padding:6px 11px; background:var(--card); border:1px solid var(--line); border-radius:9px; box-shadow:var(--shadow); text-align:left; white-space:nowrap; }
+#personalization .inrow b{ font-family:'Geist',sans-serif; font-weight:700; font-size:12px; color:var(--ink); }
+#personalization .inrow span{ font-family:'Lora',Georgia,serif; font-size:10.5px; color:var(--ink-dim); }
+#personalization .gather{ width:46px; align-self:stretch; flex:0 0 auto; }
+#personalization .gather path{ stroke:rgba(177,135,58,.5); stroke-width:1.2; fill:none; stroke-dasharray:3 5; animation:pdash 1.3s linear infinite; }
+#personalization .gather circle{ fill:var(--gold); }
+@keyframes pdash{ to{ stroke-dashoffset:-16; } }
+#personalization .audit{ flex:0 0 auto; padding:16px 20px; border-radius:14px; text-align:center;
+  background:radial-gradient(circle at 50% 35%, #fff, #f0e7d4); border:1.5px solid var(--gold); box-shadow:0 12px 28px rgba(177,135,58,.2); }
+#personalization .audit b{ font-family:'Geist',sans-serif; font-weight:800; font-size:clamp(14px,1.4vw,18px); color:var(--ink); display:block; }
+#personalization .audit span{ font-family:'Geist Mono',ui-monospace,monospace; font-size:9px; letter-spacing:.1em; text-transform:uppercase; color:var(--gold); }
+#personalization .rar{ color:var(--gold); font-weight:700; font-size:18px; flex:0 0 auto; }
+#personalization .underst{ flex:0 0 auto; text-align:left; }
+#personalization .underst b{ font-family:'Geist',sans-serif; font-weight:800; font-size:clamp(13px,1.2vw,15px); color:var(--ink); display:block; max-width:20ch; line-height:1.2; }
+#personalization .actions{ margin-top:6px; font-family:'Geist Mono',ui-monospace,monospace; text-transform:uppercase; letter-spacing:.06em; font-size:10.5px; color:var(--gold); }
+
+#personalization .branch-lab{ margin:2px auto 0; font-family:'Geist Mono',ui-monospace,monospace; text-transform:uppercase; letter-spacing:.14em; font-size:10px; color:var(--ink-dim); }
+#personalization .examples{ display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(10px,1.3vw,18px); align-items:start; }
+#personalization .ex{ display:flex; flex-direction:column; gap:7px; padding:clamp(13px,1.3vw,18px); background:var(--card); border:1px solid var(--line); border-radius:15px; box-shadow:var(--shadow); text-align:left; }
+#personalization .ex .num{ font-family:'Geist Mono',ui-monospace,monospace; font-size:10px; letter-spacing:.1em; color:var(--gold); }
+#personalization .ex .type{ font-family:'Geist',sans-serif; font-weight:800; font-size:clamp(14px,1.3vw,16px); color:var(--ink); line-height:1.15; }
+#personalization .ex .k{ font-family:'Geist Mono',ui-monospace,monospace; text-transform:uppercase; letter-spacing:.08em; font-size:9px; color:var(--ink-dim); margin-top:2px; }
+#personalization .ex .chips{ display:flex; flex-wrap:wrap; gap:5px; }
+#personalization .ex .chip{ padding:4px 9px; border-radius:7px; background:rgba(255,255,255,.55); border:1px solid var(--line-soft); font-family:'Lora',Georgia,serif; font-size:11px; color:var(--ink-2); }
+#personalization .ex .exres{ font-family:'Lora',Georgia,serif; font-size:12px; line-height:1.4; color:var(--ink-2); }
+#personalization .ex .exres b{ color:var(--ink); font-family:'Geist',sans-serif; font-weight:600; }
+#personalization .ex .baza{ margin-top:6px; display:flex; align-items:center; gap:9px; padding-top:8px; border-top:1px dashed var(--line); }
+#personalization .ex .contour{ display:flex; gap:3px; padding:6px 8px; border:1.4px solid var(--gold); border-radius:9px; background:rgba(201,162,75,.06); }
+#personalization .ex .contour i{ width:6px; height:6px; border-radius:2px; background:var(--gold); opacity:.85; }
+#personalization .ex .bl{ font-family:'Geist',sans-serif; font-weight:800; font-size:13px; color:var(--red); letter-spacing:.02em; }
+
+#personalization .final{ margin:2px auto 0; }
+#personalization .final .ft{ font-family:'Geist',sans-serif; font-weight:800; font-size:clamp(17px,1.8vw,24px); color:var(--ink); }
+#personalization .final .ft .g{ color:var(--gold); }
+#personalization .final .fs{ margin-top:5px; font-family:'Lora',Georgia,serif; font-size:clamp(12.5px,1.05vw,15px); color:var(--ink-2); }
+
+@media (max-width:900px){
+  #personalization{ min-height:auto; }
+  #personalization .wrap{ padding-top:clamp(90px,13vh,120px); }
+  #personalization .research{ flex-direction:column; } #personalization .gather{ display:none; } #personalization .rar{ transform:rotate(90deg); }
+  #personalization .examples{ grid-template-columns:1fr; }
+}
+@media (prefers-reduced-motion: reduce){ #personalization *{ animation:none !important; } }
