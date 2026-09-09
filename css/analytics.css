@@ -29,7 +29,7 @@
 #analytics .page{ display:none; }
 #analytics .page.on{ display:contents; }
 #analytics .card{ position:relative; display:flex; flex-direction:column; gap:6px; padding:clamp(14px,1.4vw,20px);
-  background:var(--card); border:1px solid var(--line); border-radius:15px; box-shadow:var(--shadow); cursor:pointer; transition:border-color .2s ease, transform .25s ease, box-shadow .3s ease; }
+  background:var(--card); border:1px solid var(--line); border-radius:15px; box-shadow:var(--shadow); transition:border-color .2s ease, transform .25s ease, box-shadow .3s ease; }
 #analytics .card:hover{ transform:translateY(-3px); border-color:rgba(201,162,75,.5); box-shadow:0 20px 40px rgba(60,48,30,.13); }
 #analytics .card.sel{ border-color:var(--gold); box-shadow:0 0 0 2px rgba(201,162,75,.35), 0 18px 38px rgba(177,135,58,.16); background:linear-gradient(180deg,#fffdf8,#fbf6ea); }
 #analytics .card .n{ font-family:'Geist Mono',ui-monospace,monospace; font-size:11px; letter-spacing:.1em; color:var(--gold); }
