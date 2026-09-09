@@ -52,3 +52,18 @@
 #block5 .b5card__ava{ background:#fff !important; border-color:rgba(30,26,20,.12) !important; }
 #block5 .b5card__ava img{ filter:none !important; }
 #block5 .b5card__tags span{ color:#4a463f !important; background:rgba(30,26,20,.04) !important; border-color:rgba(30,26,20,.14) !important; }
+
+/* ---------- Контакты (#block6) — светлая тема + влево ---------- */
+#block6 .b6__wrap{ text-align:left !important; }
+#block6 .b6__eyebrow{ justify-content:flex-start !important; }
+#block6 .b6__eyebrow::after{ display:none !important; }
+#block6 .b6__title{ color:#161512 !important; }
+#block6 .b6__text{ color:#4a463f !important; font-family:'Lora',Georgia,serif !important; }
+#block6 .b6__eyebrow{ color:#8a8477 !important; }
+#block6 .b6form__label{ color:#4a463f !important; }
+#block6 .b6form__label b{ color:#b1873a !important; }
+#block6 .b6form__input, #block6 .b6form__textarea{ color:#20201d !important; background:rgba(255,255,255,.72) !important; border-color:rgba(30,26,20,.16) !important; }
+#block6 .b6form__input::placeholder, #block6 .b6form__textarea::placeholder{ color:#8a8477 !important; }
+#block6 .b6form__note, #block6 .b6form__consent{ color:#4a463f !important; }
+#block6 .b6form__consent a, #block6 .b6__direct a{ color:#4a463f !important; border-bottom-color:rgba(177,135,58,.5) !important; }
+#block6 .b6__direct{ color:#8a8477 !important; }

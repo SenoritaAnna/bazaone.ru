@@ -56,3 +56,5 @@
 
 @media (max-width:900px){ #analytics{ min-height:auto; } #analytics .wrap{ padding-top:clamp(90px,13vh,120px); } #analytics .grid{ grid-template-columns:1fr 1fr; } }
 @media (max-width:560px){ #analytics .grid{ grid-template-columns:1fr; } }
+
+#analytics .title .r{ color:var(--red); }
