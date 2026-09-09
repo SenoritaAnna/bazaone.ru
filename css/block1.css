@@ -77,7 +77,8 @@
   #block1 .b1__wrap{ gap:22px; padding-top:clamp(84px,12vh,120px); }
   #block1 .top{ grid-template-columns:1fr; }
   #block1 .viz{ width:min(320px,84%); margin-top:4px; }
-  #block1 .trio{ flex-wrap:wrap; } #block1 .tc{ flex:1 1 100%; max-width:none; } #block1 .tarrow{ transform:rotate(90deg); }
+  #block1 .trio{ flex-wrap:wrap; gap:10px; } #block1 .tc{ flex:0 0 auto; width:min(280px,86%); max-width:none; margin:0 auto; } #block1 .tarrow{ transform:rotate(90deg); }
+  #block1 .mini-lab{ margin-top:14px; }
   #block1 .launch{ align-self:stretch; flex-direction:column; align-items:center; text-align:center; }
   #block1 .cd{ justify-content:center; } #block1 .launch .act{ align-items:center; }
   /* надписи по центру, формула — в одну строку */
