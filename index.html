@@ -13,8 +13,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..900&family=Onest:wght@400..700&family=Geist+Mono:wght@400..600&family=JetBrains+Mono:wght@400..600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/fonts.css?v=2" />
   <link rel="stylesheet" href="css/menu.css?v=18" />
-  <link rel="stylesheet" href="css/hero.css?v=33" />
-  <link rel="stylesheet" href="css/block1.css?v=47" />
+  <link rel="stylesheet" href="css/hero.css?v=34" />
+  <link rel="stylesheet" href="css/block1.css?v=48" />
   <link rel="stylesheet" href="css/why.css?v=7" />
   <link rel="stylesheet" href="css/how.css?v=3" />
   <link rel="stylesheet" href="css/kit.css?v=2" />
@@ -97,52 +97,67 @@
       </div>
     </section>
 
-    <!-- ============ БЛОК 1 — витрина (по мотивам vanlent.dev) ============ -->
-    <section class="b1" id="block1" aria-label="БАЗА — концепция">
-      <div class="b1__track">
-        <div class="b1__stage">
-
-          <!-- Фон: единая кожа приходит с body -->
-          <div class="b1__bg" aria-hidden="true"></div>
-
-          <div class="b1__grid">
-
-            <!-- Слева: шар-ядро (частицы) -->
-            <div class="b1__visual">
-              <div class="b1__square" aria-hidden="true">
-                <span class="b1__corner b1__corner--tl"></span>
-                <span class="b1__corner b1__corner--tr"></span>
-                <span class="b1__corner b1__corner--bl"></span>
-                <span class="b1__corner b1__corner--br"></span>
-              </div>
-              <canvas class="b1__blob" data-b1-blob aria-hidden="true"></canvas>
+    <!-- ============ БЛОК 1 — «01 · Продукт» (светлая тема) ============ -->
+    <section class="b1" id="block1" aria-label="БАЗА — продукт">
+      <div class="b1__wrap">
+        <div class="top">
+          <div>
+            <p class="eyebrow">01 · Продукт</p>
+            <h1 class="h-title">Единая платформа <span class="r">управления компанией</span></h1>
+            <p class="sub">БАЗА объединяет данные, процессы и&nbsp;рабочие инструменты компании в&nbsp;одном пространстве, связывает их в&nbsp;общий контекст и&nbsp;помогает вовремя увидеть то, что&nbsp;требует внимания.</p>
+            <p class="tagline">Чтобы понимать, что&nbsp;происходит, и&nbsp;запускать следующий шаг.</p>
+            <p class="mini-lab">Как работает БАЗА</p>
+            <div class="formula">
+              <div class="fstep k"><b>Контекст</b><span>что происходит</span></div>
+              <span class="farrow"><i></i></span>
+              <div class="fstep"><b>Внимание</b><span>что важно сейчас</span></div>
+              <span class="farrow d2"><i></i></span>
+              <div class="fstep"><b>Действие</b><span>что нужно сделать</span></div>
             </div>
+          </div>
 
-            <!-- Справа: заголовок + текст + схема -->
-            <div class="b1__content">
-              <h2 class="b1__title" data-reveal>Единая платформа <span class="b1__r">управления компанией</span></h2>
-              <p class="b1__sub" data-reveal data-reveal-delay="1">Единый пульт, который объединяет данные, процессы и&nbsp;используемые сервисы компании в&nbsp;одном рабочем пространстве.</p>
+          <div class="viz">
+            <svg viewBox="0 0 100 100" aria-hidden="true" preserveAspectRatio="none">
+              <line x1="50" y1="50" x2="50" y2="8"/><line x1="50" y1="50" x2="14" y2="33"/><line x1="50" y1="50" x2="86" y2="33"/>
+              <line x1="50" y1="50" x2="16" y2="73"/><line x1="50" y1="50" x2="84" y2="73"/><line x1="50" y1="50" x2="50" y2="93"/>
+            </svg>
+            <div class="core"><b>БАЗА</b></div>
+            <span class="node n1">Документы</span>
+            <span class="node n2">Люди</span>
+            <span class="node n3">Деньги</span>
+            <span class="node n4">Сроки · обязательства</span>
+            <span class="node n5">Изменения</span>
+            <span class="node n6">Задачи</span>
+          </div>
+        </div>
 
-              <div class="b1__scheme" data-reveal data-reveal-delay="2">
-                <div class="b1__src">
-                  <span class="b1__chip">Данные</span>
-                  <span class="b1__chip">Процессы</span>
-                  <span class="b1__chip">Сервисы</span>
-                  <span class="b1__chip">Люди&nbsp;/&nbsp;роли</span>
-                </div>
-                <span class="b1__flow" aria-hidden="true"></span>
-                <div class="b1__hub"><span class="b1__hub-ring" aria-hidden="true"></span><span class="b1__hub-t">БАЗА</span></div>
-                <span class="b1__flow b1__flow--2" aria-hidden="true"></span>
-                <div class="b1__out"><b>Единый пульт</b><span>управление из&nbsp;одного окна</span></div>
-              </div>
+        <div class="grp">
+          <p class="mini-lab center">Что получает руководитель</p>
+          <div class="trio">
+            <div class="tc"><b>Вижу</b><span>что происходит в&nbsp;компании</span></div>
+            <span class="tarrow">→</span>
+            <div class="tc"><b>Понимаю</b><span>что требует внимания</span></div>
+            <span class="tarrow">→</span>
+            <div class="tc"><b>Управляю</b><span>запускаю следующий шаг</span></div>
+          </div>
+        </div>
 
-              <blockquote class="b1__quote" data-reveal data-reveal-delay="3">Управление компанией из&nbsp;одного окна.</blockquote>
+        <div class="launch">
+          <div>
+            <div class="cd-lab">До открытия БАЗЫ осталось</div>
+            <div class="cd">
+              <div class="u"><b id="cd-d">—</b><span>дней</span></div>
+              <div class="u"><b id="cd-h">—</b><span>часов</span></div>
+              <div class="u"><b id="cd-m">—</b><span>минут</span></div>
+              <div class="u"><b id="cd-s">—</b><span>секунд</span></div>
             </div>
-
-          </div><!-- /.b1__grid -->
-
-        </div><!-- /.b1__stage -->
-      </div><!-- /.b1__track -->
+          </div>
+          <div class="act">
+            <a class="btn" href="#block6">Оставить заявку</a>
+            <span class="dt">запуск · 12 декабря 2026</span>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- ============ БЛОК «Почему это нужно» — цепочка процессов + разброс данных ============ -->
@@ -920,6 +935,19 @@
   <script src="js/block4.js" defer></script>
   <script src="js/reveal.js" defer></script>
   <script src="js/form.js?v=3" defer></script>
+  <script>
+  /* Блок 1 — счётчик до открытия БАЗЫ (12 декабря 2026) */
+  (function(){
+    var t=new Date('2026-12-12T00:00:00');
+    var d=document.getElementById('cd-d'),h=document.getElementById('cd-h'),m=document.getElementById('cd-m'),s=document.getElementById('cd-s');
+    if(!d) return;
+    function p(n){ return (n<10?'0':'')+n; }
+    function tick(){ var diff=Math.max(0,t-new Date()),sec=Math.floor(diff/1000);
+      d.textContent=Math.floor(sec/86400); h.textContent=p(Math.floor(sec%86400/3600));
+      m.textContent=p(Math.floor(sec%3600/60)); s.textContent=p(sec%60); }
+    tick(); setInterval(tick,1000);
+  })();
+  </script>
   <script src="js/cookie.js?v=2" defer></script>
 </body>
 </html>
