@@ -32,6 +32,7 @@
 }
 .hero .hero-title .hl{ -webkit-text-fill-color:#c0392b !important; color:#c0392b !important; }
 .hero .hero-sub{ color:#2a2620 !important; font-family:'Lora',Georgia,serif !important; }
+.hero .icons__amp{ color:#161512 !important; text-shadow:none !important; }
 
 /* ---------- Блок 1 — описания шрифтом Lora ---------- */
 #block1 .sub,
