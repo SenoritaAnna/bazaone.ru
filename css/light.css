@@ -54,7 +54,8 @@
 #block5 .b5card__tags span{ color:#4a463f !important; background:rgba(30,26,20,.04) !important; border-color:rgba(30,26,20,.14) !important; }
 
 /* ---------- Контакты (#block6) — светлая тема + влево ---------- */
-#block6 .b6__wrap{ text-align:left !important; }
+#block6 .b6__wrap{ text-align:left !important; align-items:flex-start !important; }
+#block6 .b6__text{ margin-left:0 !important; margin-right:auto !important; }
 #block6 .b6__eyebrow{ justify-content:flex-start !important; }
 #block6 .b6__eyebrow::after{ display:none !important; }
 #block6 .b6__title{ color:#161512 !important; }
@@ -67,3 +68,12 @@
 #block6 .b6form__note, #block6 .b6form__consent{ color:#4a463f !important; }
 #block6 .b6form__consent a, #block6 .b6__direct a{ color:#4a463f !important; border-bottom-color:rgba(177,135,58,.5) !important; }
 #block6 .b6__direct{ color:#8a8477 !important; }
+
+/* ---------- Мобильное меню (бургер) — светлая подложка ---------- */
+.mmenu{ background:rgba(248,244,236,.98) !important; }
+.mmenu::before{ background:#f4efe6 url('../assets/fon-baza.png') center center / cover no-repeat !important; opacity:.4 !important; }
+.mmenu__close{ color:#20201d !important; }
+.mmenu__close:hover{ color:#000 !important; }
+.mmenu__links a{ color:#20201d !important; }
+.mmenu__links a:hover, .mmenu__links a:active{ color:#161512 !important; text-shadow:0 0 20px rgba(177,135,58,.4) !important; }
+.mmenu__links a.mmenu__promo{ color:#3a2b06 !important; }
