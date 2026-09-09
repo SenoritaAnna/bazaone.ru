@@ -40,19 +40,16 @@ body {
   /* ЕДИНЫЙ светлый фон на всю страницу — ОДНА копия на весь фон (cover),
      без повторов и швов на любой ширине экрана */
   background-color: #f4efe6;
-  background-image: url('../assets/fon-baza.png');
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  background-attachment: fixed;
 }
-/* Светлая молочная вуаль поверх фона по ВСЕЙ странице — для читаемости текста.
-   (тёмная подложка убрана) */
+/* Фон + светлая молочная вуаль — на ОДНОМ фиксированном слое (как подложка меню):
+   position:fixed = размер по вьюпорту, без background-attachment:fixed, который
+   раздувает картинку на мобильных. Изображение растянуто cover по экрану. */
 body::before {
   content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
   background:
     radial-gradient(900px 560px at 82% -8%, rgba(255,255,255,.5), transparent 60%),
-    linear-gradient(180deg, rgba(245,240,232,.46) 0%, rgba(245,240,232,.4) 100%);
+    linear-gradient(180deg, rgba(245,240,232,.46) 0%, rgba(245,240,232,.4) 100%),
+    #f4efe6 url('../assets/fon-baza.png') center center / cover no-repeat;
 }
 
 :focus-visible { outline: 2px solid #8b93ff; outline-offset: 3px; }

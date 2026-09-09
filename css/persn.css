@@ -63,5 +63,8 @@
   #personalization .wrap{ padding-top:clamp(90px,13vh,120px); }
   #personalization .research{ flex-direction:column; } #personalization .gather{ display:none; } #personalization .rar{ transform:rotate(90deg); }
   #personalization .examples{ grid-template-columns:1fr; }
+  /* надписи по центру на мобилке */
+  #personalization .underst, #personalization .underst b{ text-align:center; max-width:none; }
+  #personalization .actions, #personalization .branch-lab{ text-align:center; }
 }
 @media (prefers-reduced-motion: reduce){ #personalization *{ animation:none !important; } }
