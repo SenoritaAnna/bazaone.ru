@@ -54,8 +54,9 @@
 #block5 .b5card__tags span{ color:#4a463f !important; background:rgba(30,26,20,.04) !important; border-color:rgba(30,26,20,.14) !important; }
 
 /* ---------- Контакты (#block6) — светлая тема + влево ---------- */
-#block6 .b6__wrap{ text-align:left !important; align-items:flex-start !important; }
+#block6 .b6__wrap{ text-align:left !important; align-items:flex-start !important; max-width:1200px !important; }
 #block6 .b6__text{ margin-left:0 !important; margin-right:auto !important; }
+#block6 .b6form{ width:100% !important; max-width:680px !important; }
 #block6 .b6__eyebrow{ justify-content:flex-start !important; }
 #block6 .b6__eyebrow::after{ display:none !important; }
 #block6 .b6__title{ color:#161512 !important; }
