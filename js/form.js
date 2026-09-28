@@ -1,6 +1,6 @@
 /* ============================================================
    БАЗА — форма заявки: мат-капча (анти-бот), валидация,
-   временная отправка через mailto (до подключения сервера).
+   отправка через общий js/lead-send.js.
    Vanilla JS, без библиотек.
    ============================================================ */
 (function () {
@@ -77,39 +77,17 @@
       return setNote('Неверный ответ на пример. Попробуйте ещё раз.', 'is-error');
     }
 
-    // --- Отправка: на сервер (если задан endpoint), иначе mailto ---
-    send({
-      'Имя': name,
-      'E-mail': mail,
-      'Контакт': mail,
-      'Комментарий': msg,
-      'Форма': 'Главная — контакт'
+    // --- Отправка через общий модуль (таймаут, повтор, запасные варианты) ---
+    window.BAZA.sendLead({
+      form: form, noteEl: noteEl, note: setNote,
+      data: {
+        'Имя': name,
+        'E-mail': mail,
+        'Контакт': mail,
+        'Комментарий': msg,
+        'Форма': 'Главная — контакт'
+      },
+      onSuccess: function () { form.reset(); newCaptcha(); }
     });
   });
-
-  function bodyText(data) {
-    return Object.keys(data).map(function (k) {
-      var v = data[k]; if (Array.isArray(v)) v = v.join(', ');
-      return k + ': ' + v;
-    }).join('\n');
-  }
-  function mailtoFallback(data) {
-    var subject = data['Форма'] || 'Заявка с сайта БАЗА';
-    window.location.href = 'mailto:go@bazaone.ru?subject=' + encodeURIComponent(subject) +
-      '&body=' + encodeURIComponent(bodyText(data));
-  }
-  function send(data) {
-    var endpoint = window.BAZA_FORM_ENDPOINT ||
-      ((document.querySelector('meta[name="form-endpoint"]') || {}).content || '');
-    if (!endpoint) { mailtoFallback(data); return setNote('Открываем ваш почтовый клиент для отправки заявки…', 'is-ok'); }
-
-    var btn = form.querySelector('button[type="submit"]');
-    if (btn) btn.disabled = true;
-    setNote('Отправляем заявку…');
-    fetch(endpoint, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) })
-      .then(function (r) { if (!r.ok) throw new Error('bad status'); return r.text(); })
-      .then(function () { setNote('Спасибо! Заявка отправлена — мы свяжемся с вами.', 'is-ok'); form.reset(); newCaptcha(); })
-      .catch(function () { mailtoFallback(data); setNote('Открываем ваш почтовый клиент для отправки заявки…', 'is-ok'); })
-      .finally(function () { if (btn) btn.disabled = false; });
-  }
 })();

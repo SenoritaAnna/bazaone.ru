@@ -1,7 +1,7 @@
 /* ============================================================
    БАЗА — страница /forum: выбор диагностики карточками,
    валидация форм, мат-капча (анти-бот), отправка на бэкенд
-   (window.BAZA_FORM_ENDPOINT) с запасным mailto. Vanilla JS.
+   через общий js/lead-send.js. Vanilla JS.
    ============================================================ */
 (function () {
   'use strict';
@@ -95,40 +95,14 @@
       });
       data['Форма'] = form.getAttribute('data-lead-form');
 
-      send(form, data, note);
+      window.BAZA.sendLead({
+        form: form, data: data, noteEl: noteEl, note: note,
+        onSuccess: function () {
+          form.reset(); newCaptcha();
+          form.querySelectorAll('.is-active, .is-selected').forEach(function (el) { el.classList.remove('is-active', 'is-selected'); });
+          document.querySelectorAll('.fx-card.is-selected').forEach(function (c) { c.classList.remove('is-selected'); });
+        }
+      });
     });
   });
-
-  function bodyText(data) {
-    return Object.keys(data).map(function (k) {
-      var v = data[k]; if (Array.isArray(v)) v = v.join(', ');
-      return k + ': ' + v;
-    }).join('\n');
-  }
-
-  function mailtoFallback(data) {
-    var subject = data['Форма'] || 'Заявка с сайта БАЗА';
-    window.location.href = 'mailto:go@bazaone.ru?subject=' + encodeURIComponent(subject) +
-      '&body=' + encodeURIComponent(bodyText(data));
-  }
-
-  function send(form, data, note) {
-    var endpoint = window.BAZA_FORM_ENDPOINT ||
-      ((document.querySelector('meta[name="form-endpoint"]') || {}).content || '');
-    if (!endpoint) { mailtoFallback(data); return note('Открываем ваш почтовый клиент для отправки заявки…', 'is-ok'); }
-
-    var btn = form.querySelector('button[type="submit"]');
-    if (btn) btn.disabled = true;
-    note('Отправляем заявку…');
-    fetch(endpoint, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) })
-      .then(function (r) { if (!r.ok) throw new Error('bad status'); return r.text(); })
-      .then(function () {
-        note('Спасибо! Заявка отправлена — мы свяжемся с вами.', 'is-ok');
-        form.reset();
-        form.querySelectorAll('.is-active, .is-selected').forEach(function (el) { el.classList.remove('is-active', 'is-selected'); });
-        document.querySelectorAll('.fx-card.is-selected').forEach(function (c) { c.classList.remove('is-selected'); });
-      })
-      .catch(function () { mailtoFallback(data); note('Открываем ваш почтовый клиент для отправки заявки…', 'is-ok'); })
-      .finally(function () { if (btn) btn.disabled = false; });
-  }
 })();
