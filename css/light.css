@@ -67,6 +67,8 @@
 #block6 .b6form__input, #block6 .b6form__textarea{ color:#20201d !important; background:rgba(255,255,255,.72) !important; border-color:rgba(30,26,20,.16) !important; }
 #block6 .b6form__input::placeholder, #block6 .b6form__textarea::placeholder{ color:#8a8477 !important; }
 #block6 .b6form__note, #block6 .b6form__consent{ color:#4a463f !important; }
+#block6 .b6form__note.is-error{ color:#b3242a !important; }
+#block6 .b6form__note.is-ok{ color:#1f7a45 !important; }
 #block6 .b6form__consent a, #block6 .b6__direct a{ color:#4a463f !important; border-bottom-color:rgba(177,135,58,.5) !important; }
 #block6 .b6__direct{ color:#8a8477 !important; }
 

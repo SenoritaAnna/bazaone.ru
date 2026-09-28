@@ -3,16 +3,26 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <!-- Адрес приёма заявок (send.php на сервере). Пусто = отправка через mailto. -->
+  <!-- Адрес приёма заявок (send.php). При переезде сервера меняется ТОЛЬКО здесь и в index.html. -->
   <meta name="form-endpoint" content="https://api.bazaone.ru/send.php" />
   <title>БАЗА на «Мой Бизнес Форуме» 2026 — бесплатная экспресс-диагностика</title>
   <meta name="description" content="БАЗА на «Мой Бизнес Форуме» 2026 (9–10 сентября, Экспофорум, Санкт-Петербург). Встретились на форуме? Выберите бесплатную экспресс-диагностику компании. Участникам — скидка 50% на пентест." />
+  <link rel="canonical" href="https://bazaone.ru/forum/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="БАЗА" />
+  <meta property="og:locale" content="ru_RU" />
+  <meta property="og:url" content="https://bazaone.ru/forum/" />
+  <meta property="og:title" content="БАЗА на «Мой Бизнес Форуме» 2026 — бесплатная экспресс-диагностика" />
+  <meta property="og:description" content="БАЗА на «Мой Бизнес Форуме» 2026 (9–10 сентября, Экспофорум, Санкт-Петербург). Встретились на форуме? Выберите бесплатную экспресс-диагностику компании. Участникам — скидка 50% на пентест." />
+  <meta property="og:image" content="https://bazaone.ru/assets/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="БАЗА — собираем бизнес в систему: CRM, автоматизация, AI, аналитика" />
+  <meta name="twitter:card" content="summary_large_image" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2308080a'/%3E%3Ctext x='16' y='23' font-family='Arial,sans-serif' font-size='20' font-weight='900' fill='%23f5f5f7' text-anchor='middle'%3E%D0%91%3C/text%3E%3C/svg%3E" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..900&family=Onest:wght@400..700&family=Geist+Mono:wght@400..600&family=JetBrains+Mono:wght@400..600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/webfonts.css?v=1" />
   <link rel="stylesheet" href="/css/menu.css?v=18" />
-  <link rel="stylesheet" href="/css/forum.css?v=3" />
+  <link rel="stylesheet" href="/css/forum.css?v=4" />
   <link rel="stylesheet" href="/css/footer.css?v=10" />
   <link rel="stylesheet" href="/css/cookie.css?v=2" />
 </head>
@@ -281,7 +291,8 @@
   </button>
 
   <script src="/js/menu.js?v=3" defer></script>
-  <script src="/js/forum.js?v=1" defer></script>
+  <script src="/js/lead-send.js?v=1" defer></script>
+  <script src="/js/forum.js?v=2" defer></script>
   <script src="/js/cookie.js?v=2" defer></script>
 </body>
 </html>

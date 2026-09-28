@@ -224,3 +224,13 @@ textarea.fx-input{ resize:vertical; min-height:96px; line-height:1.5; }
   .fx-cap{ max-width:none; }
   .fx-submit{ width:100%; justify-content:center; }
 }
+
+/* запасные варианты, если сервер заявок не ответил (js/lead-send.js) */
+.lead-fallback__text{ display:block; line-height:1.45; }
+.lead-fallback__actions{ display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; }
+.lead-fallback__btn{
+  display:inline-flex; align-items:center; min-height:40px; padding:0 16px;
+  border:1px solid currentColor; border-radius:999px; background:transparent;
+  color:inherit; font:inherit; font-weight:600; text-decoration:none; cursor:pointer;
+}
+.lead-fallback__btn:hover{ background:rgba(216,38,44,.08); }

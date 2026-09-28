@@ -3,20 +3,30 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <!-- Адрес приёма заявок (send.php на сервере). Пусто = отправка через mailto. -->
+  <!-- Адрес приёма заявок (send.php). При переезде сервера меняется ТОЛЬКО здесь и в forum/index.html. -->
   <meta name="form-endpoint" content="https://api.bazaone.ru/send.php" />
   <title>БАЗА — CRM и автоматизация под ваш бизнес</title>
   <meta name="description" content="БАЗА — CRM и автоматизация под ваш бизнес: воронки, аналитика, ИИ-агенты, конкурентный и OSINT-анализ, аудит рисков по 152-ФЗ. Данные, процессы и команда в одной рабочей системе." />
+  <link rel="canonical" href="https://bazaone.ru/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="БАЗА" />
+  <meta property="og:locale" content="ru_RU" />
+  <meta property="og:url" content="https://bazaone.ru/" />
+  <meta property="og:title" content="БАЗА — CRM и автоматизация под ваш бизнес" />
+  <meta property="og:description" content="БАЗА — CRM и автоматизация под ваш бизнес: воронки, аналитика, ИИ-агенты, конкурентный и OSINT-анализ, аудит рисков по 152-ФЗ. Данные, процессы и команда в одной рабочей системе." />
+  <meta property="og:image" content="https://bazaone.ru/assets/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="БАЗА — собираем бизнес в систему: CRM, автоматизация, AI, аналитика" />
+  <meta name="twitter:card" content="summary_large_image" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2308080a'/%3E%3Ctext x='16' y='23' font-family='Arial,sans-serif' font-size='20' font-weight='900' fill='%23f5f5f7' text-anchor='middle'%3E%D0%91%3C/text%3E%3C/svg%3E" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..900&family=Lora:ital,wght@0,400..600;1,400&family=Onest:wght@400..700&family=Geist+Mono:wght@400..600&family=JetBrains+Mono:wght@400..600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/webfonts.css?v=1" />
   <link rel="stylesheet" href="css/fonts.css?v=2" />
   <link rel="stylesheet" href="css/menu.css?v=18" />
   <link rel="stylesheet" href="css/hero.css?v=37" />
   <link rel="stylesheet" href="css/block1.css?v=51" />
-  <link rel="stylesheet" href="css/persn.css?v=4" />
-  <link rel="stylesheet" href="css/analytics.css?v=3" />
+  <link rel="stylesheet" href="css/persn.css?v=5" />
+  <link rel="stylesheet" href="css/analytics.css?v=4" />
   <link rel="stylesheet" href="css/why.css?v=7" />
   <link rel="stylesheet" href="css/how.css?v=3" />
   <link rel="stylesheet" href="css/kit.css?v=2" />
@@ -28,11 +38,11 @@
   <link rel="stylesheet" href="css/block3.css?v=3" />
   <link rel="stylesheet" href="css/block4.css?v=2" />
   <link rel="stylesheet" href="css/block5.css?v=1" />
-  <link rel="stylesheet" href="css/block6.css?v=4" />
+  <link rel="stylesheet" href="css/block6.css?v=5" />
   <link rel="stylesheet" href="css/footer.css?v=10" />
   <link rel="stylesheet" href="css/cookie.css?v=2" />
   <link rel="stylesheet" href="css/reveal.css?v=1" />
-  <link rel="stylesheet" href="css/light.css?v=8" />
+  <link rel="stylesheet" href="css/light.css?v=9" />
 </head>
 <body>
   <!--
@@ -55,7 +65,6 @@
         <a href="#analytics" data-spy="analytics">Аналитика</a>
         <a href="#block5" data-spy="block5">О&nbsp;нас</a>
         <a href="#block6" data-spy="block6">Контакты</a>
-        <a href="/forum/" class="nav__promo">Форум</a>
       </nav>
       <a class="nav__cta" href="#block6">Оставить заявку</a>
       <button class="nav__burger" type="button" data-burger
@@ -75,7 +84,6 @@
       <a href="#analytics">Аналитика</a>
       <a href="#block5">О&nbsp;нас</a>
       <a href="#block6">Контакты</a>
-      <a href="/forum/" class="mmenu__promo">Форум</a>
     </nav>
     <a class="mmenu__cta" href="#block6">Оставить заявку</a>
   </div>
@@ -106,7 +114,7 @@
         <div class="top">
           <div>
             <p class="eyebrow">01 · Продукт</p>
-            <h1 class="h-title">Единая платформа <span class="r">управления компанией</span></h1>
+            <h2 class="h-title">Единая платформа <span class="r">управления компанией</span></h2>
             <p class="sub">БАЗА объединяет данные, процессы и&nbsp;рабочие инструменты компании в&nbsp;одном пространстве, связывает их в&nbsp;общий контекст и&nbsp;помогает вовремя увидеть то, что&nbsp;требует внимания.</p>
             <p class="tagline">Чтобы понимать, что&nbsp;происходит, и&nbsp;запускать следующий шаг.</p>
             <p class="mini-lab">Как работает БАЗА</p>
@@ -167,7 +175,7 @@
     <section class="persn" id="personalization" aria-label="Персонализация">
       <div class="wrap" data-reveal>
         <p class="eyebrow">02 · Персонализация</p>
-        <h1 class="ptitle">БАЗА начинается с&nbsp;<span class="r">вашей</span> компании</h1>
+        <h2 class="ptitle">БАЗА начинается с&nbsp;<span class="r">вашей</span> компании</h2>
         <p class="psub">Сначала изучаем, как устроена работа: процессы, роли, данные, инструменты и&nbsp;связи между ними. Затем определяем, какая конфигурация БАЗЫ нужна именно этой компании.</p>
 
         <div class="research">
@@ -230,7 +238,7 @@
       <div class="wrap" data-reveal>
         <div class="head">
           <p class="eyebrow">03 · Аналитика и разведка</p>
-          <h1 class="title">Разбираемся <span class="r">в&nbsp;бизнесе</span> глубже</h1>
+          <h2 class="title">Разбираемся <span class="r">в&nbsp;бизнесе</span> глубже</h2>
           <p class="sub">Исследуем процессы, данные, цифровую среду и&nbsp;внешнее поле компании. Можно выбрать отдельное направление или провести комплексный анализ.</p>
         </div>
 
@@ -960,7 +968,8 @@
   <script src="js/block3.js" defer></script>
   <script src="js/block4.js" defer></script>
   <script src="js/reveal.js" defer></script>
-  <script src="js/form.js?v=3" defer></script>
+  <script src="js/lead-send.js?v=1" defer></script>
+  <script src="js/form.js?v=4" defer></script>
   <script>
   /* Блок 1 — счётчик до открытия БАЗЫ (12 декабря 2026) */
   (function(){
