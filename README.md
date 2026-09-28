@@ -21,6 +21,7 @@
 | `/privacy.html` | `privacy.html` | Политика конфиденциальности |
 | `/consent.html` | `consent.html` | Согласие на обработку ПДн |
 | `/cookie.html` | `cookie.html` | Политика cookie |
+| `/admin/` | `admin/index.html` | Переход во временную админку `https://api.bazaone.ru/admin.php` (noindex). Нужна, пока не запущена админка в БАЗЕ CRM |
 | любой неверный адрес | `404.html` | Своя страница 404 (GitHub Pages отдаёт её сам; все пути в ней абсолютные) |
 
 ## Главная: блоки
@@ -106,6 +107,7 @@ index.html            главная
 forum/index.html      страница форума
 privacy.html, consent.html, cookie.html   юридические страницы
 404.html              страница «не найдено»
+admin/index.html      переход во временную админку
 robots.txt, sitemap.xml   для поисковиков
 css/                  стили: по файлу на блок + light.css (светлая тема), fonts.css
 js/                   скрипты: по файлу на блок/механику
