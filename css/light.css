@@ -70,7 +70,7 @@
 #block6 .b6form__note.is-error{ color:#b3242a !important; }
 #block6 .b6form__note.is-ok{ color:#1f7a45 !important; }
 #block6 .b6form__consent a, #block6 .b6__direct a{ color:#4a463f !important; border-bottom-color:rgba(177,135,58,.5) !important; }
-#block6 .b6__direct{ color:#8a8477 !important; }
+#block6 .b6__direct{ color:#625d54 !important; }
 
 /* ---------- Мобильное меню (бургер) — светлая подложка ---------- */
 .mmenu{ background:rgba(248,244,236,.98) !important; }

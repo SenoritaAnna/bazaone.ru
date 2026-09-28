@@ -49,3 +49,8 @@
   .cookie__actions{ gap:10px; }
   .cookie__btn{ flex:1 1 0; }
 }
+
+/* Баннер виден с первой отрисовки, без ожидания JS: класс ставит inline-скрипт в <head>,
+   если выбор ещё не сделан. cookie.js снимает класс при «Принять»/«Отклонить». */
+html.cookie-pending .cookie[hidden]{ display:flex; }
+html.cookie-pending .cookie{ opacity:1; visibility:visible; transform:translateX(-50%) translateY(0); transition:none; }

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <!-- Адрес приёма заявок (send.php). Если адрес поменяется — править ТОЛЬКО здесь и в forum/index.html. -->
+  <!-- Адрес приёма заявок (send.php). Если адрес поменяется — править здесь. -->
   <meta name="form-endpoint" content="https://api.bazaone.ru/send.php" />
   <title>БАЗА — CRM и автоматизация под ваш бизнес</title>
   <meta name="description" content="БАЗА — CRM и автоматизация под ваш бизнес: воронки, аналитика, ИИ-агенты, конкурентный и OSINT-анализ, аудит рисков по 152-ФЗ. Данные, процессы и команда в одной рабочей системе." />
@@ -20,29 +20,14 @@
   <meta property="og:image:alt" content="БАЗА — собираем бизнес в систему: CRM, автоматизация, AI, аналитика" />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2308080a'/%3E%3Ctext x='16' y='23' font-family='Arial,sans-serif' font-size='20' font-weight='900' fill='%23f5f5f7' text-anchor='middle'%3E%D0%91%3C/text%3E%3C/svg%3E" />
-  <link rel="stylesheet" href="css/webfonts.css?v=1" />
-  <link rel="stylesheet" href="css/fonts.css?v=2" />
-  <link rel="stylesheet" href="css/menu.css?v=18" />
-  <link rel="stylesheet" href="css/hero.css?v=37" />
-  <link rel="stylesheet" href="css/block1.css?v=51" />
-  <link rel="stylesheet" href="css/persn.css?v=5" />
-  <link rel="stylesheet" href="css/analytics.css?v=4" />
-  <link rel="stylesheet" href="css/why.css?v=7" />
-  <link rel="stylesheet" href="css/how.css?v=3" />
-  <link rel="stylesheet" href="css/kit.css?v=2" />
-  <link rel="stylesheet" href="css/result.css?v=1" />
-  <link rel="stylesheet" href="css/story.css?v=1" />
-  <link rel="stylesheet" href="css/grow.css?v=1" />
-  <link rel="stylesheet" href="css/faq.css?v=1" />
-  <link rel="stylesheet" href="css/block2.css?v=7" />
-  <link rel="stylesheet" href="css/block3.css?v=3" />
-  <link rel="stylesheet" href="css/block4.css?v=2" />
-  <link rel="stylesheet" href="css/block5.css?v=1" />
-  <link rel="stylesheet" href="css/block6.css?v=5" />
-  <link rel="stylesheet" href="css/footer.css?v=10" />
-  <link rel="stylesheet" href="css/cookie.css?v=2" />
-  <link rel="stylesheet" href="css/reveal.css?v=1" />
-  <link rel="stylesheet" href="css/light.css?v=9" />
+  <script>/* cookie-баннер с первой отрисовки: выбор ещё не сделан → показать сразу (см. css/cookie.css) */
+  (function(){var c=null;try{c=localStorage.getItem('baza_cookie_consent');}catch(e){}if(c!=='accepted'&&c!=='declined')document.documentElement.classList.add('cookie-pending');})();</script>
+  <!-- шрифты первого экрана: браузер начинает качать их сразу, не дожидаясь CSS -->
+  <link rel="preload" href="assets/fonts/pf-normal-cyrillic.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="assets/fonts/geist-cyrillic.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="assets/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="assets/fonts/lora-cyrillic.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="css/site.css?v=f2390093" />
 </head>
 <body>
   <!--
@@ -56,7 +41,7 @@
   <header class="nav" data-nav>
     <div class="nav__inner">
       <a class="nav__logo" href="#top" aria-label="БАЗА — наверх">
-        <img src="assets/logo-baza-black.svg" alt="БАЗА" />
+        <img src="assets/logo-baza-black.svg" width="650" height="710" alt="БАЗА" />
       </a>
       <nav class="nav__links" aria-label="Основное меню">
         <a href="#top" data-spy="top" class="is-active" aria-current="page">Главная</a>
@@ -92,14 +77,18 @@
     <!-- ============ БЛОК 0 — вступление (один экран, без анимации) ============ -->
     <section class="hero" aria-label="Вступление">
       <div class="hero__inner">
-        <img class="hero-logo" src="assets/logo-baza-black.svg"
+        <img class="hero-logo" src="assets/logo-baza-black.svg" width="650" height="710"
              alt="БАЗА — CRM и автоматизация под ваш бизнес" decoding="async" />
         <div class="icons">
           <img class="figure figure--man" src="assets/icon-artem-cut.png"
-               width="675" height="900" alt="Артем" decoding="async" />
+               srcset="assets/icon-artem-cut-400.png 358w, assets/icon-artem-cut.png 716w"
+               sizes="(max-width: 860px) 200px, 340px"
+               width="716" height="800" alt="Артем" fetchpriority="high" />
           <span class="icons__amp" aria-hidden="true">&amp;</span>
           <img class="figure figure--woman" src="assets/icon-anna-cut.png"
-               width="720" height="900" alt="Анна" decoding="async" />
+               srcset="assets/icon-anna-cut-400.png 320w, assets/icon-anna-cut.png 640w"
+               sizes="(max-width: 860px) 200px, 340px"
+               width="640" height="800" alt="Анна" fetchpriority="high" />
         </div>
         <div class="hero-copy">
           <h1 class="hero-title">СОБИРАЕМ <span class="hl">БИЗНЕС</span> В&nbsp;СИСТЕМУ</h1>
@@ -861,7 +850,7 @@
 
           <article class="b5card" data-reveal data-reveal-delay="1">
             <div class="b5card__head">
-              <img class="b5card__ava" src="assets/icon-anna-cut.png" alt="Анна" decoding="async" />
+              <img class="b5card__ava" src="assets/icon-anna-cut-400.png" width="320" height="400" alt="Анна" loading="lazy" decoding="async" />
               <div>
                 <h3 class="b5card__name">Анна</h3>
                 <p class="b5card__role">Продукт · Архитектура · Digital</p>
@@ -873,7 +862,7 @@
 
           <article class="b5card" data-reveal data-reveal-delay="2">
             <div class="b5card__head">
-              <img class="b5card__ava" src="assets/icon-artem-cut.png" alt="Артем" decoding="async" />
+              <img class="b5card__ava" src="assets/icon-artem-cut-400.png" width="358" height="400" alt="Артем" loading="lazy" decoding="async" />
               <div>
                 <h3 class="b5card__name">Артем</h3>
                 <p class="b5card__role">Бизнес · Процессы · Внедрение</p>
@@ -930,7 +919,7 @@
       <footer class="foot" aria-label="Подвал сайта">
         <div class="foot__inner">
           <div class="foot__col">
-            <img class="foot__logo" src="assets/logo-baza-header.svg" alt="БАЗА" />
+            <img class="foot__logo" src="assets/logo-baza-header.svg" width="650" height="710" alt="БАЗА" />
           </div>
           <div class="foot__col foot__col--mid">
             <a class="foot__mail" href="mailto:go@bazaone.ru">go@bazaone.ru</a>
@@ -965,9 +954,6 @@
   <script src="js/menu.js?v=3" defer></script>
   <script src="js/hero.js" defer></script>
   <script src="js/block1.js?v=3" defer></script>
-  <script src="js/block2.js" defer></script>
-  <script src="js/block3.js" defer></script>
-  <script src="js/block4.js" defer></script>
   <script src="js/reveal.js" defer></script>
   <script src="js/lead-send.js?v=2" defer></script>
   <script src="js/form.js?v=5" defer></script>
