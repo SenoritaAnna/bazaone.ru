@@ -1,0 +1,48 @@
+# БАЗА — проверка сайта перед публикацией.
+# Запускается в каждом pull request и при изменениях в main.
+# Красный крестик в PR = что-то сломано; подробности — в логе шага «Проверка сайта в браузере».
+name: Проверка сайта
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: site-check-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Стили собраны (css/site.css соответствует исходникам)
+        run: |
+          node tools/build-css.mjs
+          if ! git diff --quiet -- css/site.css index.html; then
+            echo "::error title=Стили не пересобраны::Исходные CSS изменены, а css/site.css — нет. Запустите: node tools/build-css.mjs и закоммитьте результат."
+            git --no-pager diff --stat -- css/site.css index.html
+            exit 1
+          fi
+
+      - name: Установка браузера
+        run: |
+          npm install --no-save --no-package-lock playwright@1.47.2
+          npx playwright install --with-deps chromium
+
+      - name: Проверка сайта в браузере
+        run: |
+          python3 -m http.server 8080 >/dev/null 2>&1 &
+          sleep 1
+          BASE_URL=http://127.0.0.1:8080 node tools/check-site.mjs

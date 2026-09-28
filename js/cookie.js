@@ -20,6 +20,7 @@
   });
 
   function decide(value) {
+    document.documentElement.classList.remove('cookie-pending');
     try { localStorage.setItem(KEY, value); } catch (e) {}
     // сообщаем остальным скриптам (metrika.js грузит счётчик только при 'accepted')
     try { document.dispatchEvent(new CustomEvent('baza:cookie-consent', { detail: value })); } catch (e) {}

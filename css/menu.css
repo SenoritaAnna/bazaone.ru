@@ -188,9 +188,8 @@ body[data-menu-open="true"] .nav__burger span:nth-child(3){ transform:translateY
   display:flex; align-items:center; justify-content:center; cursor:pointer;
   color:#e6c877;
   background-color:#0b0c0e;
-  background-image:url('../assets/black-suede.jpg');
-  background-image:image-set(url('../assets/black-suede.webp') type('image/webp'), url('../assets/black-suede.jpg') type('image/jpeg'));
-  background-position:center; background-size:cover; background-repeat:no-repeat;
+  /* мягкий градиент вместо текстуры замши: та же тёмная кнопка без загрузки 200 КБ картинки */
+  background-image:radial-gradient(120% 120% at 30% 22%, #2a2b30 0%, #121316 55%, #0b0c0e 100%);
   border:1px solid rgba(201,162,75,.5);
   -webkit-backdrop-filter:blur(4px); backdrop-filter:blur(4px);
   box-shadow:0 8px 24px rgba(0,0,0,.4);
