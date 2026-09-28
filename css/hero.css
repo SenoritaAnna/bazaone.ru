@@ -49,7 +49,11 @@ body::before {
   background:
     radial-gradient(900px 560px at 82% -8%, rgba(255,255,255,.5), transparent 60%),
     linear-gradient(180deg, rgba(245,240,232,.46) 0%, rgba(245,240,232,.4) 100%),
-    #f4efe6 url('../assets/fon-baza.png') center center / cover no-repeat;
+    #f4efe6 url('../assets/fon-baza.jpg') center center / cover no-repeat;
+  background:
+    radial-gradient(900px 560px at 82% -8%, rgba(255,255,255,.5), transparent 60%),
+    linear-gradient(180deg, rgba(245,240,232,.46) 0%, rgba(245,240,232,.4) 100%),
+    #f4efe6 image-set(url('../assets/fon-baza.webp') type('image/webp'), url('../assets/fon-baza.jpg') type('image/jpeg')) center center / cover no-repeat;
 }
 
 :focus-visible { outline: 2px solid #8b93ff; outline-offset: 3px; }

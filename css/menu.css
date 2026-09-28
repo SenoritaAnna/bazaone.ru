@@ -16,10 +16,10 @@
   position:fixed; top:0; left:0; right:0; z-index:50;
   /* собственная текстура кожи на меню — поверх подложки, поэтому кожа тут чётко видна */
   background-color:#0a0a0a;
-  background-image:url('../assets/croco-skin-seamless.png');
+  background-image:url('../assets/croco-skin.jpg');
   background-image:image-set(
     url('../assets/croco-skin.webp') type('image/webp'),
-    url('../assets/croco-skin-seamless.png') type('image/png'));
+    url('../assets/croco-skin.jpg') type('image/jpeg'));
   background-position:center; background-size:cover; background-repeat:no-repeat;
   border-bottom:1px solid rgba(201,162,75,.18);
   font-family:'Geist', -apple-system, Arial, sans-serif;    /* меню — без засечек */

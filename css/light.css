@@ -72,7 +72,8 @@
 
 /* ---------- Мобильное меню (бургер) — светлая подложка ---------- */
 .mmenu{ background:rgba(248,244,236,.98) !important; }
-.mmenu::before{ background:#f4efe6 url('../assets/fon-baza.png') center center / cover no-repeat !important; opacity:.4 !important; }
+.mmenu::before{ background:#f4efe6 url('../assets/fon-baza.jpg') center center / cover no-repeat !important; opacity:.4 !important; }
+.mmenu::before{ background:#f4efe6 image-set(url('../assets/fon-baza.webp') type('image/webp'), url('../assets/fon-baza.jpg') type('image/jpeg')) center center / cover no-repeat !important; }
 .mmenu__close{ color:#20201d !important; }
 .mmenu__close:hover{ color:#000 !important; }
 .mmenu__links a{ color:#20201d !important; }
