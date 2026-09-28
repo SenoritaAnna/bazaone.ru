@@ -21,6 +21,8 @@
 
   function decide(value) {
     try { localStorage.setItem(KEY, value); } catch (e) {}
+    // сообщаем остальным скриптам (metrika.js грузит счётчик только при 'accepted')
+    try { document.dispatchEvent(new CustomEvent('baza:cookie-consent', { detail: value })); } catch (e) {}
     bar.classList.remove('is-show');
     setTimeout(function () { bar.hidden = true; }, 400);
   }

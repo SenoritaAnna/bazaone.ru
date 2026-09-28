@@ -78,15 +78,19 @@
     }
 
     // --- Отправка через общий модуль (таймаут, повтор, запасные варианты) ---
+    var data = {
+      'Имя': name,
+      'E-mail': mail,
+      'Контакт': mail,
+      'Комментарий': msg,
+      'Форма': 'Главная — контакт'
+    };
+    // honeypot: люди поле не видят; заполнил — бот, сервер такую заявку отбросит
+    var hpEl = form.querySelector('input[name="website"]');
+    if (hpEl && hpEl.value) data.website = hpEl.value;
+
     window.BAZA.sendLead({
-      form: form, noteEl: noteEl, note: setNote,
-      data: {
-        'Имя': name,
-        'E-mail': mail,
-        'Контакт': mail,
-        'Комментарий': msg,
-        'Форма': 'Главная — контакт'
-      },
+      form: form, noteEl: noteEl, note: setNote, data: data,
       onSuccess: function () { form.reset(); newCaptcha(); }
     });
   });

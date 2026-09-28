@@ -18,6 +18,8 @@
   var RETRY_DELAY_MS = 1500;
   var PENDING_MAX_AGE_MS = 14 * 24 * 3600 * 1000;
 
+  function goal(name) { try { if (window.BAZA && window.BAZA.goal) window.BAZA.goal(name); } catch (e) {} }
+
   function endpoint() {
     return window.BAZA_FORM_ENDPOINT ||
       ((document.querySelector('meta[name="form-endpoint"]') || {}).content || '');
@@ -87,6 +89,7 @@
         var data = Object.assign({}, item.data, { 'Повторная отправка': 'да (не ушла с первой попытки)' });
         return post(url, data).then(function () {
           writePending(readPending().filter(function (x) { return x.t !== item.t; }));
+          goal('lead_resent');
         });
       });
     }, Promise.resolve()).catch(function () { /* попробуем при следующем заходе */ });
@@ -145,10 +148,12 @@
     postWithRetry(url, opts.data)
       .then(function () {
         opts.note('Спасибо! Заявка отправлена — мы свяжемся с вами.', 'is-ok');
+        goal('lead_sent');
         if (opts.onSuccess) opts.onSuccess();
       })
       .catch(function () {
         savePending(opts.data);
+        goal('lead_failed');
         renderFallback(opts.noteEl, opts.data);
       })
       .finally(function () { if (btn) btn.disabled = false; });

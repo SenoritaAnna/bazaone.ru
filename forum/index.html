@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <!-- Адрес приёма заявок (send.php). При переезде сервера меняется ТОЛЬКО здесь и в index.html. -->
+  <!-- Адрес приёма заявок (send.php). Если адрес поменяется — править ТОЛЬКО здесь и в index.html. -->
   <meta name="form-endpoint" content="https://api.bazaone.ru/send.php" />
   <title>БАЗА на «Мой Бизнес Форуме» 2026 — бесплатная экспресс-диагностика</title>
   <meta name="description" content="БАЗА на «Мой Бизнес Форуме» 2026 (9–10 сентября, Экспофорум, Санкт-Петербург). Встретились на форуме? Выберите бесплатную экспресс-диагностику компании. Участникам — скидка 50% на пентест." />
@@ -166,6 +166,7 @@
               <input class="fx-input" type="text" inputmode="numeric" name="captcha" autocomplete="off" required placeholder="Ответ" /></label>
             <button class="fx-cta fx-submit" type="submit">Отправить заявку <span class="fx-arrow" aria-hidden="true">→</span></button>
           </div>
+          <div class="hp-field" aria-hidden="true" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden"><label>Не заполняйте это поле <input type="text" name="website" tabindex="-1" autocomplete="off" /></label></div>
           <p class="fx-formnote" data-form-note role="status" aria-live="polite"></p>
         </form>
       </div>
@@ -250,6 +251,7 @@
               <input class="fx-input" type="text" inputmode="numeric" name="captcha" autocomplete="off" required placeholder="Ответ" /></label>
             <button class="fx-cta fx-submit" type="submit">Отправить заявку на&nbsp;пентест <span class="fx-arrow" aria-hidden="true">→</span></button>
           </div>
+          <div class="hp-field" aria-hidden="true" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden"><label>Не заполняйте это поле <input type="text" name="website" tabindex="-1" autocomplete="off" /></label></div>
           <p class="fx-formnote" data-form-note role="status" aria-live="polite"></p>
         </form>
       </div>
@@ -272,7 +274,7 @@
       </div>
       <p class="foot__req">ИП&nbsp;Гордиенко А.&nbsp;Д. · ОГРНИП 325784700359474 · ИНН 780620653426</p>
       <p class="foot__copy">© 2026 БАЗА. Все права защищены.</p>
-      <p class="foot__cookie">Мы&nbsp;используем файлы cookie, чтобы сайт работал корректно и&nbsp;удобно. Продолжая пользоваться сайтом, вы&nbsp;соглашаетесь с&nbsp;использованием cookie в&nbsp;соответствии с&nbsp;<a href="/cookie.html">Политикой&nbsp;cookie</a>.</p>
+      <p class="foot__cookie">Мы&nbsp;используем технические cookie, чтобы сайт работал корректно. Аналитические cookie (Яндекс&nbsp;Метрика)&nbsp;— только после вашего согласия. Подробнее&nbsp;— в&nbsp;<a href="/cookie.html">Политике&nbsp;cookie</a>.</p>
     </footer>
   </main>
 
@@ -291,8 +293,9 @@
   </button>
 
   <script src="/js/menu.js?v=3" defer></script>
-  <script src="/js/lead-send.js?v=1" defer></script>
+  <script src="/js/lead-send.js?v=2" defer></script>
   <script src="/js/forum.js?v=2" defer></script>
-  <script src="/js/cookie.js?v=2" defer></script>
+  <script src="/js/metrika.js?v=1" defer></script>
+  <script src="/js/cookie.js?v=3" defer></script>
 </body>
 </html>
