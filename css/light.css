@@ -32,6 +32,7 @@
 }
 .hero .hero-title .hl{ -webkit-text-fill-color:#c0392b !important; color:#c0392b !important; }
 .hero .hero-sub{ color:#2a2620 !important; font-family:'Lora',Georgia,serif !important; }
+.hero .hero-lead{ color:#4a463f !important; }
 .hero .icons__amp{ color:#161512 !important; text-shadow:none !important; }
 
 /* ---------- временно скрытые блоки (ещё тёмная тема, вернём по мере перевода) ----------

@@ -150,6 +150,17 @@ body::before {
   letter-spacing: .18em;
   text-shadow: 0 1px 10px rgba(0,0,0,.8);
 }
+/* пояснение под мета-меткой: что умеет БАЗА (обычный регистр, мельче, 2 строки на десктопе) */
+.hero-lead {
+  margin: clamp(2px, .6vh, 8px) 0 0;
+  max-width: 700px;
+  font-family: 'Lora', Georgia, serif;
+  font-weight: 400;
+  font-size: clamp(15px, 1.2vw, 18px);
+  line-height: 1.55;
+  color: #d9dce1;
+  text-wrap: balance;
+}
 
 /* ---------- Мобильные / узкие экраны ---------- */
 @media (max-width: 680px) {
@@ -158,6 +169,7 @@ body::before {
   .icons__amp { font-size: clamp(20px, 6vw, 36px); }
   .hero-logo { height: clamp(52px, 8vh, 88px); }
   .hero-sub { letter-spacing: .1em; max-width: 100%; overflow-wrap: anywhere; }
+  .hero-lead { max-width: 34em; padding: 0 4px; }
 }
 /* Низкие экраны (ландшафт телефона): компактнее, чтобы всё влезло */
 @media (max-height: 520px) {
