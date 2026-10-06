@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="robots" content="noindex,nofollow" />
+  <title>ПРОТОТИП — БАЗА · Управленческий пульт компании</title>
+  <link rel="stylesheet" href="../css/webfonts.css?v=1" />
+  <link rel="stylesheet" href="proto.css?v=1" />
+</head>
+<body>
+  <div class="proto-flag">Прототип главной для обсуждения структуры · тексты черновые · экраны будут заменены на витринный демо-стенд</div>
+
+  <!-- ШАПКА -->
+  <header class="top">
+    <div class="wrap top__in">
+      <a class="brand" href="#top" aria-label="БАЗА — пульт компании">
+        <img src="../assets/logo-baza-black.svg" width="650" height="710" alt="" />
+        <span><b>БАЗА</b><small>пульт компании</small></span>
+      </a>
+      <nav class="nav" aria-label="Основное меню">
+        <a href="#product">Продукт</a>
+        <a href="#start">Тарифы</a>
+        <a href="#about">Философия</a>
+        <a href="#dev">Разработка</a>
+        <a href="#contact">Контакты</a>
+      </nav>
+      <div class="top__cta">
+        <a class="btn btn--ghost btn--sm" href="#">Войти</a>
+        <a class="btn btn--main btn--sm" href="#start">Посмотреть БАЗУ</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- 1. ПЕРВЫЙ ЭКРАН -->
+    <section class="hero">
+      <div class="wrap">
+        <div class="hero__grid">
+          <div class="hero__text">
+            <h1>Управленческий пульт компании</h1>
+            <p class="lead">Один экран, на котором видно, что происходит в&nbsp;компании, что требует внимания и&nbsp;куда двигаться дальше. Клиенты, деньги, документы, дела и&nbsp;команда — в&nbsp;одной картине.</p>
+            <p class="hero__keep"><span>↻</span><span><b>Не нужно выбрасывать то, что уже работает.</b> БАЗА подключается к&nbsp;1С, МойСкладу, почте и&nbsp;таблицам и&nbsp;собирает их в&nbsp;один управленческий слой.</span></p>
+            <div class="hero__cta">
+              <a class="btn btn--main" href="#start">Посмотреть БАЗУ вживую</a>
+              <a class="btn btn--ghost" href="#contact">Обсудить внедрение</a>
+            </div>
+            <div class="hero__motto">ВИДЕТЬ · ПОНИМАТЬ · ДЕЙСТВОВАТЬ</div>
+          </div>
+          <img class="hero__bazika" src="img/bazika-wave.webp" width="593" height="640" alt="Ба́зика — помощник БАЗЫ" />
+        </div>
+
+        <div class="hero__shot" id="product">
+          <div class="frame ph">
+            <div class="frame__bar"><i></i><i></i><i></i><span>Пульт компании</span></div>
+            <img src="img/pult.webp" width="1800" height="946" alt="Пульт компании: сводка управления, календарь, сигналы и последние изменения" />
+          </div>
+          <span class="ph-note">Место под ролик «Пульт компании» · сейчас временный скриншот</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. ПОВЕРХ ТОГО, ЧТО ЕСТЬ -->
+    <section>
+      <div class="wrap">
+        <div class="sec-head">
+          <p class="eyebrow">Как БАЗА появляется в компании</p>
+          <h2>Начинаем с вашей компании, а&nbsp;не&nbsp;с&nbsp;чистого листа</h2>
+          <p class="lead">Разные системы и&nbsp;процессы собираются в&nbsp;единый управленческий слой. То, что работает, остаётся работать — БАЗА связывает это и&nbsp;постепенно забирает внутрь то, что удобнее вести в&nbsp;одном месте.</p>
+        </div>
+        <div class="flow">
+          <div class="flow__col">
+            <h4>Источники</h4>
+            <div class="chip">Клиенты и продажи</div>
+            <div class="chip">1С · учёт</div>
+            <div class="chip">Склад · МойСклад</div>
+            <div class="chip">Документы</div>
+            <div class="chip">Почта и входящие</div>
+            <div class="chip">Таблицы</div>
+          </div>
+          <div class="flow__arrow">→</div>
+          <div class="flow__col">
+            <h4>Как подключаем</h4>
+            <div class="connect connect--keep"><small>Подключение</small><b>Ваши системы остаются в&nbsp;работе</b><p>Данные приходят через API и&nbsp;вебхуки.</p></div>
+            <div class="connect connect--in"><small>Модули БАЗЫ</small><b>Или всё внутри БАЗЫ</b><p>С&nbsp;нуля или с&nbsp;переносом данных.</p></div>
+          </div>
+          <div class="flow__arrow">→</div>
+          <div class="core">
+            <img src="../assets/logo-baza-black.svg" width="650" height="710" alt="" />
+            <b>БАЗА</b><span>управленческий слой компании</span>
+          </div>
+          <div class="flow__arrow">→</div>
+          <div class="flow__col sees">
+            <h4>Что видит руководитель</h4>
+            <div class="chip">Что требует решения <span class="tag t-decide">решение</span></div>
+            <div class="chip">Что требует внимания <span class="tag t-attn">внимание</span></div>
+            <div class="chip">Что изменилось <span class="tag t-change">изменение</span></div>
+            <div class="chip">Что по срокам <span class="tag t-due">срок</span></div>
+            <div class="chip">Что в контуре <span class="tag t-loop">контур</span></div>
+          </div>
+        </div>
+        <div class="steps3">Собираем <span>→</span> Связываем <span>→</span> Автоматизируем</div>
+      </div>
+    </section>
+
+    <!-- 3. СЦЕНАРИИ -->
+    <section style="background:var(--sand)">
+      <div class="wrap">
+        <div class="sec-head">
+          <p class="eyebrow">Что решает БАЗА</p>
+          <h2>Данные компании становятся инструментом управления</h2>
+        </div>
+
+        <div class="scenarios">
+          <div class="scn">
+            <div class="scn__text">
+              <div class="scn__num">01</div>
+              <h3>Ясная картина компании</h3>
+              <p>В&nbsp;одном месте видно, что просрочено, что ждёт решения, что изменилось и&nbsp;что происходит сегодня.</p>
+              <ul><li>Сводка управления на одном экране</li><li>Календарь компании: сроки, встречи, сверки</li><li>Пустое — значит пустое: без искусственных KPI</li></ul>
+            </div>
+            <div><div class="frame ph"><div class="frame__bar"><i></i><i></i><i></i><span>Сводка управления</span></div><img src="img/pult-summary.webp" width="1200" height="334" alt="Сводка управления" loading="lazy" /></div><span class="ph-note">ролик / экран</span></div>
+          </div>
+
+          <div class="scn">
+            <div class="scn__text">
+              <div class="scn__num">02</div>
+              <h3>Видно, где нужно вмешаться</h3>
+              <p>Не статистика ради статистики. Сигналы управления показывают, что сломалось, почему и&nbsp;кто отвечает.</p>
+              <ul><li>Критично · предупреждение · к сведению</li><li>У каждого сигнала — причина и ответственный</li><li>Из сигнала — сразу к объекту и действию</li></ul>
+            </div>
+            <div><div class="frame ph"><div class="frame__bar"><i></i><i></i><i></i><span>Сигналы управления</span></div><img src="img/pult-signals.webp" width="1400" height="456" alt="Сигналы управления" loading="lazy" /></div><span class="ph-note">ролик / экран</span></div>
+          </div>
+
+          <div class="scn">
+            <div class="scn__text">
+              <div class="scn__num">03</div>
+              <h3>Вся картина по клиенту, деньги и документы связаны</h3>
+              <p>КП, счёт, оплата и&nbsp;акт живут в&nbsp;карточке клиента вместе с&nbsp;контактами, делами и&nbsp;историей. Видно, сколько выставлено, оплачено и&nbsp;чего ждём.</p>
+              <ul><li>Клиент → КП → счёт → оплата → акт</li><li>Этапы работы с клиентом и продажи</li><li>Документы формируются и хранятся у клиента</li></ul>
+            </div>
+            <div><div class="frame ph"><div class="frame__bar"><i></i><i></i><i></i><span>Карточка клиента</span></div><img src="img/client-card.webp" width="1800" height="829" alt="Карточка клиента" loading="lazy" /></div><span class="ph-note">ролик / экран</span></div>
+          </div>
+
+          <div class="scn">
+            <div class="scn__text">
+              <div class="scn__num">04</div>
+              <h3>Работа команды не теряется</h3>
+              <p>Дела и&nbsp;задачи с&nbsp;исполнителем, сроком и&nbsp;источником. Результат подтверждается, а&nbsp;не&nbsp;просто отмечается галочкой.</p>
+              <ul><li>Кто → что → к какому сроку → на каком основании</li><li>Единая очередь задач по всем делам</li><li>Роли и права: каждый видит своё</li></ul>
+            </div>
+            <div><div class="frame ph"><div class="frame__bar"><i></i><i></i><i></i><span>Дела и задачи</span></div><img src="img/deals.webp" width="1800" height="896" alt="Дела и задачи" loading="lazy" /></div><span class="ph-note">ролик / экран · будет переименование «Дела и задачи»</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. ЧТО ВНУТРИ -->
+    <section>
+      <div class="wrap">
+        <div class="sec-head">
+          <p class="eyebrow">Платформа</p>
+          <h2>Ядро держит общую картину, модули подключаются по&nbsp;мере необходимости</h2>
+          <p class="lead">Компания растёт — система остаётся одной. Начать можно с&nbsp;одного модуля.</p>
+        </div>
+        <div class="inside">
+          <div class="kernel">
+            <small>Ядро БАЗЫ</small>
+            <h3>Пульт управления</h3>
+            <ul>
+              <li>Знает состояние компании</li>
+              <li>Понимает контекст каждого объекта</li>
+              <li>Учитывает правила бизнеса</li>
+              <li>Учитывает права сотрудников</li>
+            </ul>
+            <p>…и&nbsp;действует только в&nbsp;допустимых рамках.</p>
+          </div>
+          <div class="mods">
+            <div class="mod"><b>Клиенты и&nbsp;контакты</b><em class="s-on">работает</em></div>
+            <div class="mod"><b>Продажи</b><em class="s-on">работает</em></div>
+            <div class="mod"><b>КП, счета, оплаты, акты</b><em class="s-on">работает</em></div>
+            <div class="mod"><b>Документы</b><em class="s-on">работает</em></div>
+            <div class="mod"><b>Финансы</b><em class="s-on">работает</em></div>
+            <div class="mod"><b>Календарь</b><em class="s-on">работает</em></div>
+            <div class="mod"><b>Дела и&nbsp;задачи</b><em class="s-on">работает</em></div>
+            <div class="mod"><b>Сотрудники и&nbsp;роли</b><em class="s-on">работает</em></div>
+            <div class="mod"><b>Склад</b><em class="s-soon">к запуску</em></div>
+            <div class="mod"><b>Почта и&nbsp;входящие</b><em class="s-plan">скоро</em></div>
+            <div class="mod"><b>Подключения к&nbsp;вашим системам</b><em class="s-on">работает</em></div>
+            <div class="mod mod--more"><b>+ новые модули по&nbsp;мере роста</b><em class="s-plan">дальше</em></div>
+          </div>
+        </div>
+        <p class="ph-note">Статусы модулей черновые — сверить с фактическим MVP перед публикацией</p>
+      </div>
+    </section>
+
+    <!-- 5. НЕ CRM И НЕ ERP -->
+    <section style="background:var(--sand)">
+      <div class="wrap">
+        <div class="sec-head">
+          <p class="eyebrow">Сравнение</p>
+          <h2>Не&nbsp;ещё одна CRM и&nbsp;не&nbsp;тяжёлая ERP</h2>
+          <p class="lead">Функции могут пересекаться. Различается центр системы.</p>
+        </div>
+        <div class="cmp">
+          <div class="cmp__col"><h3>CRM</h3><small>Центр системы</small><div class="center">Клиент и&nbsp;продажа</div><div class="pills"><span>клиенты</span><span>продажи</span><span>коммуникации</span></div><p>CRM помогает работать с&nbsp;клиентами.</p></div>
+          <div class="cmp__col"><h3>ERP</h3><small>Центр системы</small><div class="center">Ресурсы и&nbsp;операции</div><div class="pills"><span>ресурсы</span><span>учёт</span><span>операции</span><span>планирование</span></div><p>ERP помогает учитывать ресурсы и&nbsp;операции.</p></div>
+          <div class="cmp__col cmp__col--baza"><h3>БАЗА</h3><small>Центр системы</small><div class="center">Состояние компании и&nbsp;управление</div><div class="pills"><span>сигналы</span><span>фокус внимания</span><span>контекст</span><span>действия</span></div><p>БАЗА собирает управление компанией поверх её данных, процессов и&nbsp;систем.</p></div>
+        </div>
+        <p class="cmp-foot">БАЗА соединяет <span>данные, контекст, правила и&nbsp;действия</span> в&nbsp;одном управленческом слое.</p>
+      </div>
+    </section>
+
+    <!-- 6. ВИДЕТЬ · ПОНИМАТЬ · ДЕЙСТВОВАТЬ -->
+    <section>
+      <div class="wrap">
+        <div class="sec-head">
+          <p class="eyebrow">Что получает руководитель</p>
+          <h2>Компания становится управляемой из&nbsp;одного пространства</h2>
+        </div>
+        <div class="vud">
+          <div><b>Видеть</b><p>Что происходит в&nbsp;компании — на одном экране, без переключения между системами.</p></div>
+          <div><b>Понимать</b><p>Что требует внимания и&nbsp;почему: у&nbsp;каждого сигнала есть причина и&nbsp;источник.</p></div>
+          <div><b>Действовать</b><p>Назначить ответственного, перенести срок, принять решение — прямо из&nbsp;сигнала.</p></div>
+        </div>
+        <p class="quote">Не&nbsp;статистика ради статистики, а&nbsp;то, где руководителю нужно вмешательство.</p>
+      </div>
+    </section>
+
+    <!-- 7. БА́ЗИКА -->
+    <section style="background:var(--sand)">
+      <div class="wrap bz">
+        <div>
+          <p class="eyebrow">AI-помощник</p>
+          <h2>Ба́зика — помощник БАЗЫ</h2>
+          <p class="lead">Работает в&nbsp;контексте вашей компании. У&nbsp;Ба́зики можно спросить, что происходит, — и&nbsp;получить ответ с&nbsp;опорой на данные.</p>
+          <div class="bz__grid">
+            <div class="bz__card"><b>Читает</b><p>Данные, документы и&nbsp;историю изменений компании.</p></div>
+            <div class="bz__card"><b>Объясняет</b><p>Почему появился сигнал и&nbsp;что изменилось — с&nbsp;источником.</p></div>
+            <div class="bz__card"><b>Находит</b><p>Клиента, дело, документ или принятое решение.</p></div>
+            <div class="bz__card"><b>Подсказывает</b><p>Следующий шаг и&nbsp;того, кто за&nbsp;него отвечает.</p></div>
+            <div class="bz__card bz__rule"><small>Общий помощник</small><p>Подключается сверху — во&nbsp;всех разделах БАЗЫ.</p></div>
+            <div class="bz__card bz__rule"><small>В допустимых рамках</small><p>Видит только разрешённое. Решение принимает человек.</p></div>
+          </div>
+        </div>
+        <div>
+          <div class="chat">
+            <div class="msg msg--me"><small>Руководитель</small>Что требует моего решения сегодня?</div>
+            <div class="msg msg--bz"><small>Ба́зика</small>Два вопроса: закупка ждёт согласования, а&nbsp;по договору №128 прошёл срок оплаты. Открыть?<span class="src">Источник: договор №128 · история оплат</span></div>
+            <p class="chat-note">Пример диалога на демонстрационных данных</p>
+          </div>
+          <img class="bz__img" src="img/bazika-success.webp" width="623" height="640" alt="" loading="lazy" />
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. РАЗВИВАЕМ -->
+    <section>
+      <div class="wrap">
+        <div class="sec-head">
+          <p class="eyebrow">Развиваем</p>
+          <h2>Куда растёт БАЗА</h2>
+          <p class="lead">Мы честно разделяем, что работает сейчас, а&nbsp;что в&nbsp;разработке. Эти направления делают БАЗУ принципиально больше, чем CRM.</p>
+        </div>
+        <div class="road">
+          <div><em>в разработке</em><b>Граф обязательств</b><p>Кто → что → кому → к&nbsp;какому сроку → на&nbsp;каком основании. Обязательства обеих сторон.</p></div>
+          <div><em>в разработке</em><b>Паспорт отношений</b><p>Как меняются отношения с&nbsp;клиентом: ритм, обещания, риски, следующий шаг.</p></div>
+          <div><em>в разработке</em><b>Объяснимые сигналы</b><p>«Похоже, отношения охлаждаются, потому что…» — с&nbsp;фактами и&nbsp;источниками.</p></div>
+          <div><em>в разработке</em><b>Продуктивность работы</b><p>Не&nbsp;рейтинги людей, а&nbsp;то, где застревает работа и&nbsp;где нужна помощь.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. КАК НАЧАТЬ / РАННИЙ ДОСТУП -->
+    <section id="start" style="background:var(--sand)">
+      <div class="wrap">
+        <div class="sec-head">
+          <p class="eyebrow">Следующий шаг</p>
+          <h2>Как начать с&nbsp;БАЗОЙ</h2>
+          <p class="lead">Продукт развивается по&nbsp;этапам. Подключиться можно уже сейчас.</p>
+        </div>
+        <div class="start">
+          <div>
+            <div class="st"><i>01</i><div><b>Посмотреть БАЗУ вживую</b><p>Покажем рабочий Пульт и&nbsp;текущие возможности.</p></div></div>
+            <div class="st"><i>02</i><div><b>Обсудить вашу компанию</b><p>Разберём процессы, данные и&nbsp;системы, которые стоит собрать в&nbsp;единый контур.</p></div></div>
+            <div class="st"><i>03</i><div><b>Начать внедрение</b><p>Определим первый управленческий результат и&nbsp;соберём стартовый контур.</p></div></div>
+          </div>
+          <div class="pilot">
+            <small>Ранний доступ</small>
+            <h3>Первые компании — пилотное внедрение</h3>
+            <ul><li>Подключение к вашим системам</li><li>Перенос данных</li><li>Настройка под процессы и роли</li><li>Индивидуальные условия</li></ul>
+            <p style="margin:0;opacity:.8;font-size:15px">Тарифы сформируем на&nbsp;реальной экономике первых внедрений.</p>
+            <a class="btn" href="#contact">Стать первым клиентом</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. О НАС -->
+    <section id="about">
+      <div class="wrap">
+        <div class="sec-head"><p class="eyebrow">Кто за БАЗОЙ</p><h2>Продукт, выросший из&nbsp;практики</h2></div>
+        <div class="about">
+          <div class="person"><b>Анна</b><span>Продукт · Архитектура · Digital</span><p>Проектирует цифровые продукты и&nbsp;пользовательские сценарии, собирает системы от&nbsp;идеи до&nbsp;рабочего решения.</p></div>
+          <div class="person"><b>Артем</b><span>Бизнес · Процессы · Внедрение</span><p>Разбирает бизнес-процессы и&nbsp;отвечает за&nbsp;то, чтобы продукт работал в&nbsp;реальной компании.</p></div>
+          <div class="story"><b style="font-family:var(--serif);font-size:22px;font-weight:500">БАЗА выросла из&nbsp;реальной задачи</b><p>Во&nbsp;время работы над системой для компании «Арсенал» возник вопрос: можно ли видеть компанию целиком из&nbsp;одного пространства? Так появилась БАЗА.</p><a href="#">Наша философия →</a></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section style="padding-top:0">
+      <div class="wrap faq">
+        <p class="eyebrow">Вопросы</p>
+        <details><summary>Придётся ли отказаться от 1С, МойСклада и других систем?</summary><p>Нет. Работающие системы подключаются к&nbsp;БАЗЕ и&nbsp;остаются источниками данных. Переносим внутрь только то, что удобнее вести в&nbsp;одном месте.</p></details>
+        <details><summary>Где хранятся данные?</summary><p>На&nbsp;серверах в&nbsp;России, в&nbsp;соответствии со&nbsp;152-ФЗ. Доступ — по&nbsp;ролям и&nbsp;правам.</p></details>
+        <details><summary>Сколько занимает внедрение?</summary><p>Зависит от&nbsp;того, сколько систем и&nbsp;данных нужно собрать. Стартовый контур — первый управленческий результат — собираем в&nbsp;первую очередь.</p></details>
+        <details><summary>Сколько стоит?</summary><p>Сейчас идёт ранний доступ: первые компании подключаем на&nbsp;индивидуальных условиях пилота.</p></details>
+        <details><summary>Ба́зика видит все данные компании?</summary><p>Нет. Ба́зика видит только то, что разрешено правами пользователя, и&nbsp;не&nbsp;принимает решений за&nbsp;человека.</p></details>
+      </div>
+    </section>
+
+    <!-- ЗАЯВКА -->
+    <section id="contact" style="padding-top:0">
+      <div class="wrap">
+        <div class="final">
+          <div><p class="eyebrow">Начнём с вашей компании</p><h2>Посмотреть БАЗУ вживую</h2><p class="lead">Покажем Пульт на&nbsp;демонстрационных данных и&nbsp;обсудим, каким может быть стартовый контур вашей компании.</p></div>
+          <form onsubmit="return false"><input placeholder="Имя" /><input placeholder="E-mail или телефон" /><textarea placeholder="Расскажите о компании и задачах"></textarea><button class="btn btn--main" type="submit">Оставить заявку</button><span class="ph-note">В прототипе форма не отправляет. На сайте — текущая форма со всеми защитами.</span></form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot" id="dev">
+    <div class="wrap"><span>© 2026 БАЗА · пульт компании</span><span>Разработка и аудит · Философия · Политика конфиденциальности</span></div>
+  </footer>
+</body>
+</html>
