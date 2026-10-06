@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>БАЗА — пульт управления компанией</title>
+  <meta name="description" content="БАЗА — пульт управления компанией для команд от 2 до 30 человек. Клиенты, КП, счета, оплаты, документы и дела связаны вокруг клиента, а Пульт показывает, что изменилось, что ждёт решения и почему." />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="form-endpoint" content="https://api.bazaone.ru/send.php" />
+  <meta name="theme-color" content="#FBF8F1" />
+  <link rel="icon" href="../assets/logo-baza-black.svg" type="image/svg+xml" />
+  <link rel="preload" href="../assets/fonts/lora-cyrillic.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="../css/webfonts.css?v=1" />
+  <link rel="stylesheet" href="../css/cookie.css?v=2" />
+  <link rel="stylesheet" href="home.css?v=1" />
+  <script>/* cookie-баннер с первой отрисовки (как на главной) */
+  (function(){var c=null;try{c=localStorage.getItem('baza_cookie_consent');}catch(e){}if(c!=='accepted'&&c!=='declined')document.documentElement.classList.add('cookie-pending');})();</script>
+</head>
+<body>
+  <a class="skip" href="#main">К содержанию</a>
+
+  <!-- ============ Шапка ============ -->
+  <header class="top" data-top>
+    <div class="wrap top__in">
+      <a class="top__logo" href="#main" aria-label="БАЗА — в начало"><img src="../assets/logo-baza-black.svg" width="650" height="710" alt="БАЗА" /></a>
+      <nav class="top__nav" aria-label="Разделы">
+        <a href="#day">Один день</a>
+        <a href="#now">Что работает</a>
+        <a href="#bazika">Ба́зика</a>
+        <a href="#early">Ранний доступ</a>
+        <a href="#faq">Вопросы</a>
+      </nav>
+      <a class="btn btn--main top__cta" href="#contact">Посмотреть БАЗУ</a>
+      <button class="top__menu" type="button" data-menu aria-expanded="false" aria-controls="mnav" aria-label="Меню"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+  <nav class="mnav" id="mnav" data-mnav aria-label="Меню">
+    <a href="#day">Один день</a>
+    <a href="#now">Что работает</a>
+    <a href="#bazika">Ба́зика</a>
+    <a href="#early">Ранний доступ</a>
+    <a href="#faq">Вопросы</a>
+    <a href="#contact">Посмотреть БАЗУ</a>
+  </nav>
+
+  <!-- часы дня: показывают главу сюжета -->
+  <div class="clock" data-clock aria-hidden="true">
+    <span class="clock__dot" data-clock-dot></span>
+    <span data-clock-t>8:47</span>
+    <span class="clock__lbl" data-clock-l>утро</span>
+  </div>
+
+  <main id="main">
+
+    <!-- ============ 1 · Первый экран · 8:47 ============ -->
+    <section class="hero" data-time="8:47" data-time-l="утро" aria-labelledby="h1">
+      <div class="wrap">
+        <div class="hero__txt">
+          <p class="eyebrow" data-in><span class="t">8:47</span> Понедельник</p>
+          <h1 class="h1" id="h1" data-in="2">Ваша компания — как&nbsp;на&nbsp;<em>ладони</em>.</h1>
+          <p class="lead hero__sub" data-in="3">БАЗА — пульт управления компанией. Клиенты, КП, счета, оплаты, документы и&nbsp;дела связаны вокруг клиента, а&nbsp;Пульт с&nbsp;утра показывает, что изменилось, что ждёт вашего решения и&nbsp;почему.</p>
+          <div class="hero__act" data-in="4">
+            <a class="btn btn--main" href="#contact">Посмотреть БАЗУ <span class="arr" aria-hidden="true">→</span></a>
+            <a class="btn btn--line" href="#early">Стать первым клиентом</a>
+          </div>
+          <p class="hero__note" data-in="4"><span>Для компаний <b>от&nbsp;2 до&nbsp;30 человек</b></span><span>Ранний доступ</span><span>Видеть · Понимать · Управлять</span></p>
+        </div>
+
+        <div class="hero__stage" data-hero-stage>
+          <div class="pult" role="img" aria-label="Пульт БАЗЫ на демонстрационных данных: требует решения — 3, изменилось с прошлого визита — 14, просрочено — 1, на сегодня — 4">
+            <div class="pult__bar">
+              <span class="pult__brand"><span class="pult__mark">Б</span>БАЗА</span>
+              <span class="pult__crumb">Пульт компании</span>
+              <span class="pult__date num">Понедельник, 6 октября · 8:47</span>
+              <span class="pult__demo">Демо-данные</span>
+            </div>
+            <div class="pult__body">
+              <div class="kpi kpi--decide"><div class="kpi__k"><i></i>Требует решения</div><div class="kpi__v" data-count="3">3</div><div class="kpi__s">ждут владельца</div></div>
+              <div class="kpi kpi--change"><div class="kpi__k"><i></i>Изменилось</div><div class="kpi__v" data-count="14">14</div><div class="kpi__s">с прошлого визита</div></div>
+              <div class="kpi"><div class="kpi__k"><i style="background:var(--terra)"></i>Просрочено</div><div class="kpi__v" data-count="1">1</div><div class="kpi__s">смета для «Лесной гавани»</div></div>
+              <div class="feed">
+                <div class="feed__h">Изменилось с прошлого визита</div>
+                <ul data-feed>
+                  <li><time>8:31</time><span><b>Срок дела «Смета» перенесён на 9&nbsp;окт</b><span class="src">Дела · ООО «Лесная гавань»</span></span></li>
+                  <li><time>сб</time><span><b>Новое решение: условия для клиента</b><span class="src">Решения · ООО «Альфа-Декор»</span></span></li>
+                  <li><time>пт</time><span><b>Этап клиента: «Работаем»</b><span class="src">Клиенты · ООО «Северный ветер»</span></span></li>
+                  <li><time>пт</time><span><b>Входящее: запрос КП</b><span class="src">Входящие · ИП Орлова</span></span></li>
+                </ul>
+              </div>
+              <div class="rows">
+                <div class="row is-hot"><span class="tag tag--decide">Требует решения</span><span>Условия для ООО «Альфа-Декор»</span><span class="who">Решение · вы</span><span class="due">сегодня</span></div>
+                <div class="row"><span class="tag tag--decide">Просрочено</span><span>Смета для ООО «Лесная гавань»</span><span class="who">Ответственный: вы</span><span class="due">3&nbsp;окт, 18:00</span></div>
+                <div class="row"><span class="tag tag--wait">Ждёт подтверждения</span><span>Аванс от&nbsp;ИП Орловой</span><span class="who">Источник: звонок</span><span class="due">до&nbsp;15&nbsp;окт</span></div>
+                <div class="row"><span class="tag tag--ok">Сегодня</span><span>Звонок в&nbsp;ООО «Северный ветер»</span><span class="who">Ответственный: вы</span><span class="due">15:00</span></div>
+              </div>
+            </div>
+          </div>
+          <p class="pult__cap"><em>Пульт, 8:47. С&nbsp;вашего прошлого визита — 14&nbsp;изменений, решения ждут три.</em><span>Демонстрационные данные</span></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 2 · Один день с БАЗОЙ (sticky) ============ -->
+    <section class="sec day" id="day" data-day aria-labelledby="day-h">
+      <div class="wrap sec__head">
+        <p class="eyebrow" data-in>Один день с&nbsp;БАЗОЙ</p>
+        <h2 class="h2" id="day-h" data-in="2">Проживите обычный рабочий день — уже в&nbsp;<em>БАЗЕ</em>.</h2>
+        <p class="lead" data-in="3">Прокрутите: каждая сцена — момент из&nbsp;недели руководителя и&nbsp;то, как он&nbsp;выглядит в&nbsp;БАЗЕ.</p>
+      </div>
+      <div class="day__track" data-day-track style="--steps:4">
+        <div class="day__sticky">
+          <div class="wrap day__grid">
+            <div class="scene-txt">
+              <article class="scene is-on" data-scene data-time="8:47" data-time-l="понедельник">
+                <p class="scene__t">8:47</p>
+                <p class="scene__d">Понедельник · утро</p>
+                <p class="scene__p">Сорок сообщений в&nbsp;мессенджере, таблица клиентов открыта у&nbsp;двоих сразу, три звонка, чтобы понять, что изменилось за&nbsp;выходные.</p>
+                <p class="scene__q">«Я&nbsp;каждое утро собираю компанию по&nbsp;кусочкам».</p>
+                <p class="scene__baza"><b>В&nbsp;БАЗЕ.</b> Пульт открывается с&nbsp;главным: что изменилось с&nbsp;вашего прошлого визита, какие решения ждут вас, что просрочено и&nbsp;что на&nbsp;сегодня. Пять минут — и&nbsp;понятно, куда идти первым делом.</p>
+                              </article>
+              <article class="scene" data-scene data-time="11:20" data-time-l="среда">
+                <p class="scene__t">11:20</p>
+                <p class="scene__d">Среда · звонок клиента</p>
+                <p class="scene__p">Звонит клиент: «Вы&nbsp;обещали смету ещё в&nbsp;пятницу». Обещание жило в&nbsp;переписке менеджера.</p>
+                <p class="scene__q">«О&nbsp;договорённости знали двое. Я&nbsp;узнал третьим — от&nbsp;клиента».</p>
+                <p class="scene__baza"><b>В&nbsp;БАЗЕ.</b> Смета записана делом: ответственный, срок с&nbsp;точным временем, источник «звонок клиента 02.10». В&nbsp;день срока дело стоит в&nbsp;«Сегодня», после срока Пульт поднимает его в&nbsp;«Просрочено» — с&nbsp;причиной и&nbsp;правилом.</p>
+              </article>
+              <article class="scene" data-scene data-time="14:00" data-time-l="четверг">
+                <p class="scene__t">14:00</p>
+                <p class="scene__d">Четверг · деньги</p>
+                <p class="scene__p">Деньги пришли в&nbsp;банк, счета лежат в&nbsp;почте, кто что оплатил — сверяете вручную.</p>
+                <p class="scene__q">«Банк есть, 1С есть. Картину собираю сам».</p>
+                <p class="scene__baza"><b>В&nbsp;БАЗЕ.</b> Загрузите выписку интернет-банка — 1С:Клиент-Банк или CSV. БАЗА подсказывает, к&nbsp;какому клиенту и&nbsp;счёту относится каждое поступление: по&nbsp;ИНН, номеру счёта в&nbsp;назначении и&nbsp;сумме — и&nbsp;объясняет почему. Вы&nbsp;подтверждаете, и&nbsp;счёт получает статус «оплачен».</p>
+              </article>
+              <article class="scene" data-scene data-time="16:30" data-time-l="пятница">
+                <p class="scene__t">16:30</p>
+                <p class="scene__d">Пятница · закрываем неделю</p>
+                <p class="scene__p">Пора закрыть неделю: где КП, где счёт, подписан ли акт.</p>
+                <p class="scene__q">«Каждую пятницу я&nbsp;заново свожу один и&nbsp;тот же путь».</p>
+                <p class="scene__baza"><b>В&nbsp;БАЗЕ.</b> У&nbsp;каждого клиента виден весь путь: КП → счёт → оплата → акт. Акт собирается из&nbsp;одного или нескольких счетов, подписанный скан хранится рядом. Счёт закрывается фактом — оплатой, разнесённой из&nbsp;выписки.</p>
+              </article>
+            </div>
+
+            <div class="scene-vis" aria-hidden="true">
+              <!-- 8:47: обрывки стягиваются в Пульт -->
+              <div class="vis-card is-on" data-vis>
+                <div data-frags>
+                  <div class="frag frag--chat" style="left:2%;top:4%;--gx:140px;--gy:160px"><small>Мессенджер · 46 новых</small>«Что там по&nbsp;Северному?»</div>
+                  <div class="frag" style="right:4%;top:0;--gx:-140px;--gy:180px"><small>Таблица · открыта у&nbsp;двоих</small>Клиенты_финал_НОВАЯ.xlsx</div>
+                  <div class="frag" style="left:10%;bottom:6%;--gx:120px;--gy:-150px"><small>Документ</small>Счёт №&nbsp;214 · 186&nbsp;000&nbsp;₽</div>
+                  <div class="frag" style="right:2%;bottom:12%;--gx:-120px;--gy:-130px"><small>Звонок</small>«Вы&nbsp;обещали смету в&nbsp;пятницу»</div>
+                </div>
+                <div class="ui" style="max-width:440px;margin:auto;position:relative">
+                  <div class="ui__h"><b>Пульт</b> · понедельник, 8:47</div>
+                  <div class="ui__b">
+                    <div class="row"><span class="tag tag--decide">Требует решения</span><span>3 вопроса</span><span></span><span></span></div>
+                    <div class="row"><span class="tag tag--change">Изменилось</span><span>14 с&nbsp;прошлого визита</span><span></span><span></span></div>
+                    <div class="row"><span class="tag tag--decide">Просрочено</span><span>Смета · «Лесная гавань»</span><span></span><span></span></div>
+                    <div class="row"><span class="tag tag--ok">Сегодня</span><span>4 дела</span><span></span><span></span></div>
+                  </div>
+                </div>
+              </div>
+              <!-- 11:20: сигнал по правилу -->
+              <div class="vis-card" data-vis>
+                <div class="ui sig" style="max-width:460px;margin:auto">
+                  <div class="ui__h"><b>Сигнал</b> · Пульт</div>
+                  <div class="ui__b">
+                    <div class="sig__k">● Просрочено</div>
+                    <p class="sig__t">Смета для ООО «Лесная гавань»</p>
+                    <dl class="sig__meta">
+                      <dt>Что случилось</dt><dd>Срок 3&nbsp;окт, 18:00 прошёл, дело открыто</dd>
+                      <dt>Почему важно</dt><dd>Клиент ждёт смету, обещание дано по&nbsp;звонку</dd>
+                      <dt>Источник</dt><dd>Звонок клиента 02.10</dd>
+                      <dt>Правило</dt><dd>Просроченное обязательство · v1</dd>
+                      <dt>Подтверждено</dt><dd>человеком</dd>
+                    </dl>
+                    <div class="sig__act"><span class="uibtn uibtn--main">Открыть дело</span><span class="uibtn">Принять к&nbsp;сведению</span></div>
+                  </div>
+                </div>
+              </div>
+              <!-- 14:00: выписка → счёт → клиент -->
+              <div class="vis-card" data-vis>
+                <div class="ui" style="max-width:500px;margin:auto">
+                  <div class="ui__h"><b>Выписка</b> · 1С:Клиент-Банк · 12 поступлений</div>
+                  <div class="ui__b">
+                    <div class="row"><span class="tag tag--change">п/п 412</span><span>186&nbsp;000,00&nbsp;₽ · ООО «Северный ветер»<br><span class="who">Назначение: оплата по&nbsp;счёту №&nbsp;214</span></span><span></span><span></span></div>
+                    <div class="row is-hot" style="background:linear-gradient(90deg,rgba(85,118,100,.08),transparent 70%)"><span class="tag tag--ok">Подсказка</span><span>Счёт №&nbsp;214 → ООО «Северный ветер»<br><span class="who">Совпал ИНН, в&nbsp;назначении счёт №&nbsp;214, сумма совпадает</span></span><span></span><span></span></div>
+                    <div class="sig__act"><span class="uibtn uibtn--main">Подтвердить и&nbsp;разнести</span><span class="uibtn">Выбрать другой счёт</span></div>
+                  </div>
+                </div>
+              </div>
+              <!-- 16:30: путь клиента -->
+              <div class="vis-card" data-vis>
+                <div class="ui" style="max-width:560px;margin:auto">
+                  <div class="ui__h"><b>ООО «Северный ветер»</b> · продажи</div>
+                  <div class="chain">
+                    <div class="chain__s is-done">КП<b>№&nbsp;57</b>принято</div><span class="chain__a">→</span>
+                    <div class="chain__s is-done">Счёт<b>№&nbsp;214</b>оплачен</div><span class="chain__a">→</span>
+                    <div class="chain__s is-done">Оплата<b>186&nbsp;000&nbsp;₽</b>из&nbsp;выписки</div><span class="chain__a">→</span>
+                    <div class="chain__s is-done">Акт<b>№&nbsp;198</b>подписан</div>
+                  </div>
+                  <div class="ui__b small">Скан подписанного акта · 4&nbsp;окт · Документы клиента</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 3 · Работает сейчас ============ -->
+    <section class="sec sec--paper" id="now" data-time="16:45" data-time-l="обзор" aria-labelledby="now-h">
+      <div class="wrap">
+        <div class="sec__head">
+          <p class="eyebrow" data-in>Работает сейчас</p>
+          <h2 class="h2" id="now-h" data-in="2">Всё, что нужно руководителю, — вокруг <em>клиента</em>.</h2>
+          <p class="lead" data-in="3">Откройте клиента — рядом окажутся его КП, счета, оплаты, акты, документы, дела и&nbsp;история.</p>
+        </div>
+        <div class="mods">
+          <article class="mod" data-in data-slot="pult"><span class="mod__st">Работает</span><h3 class="h3">Пульт: утро начинается здесь</h3><p>Изменилось, требует решения, просрочено, сегодня. Каждый сигнал — с&nbsp;причиной и&nbsp;правилом; его можно принять к&nbsp;сведению или отклонить с&nbsp;пояснением.</p></article>
+          <article class="mod" data-in="2" data-slot="client-card"><span class="mod__st">Работает</span><h3 class="h3">Вся история клиента на&nbsp;одной странице</h3><p>Реквизиты с&nbsp;выгрузкой в&nbsp;PDF, ответственные, адреса, контакты, документы, встречи, решения и&nbsp;хронология.</p></article>
+          <article class="mod" data-in="3" data-slot="sales"><span class="mod__st">Работает</span><h3 class="h3">От&nbsp;КП до&nbsp;акта — один путь</h3><p>Версии КП и&nbsp;PDF, счёт из&nbsp;КП, статус оплаты по&nbsp;факту поступлений, акт из&nbsp;нескольких счетов со&nbsp;сканом подписи. Общие реестры КП, счетов, оплат и&nbsp;актов.</p></article>
+          <article class="mod" data-in data-slot="finance"><span class="mod__st">Работает</span><h3 class="h3">Выписка превращается в&nbsp;разнесённые оплаты</h3><p>Выписка 1С:Клиент-Банк или CSV, подсказки по&nbsp;ИНН, номеру счёта и&nbsp;сумме, подтверждение одной кнопкой.</p></article>
+          <article class="mod" data-in="2" data-slot="tasks"><span class="mod__st">Работает</span><h3 class="h3">У&nbsp;каждой договорённости есть срок и&nbsp;основание</h3><p>Ответственный, срок с&nbsp;точным временем, источник и&nbsp;подтверждённость — человеком или источником.</p></article>
+          <article class="mod" data-in="3"><span class="mod__st">Работает</span><h3 class="h3">Каждое изменение оставляет след</h3><p>Журнал: кто, что и&nbsp;когда поменял. Права проверяются на&nbsp;сервере, вход — по&nbsp;ключу доступа или коду на&nbsp;почту.</p></article>
+          <article class="mod" data-in><span class="mod__st">Работает</span><h3 class="h3">Календарь компании</h3><p>День, неделя, месяц: события компании и&nbsp;сроки дел в&nbsp;одном календаре.</p></article>
+          <article class="mod" data-in="2"><span class="mod__st mod__st--next">Следующий этап</span><h3 class="h3">Рабочие места сотрудников</h3><p>Приглашение сотрудников, роли и&nbsp;права, «Моя работа» для каждого.</p></article>
+          <article class="mod" data-in="3"><span class="mod__st mod__st--next">Растём</span><h3 class="h3">Склад, напоминания, подключение 1С, МойСклад и&nbsp;почты</h3><p>Строим вместе с&nbsp;компаниями раннего доступа.</p></article>
+        </div>
+        <p class="legend"><span><i class="dot"></i>Работает — есть в&nbsp;БАЗЕ сейчас</span><span><i class="dot dot--ring"></i>Следующий этап и&nbsp;«Растём» — строим вместе с&nbsp;первыми компаниями</span></p>
+        <p style="margin-top:32px"><a class="btn btn--main" href="#contact">Посмотреть БАЗУ на&nbsp;демо-данных <span class="arr" aria-hidden="true">→</span></a></p>
+      </div>
+    </section>
+
+    <!-- ============ 4 · Ба́зика · 9:05 ============ -->
+    <section class="sec" id="bazika" data-time="17:00" data-time-l="Ба́зика" aria-labelledby="bz-h">
+      <div class="wrap bz" data-bz>
+        <div>
+          <p class="eyebrow" data-in>Ба́зика</p>
+          <h2 class="h2" id="bz-h" data-in="2">Ба́зика замечает важное и&nbsp;показывает, откуда это <em>известно</em>.</h2>
+          <p class="lead" data-in="3">Помощница внутри БАЗЫ. В&nbsp;карточке клиента она по&nbsp;правилам отмечает просроченные задачи и&nbsp;клиента, которому нужен ответственный, — с&nbsp;источником и&nbsp;рекомендуемым действием. Решаете вы.</p>
+          <div class="trio" data-in="4">
+            <div><b>Замечает</b><p>Деловые события в&nbsp;карточке клиента.</p></div>
+            <div><b>Объясняет</b><p>Показывает источник и&nbsp;время данных.</p></div>
+            <div><b>Оставляет решение вам</b><p>Рекомендует шаг, действует человек.</p></div>
+          </div>
+        </div>
+        <div class="bz__stage" data-in="2">
+          <div class="ui sig" style="position:relative">
+            <div class="ui__h"><b>Сигналы Ба́зики</b> · ООО «Лесная гавань»</div>
+            <div class="ui__b">
+              <div class="sig__k">● Есть просроченная задача</div>
+              <p class="sig__t">Смета, срок 3&nbsp;окт, 18:00</p>
+              <dl class="sig__meta">
+                <dt>Источник</dt><dd>Дела клиента · обновлено 9:05</dd>
+                <dt>Рекомендуемое действие</dt><dd>Перенести срок или закрыть задачу</dd>
+              </dl>
+              <div class="sig__act"><span class="uibtn uibtn--main">Открыть дело</span></div>
+            </div>
+          </div>
+          <img class="bz__peek" src="img/bazika-peek.webp" width="320" height="355" alt="" loading="lazy" />
+          <div class="bz__vision">
+            <span class="lbl"><i class="dot dot--ring"></i>Так это будет работать</span>
+            <div class="tg">
+              <div class="tg__m tg__m--me">Что требует моего внимания сегодня?</div>
+              <div class="tg__m tg__m--bz">Три решения ждут вас. Начнём с&nbsp;«Северного ветра»: счёт №&nbsp;214 просрочен на&nbsp;12&nbsp;дней. <span class="small">Источник: счёт №&nbsp;214</span></div>
+            </div>
+            <p style="margin-top:12px;font:14px/1.5 var(--sans);font-style:normal" class="small">Диалог, ответы по&nbsp;данным в&nbsp;рамках прав и&nbsp;уровень уверенности — следующий слой Ба́зики.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 5 · Как это устроено (тёмная сцена №1) ============ -->
+    <section class="sec graph" id="how" data-time="17:15" data-time-l="устройство" aria-labelledby="how-h">
+      <div class="wrap">
+        <p class="eyebrow" data-in>Как это устроено</p>
+        <h2 class="h2" id="how-h" data-in="2">Компания — это связи. БАЗА держит их на&nbsp;виду.</h2>
+        <p class="lead" data-in="3">Счёт связан с&nbsp;клиентом, оплата — со&nbsp;счётом, дело — со&nbsp;сроком и&nbsp;основанием. Сигнал появляется по&nbsp;правилу и&nbsp;объясняет причину. Следующий слой — понимание договорённостей прямо из&nbsp;деловой переписки.</p>
+
+        <div class="graph__scroll" tabindex="0" aria-label="Схема связей, прокручивается по горизонтали"><svg class="graph__svg" data-draw viewBox="0 0 1100 360" role="img" aria-label="Граф связей: клиент связан с КП, документами и делом; КП — со счётом, счёт — с оплатой из выписки; у дела есть срок; просроченный срок рождает сигнал">
+          <path class="ln" d="M190 180 C 280 180, 270 70, 360 70" />
+          <path class="ln" d="M190 180 C 280 180, 270 180, 360 180" />
+          <path class="ln" d="M190 180 C 280 180, 270 290, 360 290" />
+          <path class="ln" d="M530 70 C 590 70, 580 70, 630 70" />
+          <path class="ln" d="M800 70 C 850 70, 840 70, 890 70" />
+          <path class="ln" d="M530 290 C 590 290, 580 290, 630 290" />
+          <path class="ln" d="M800 290 C 850 290, 840 220, 890 220" />
+          <g class="nd"><rect x="20" y="148" width="170" height="64" rx="12"/><text x="38" y="174">Клиент</text><text class="s" x="38" y="195">ООО «Северный ветер»</text></g>
+          <g class="nd"><rect x="360" y="38" width="170" height="64" rx="12"/><text x="378" y="64">КП №&#160;57</text><text class="s" x="378" y="85">принято клиентом</text></g>
+          <g class="nd"><rect x="360" y="148" width="170" height="64" rx="12"/><text x="378" y="174">Документы</text><text class="s" x="378" y="195">договор, реквизиты</text></g>
+          <g class="nd"><rect x="360" y="258" width="170" height="64" rx="12"/><text x="378" y="284">Дело · смета</text><text class="s" x="378" y="305">источник: звонок 02.10</text></g>
+          <g class="nd"><rect x="630" y="38" width="170" height="64" rx="12"/><text x="648" y="64">Счёт №&#160;214</text><text class="s" x="648" y="85">186&#160;000 ₽ · оплачен</text></g>
+          <g class="nd"><rect x="890" y="38" width="190" height="64" rx="12"/><text x="908" y="64">Оплата</text><text class="s" x="908" y="85">из выписки · подтверждена</text></g>
+          <g class="nd"><rect x="630" y="258" width="170" height="64" rx="12"/><text x="648" y="284">Срок</text><text class="s" x="648" y="305">3 окт, 18:00</text></g>
+          <g class="nd nd--sig"><rect x="890" y="188" width="190" height="64" rx="12"/><text x="908" y="214">Сигнал · Просрочено</text><text class="s" x="908" y="235">правило v1 · причина</text></g>
+          <circle class="pulse" data-pulse cx="1066" cy="202" r="6" />
+        </svg></div>
+
+        <div class="layers">
+          <div class="layer" data-in><span class="st"><i></i>Работает</span><h3>Связанные факты</h3><p>Клиент, КП, счёт, оплата, акт, документ и&nbsp;дело — одна модель. Изменения пишутся в&nbsp;журнал с&nbsp;автором.</p></div>
+          <div class="layer" data-in="2"><span class="st"><i></i>Работает</span><h3>Сигнал с&nbsp;причиной</h3><p>Каждый сигнал несёт «что случилось», «почему важно» и&nbsp;правило с&nbsp;номером версии. Подтверждённость факта видна: человеком или источником.</p></div>
+          <div class="layer" data-in="3"><span class="st st--rd"><i></i>Растём</span><h3>Понимание договорённостей</h3><p>БАЗА учится находить обязательства обеих сторон в&nbsp;деловой переписке, строить граф «кто — что — кому — к&nbsp;какому сроку» и&nbsp;калибровать уверенность по&nbsp;вашим подтверждениям.</p></div>
+        </div>
+        <p class="graph__more">Исследовательская программа, измеримые параметры и&nbsp;архитектура — в&nbsp;материалах для экспертов и&nbsp;партнёров. <a href="#contact">Запросить материалы →</a></p>
+      </div>
+    </section>
+
+    <!-- ============ 6 · Один контур для людей и агентов ============ -->
+    <section class="sec sec--euc" id="contour" data-time="17:30" data-time-l="горизонт" aria-labelledby="ct-h">
+      <div class="wrap">
+        <p class="eyebrow" data-in>Направление развития</p>
+        <h2 class="h2" id="ct-h" data-in="2" style="max-width:20ch">Одни правила, одни права, одни факты — для людей и&nbsp;их&nbsp;<em>помощников</em>.</h2>
+        <p class="lead" data-in="3">БАЗА — управляемый бизнес-контур. Человек и&nbsp;разрешённые агенты получают доступ к&nbsp;нему через одни и&nbsp;те&nbsp;же правила, права и&nbsp;факты.</p>
+
+        <div class="gate" data-in>
+          <div class="gate__side">
+            <div class="gate__who"><i>Р</i><div>Руководитель<small>● работает сегодня</small></div></div>
+            <div class="gate__who is-rd"><i>С</i><div>Сотрудники<small>◐ следующий этап</small></div></div>
+          </div>
+          <div class="gate__core"><b>БАЗА</b><span>права</span><span>правила</span><span>журнал</span></div>
+          <div class="gate__side">
+            <div class="gate__who is-rd"><i>Б</i><div>Ба́зика<small>○ растём</small></div></div>
+            <div class="gate__who is-rd"><i>А</i><div>Разрешённые AI-агенты<small>○ направление развития</small></div></div>
+          </div>
+        </div>
+
+        <div class="cards3">
+          <div class="card" data-in><span class="mod__st">Работает</span><h3 class="h3">Фундамент</h3><p>Права на&nbsp;сервере, журнал изменений и&nbsp;общие факты, из&nbsp;которых строится Пульт. Каждое действие оставляет след.</p></div>
+          <div class="card card--rd" data-in="2"><span class="mod__st mod__st--next">Следующий этап</span><h3 class="h3">Команда</h3><p>Сотрудники получают рабочие места с&nbsp;ролями и&nbsp;правами.</p></div>
+          <div class="card card--rd" data-in="3"><span class="mod__st mod__st--next">Направление развития</span><h3 class="h3">Помощники</h3><p>Разрешённые агенты работают через деловые действия по&nbsp;ступеням: прочитать, предложить, выполнить разрешённое. Финальный шаг подтверждает человек.</p>
+            <div class="tg" aria-label="Пример: вопрос из мессенджера">
+              <span class="small">21:10 · Telegram / MAX</span>
+              <div class="tg__m tg__m--me">Что требует внимания завтра?</div>
+              <div class="tg__m tg__m--bz">Два дела со&nbsp;сроком на&nbsp;утро и&nbsp;одно решение. Открыть?</div>
+            </div>
+          </div>
+        </div>
+        <p class="quote-xl" data-in>Сегодня в&nbsp;БАЗЕ работает руководитель. Следом приходит команда, затем её&nbsp;помощники. Правила для всех одни.</p>
+      </div>
+    </section>
+
+    <!-- ============ 7 · Для кого: 2–30 ============ -->
+    <section class="sec" id="who" data-time="17:40" data-time-l="масштаб" aria-labelledby="who-h">
+      <div class="wrap seats" data-seats data-mode="small">
+        <div>
+          <p class="eyebrow" data-in>Для кого</p>
+          <h2 class="h2" id="who-h" data-in="2">Для компаний от&nbsp;двух до&nbsp;тридцати человек.</h2>
+          <p class="lead" data-in="3">Масштаб, где руководитель знает каждого по&nbsp;имени и&nbsp;каждая договорённость на&nbsp;счету.</p>
+          <div class="seats__grid" data-seat-grid aria-hidden="true" style="margin-top:36px"></div>
+        </div>
+        <div class="seats__cards">
+          <button class="seat-card" type="button" data-seat-mode="small" aria-pressed="true"><b>Вас двое или пятеро</b><span>Вся компания у&nbsp;вас в&nbsp;голове. БАЗА держит её&nbsp;на&nbsp;экране — с&nbsp;первого клиента, пока порядок легко заложить.</span></button>
+          <button class="seat-card" type="button" data-seat-mode="big" aria-pressed="false"><b>Вас двадцать или тридцать</b><span>Картина разошлась по&nbsp;людям, чатам и&nbsp;таблицам. БАЗА собирает клиентов, деньги и&nbsp;дела в&nbsp;одном месте и&nbsp;возвращает вам обзор.</span></button>
+          <p class="small"><i class="dot dot--ring"></i>&nbsp; Сегодня — рабочее место руководителя. Рабочие места сотрудников — следующий этап.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 8 · Ранний доступ ============ -->
+    <section class="sec sec--paper" id="early" data-time="17:50" data-time-l="приглашение" aria-labelledby="ea-h">
+      <div class="wrap">
+        <div class="invite" data-in>
+          <div>
+            <p class="eyebrow">Ранний доступ</p>
+            <h2 class="h2" id="ea-h">Первые компании строят БАЗУ вместе с&nbsp;<em>нами</em>.</h2>
+            <p class="lead">Подключаем лично, по&nbsp;одной компании. Первые клиенты первыми получают рабочие места сотрудников и&nbsp;влияют на&nbsp;то, что появится дальше.</p>
+            <div class="invite__act">
+              <a class="btn btn--main" href="#contact">Стать первым клиентом <span class="arr" aria-hidden="true">→</span></a>
+              <a class="btn btn--line" href="#contact">Обсудить внедрение</a>
+            </div>
+          </div>
+          <ul>
+            <li>Личное подключение: вместе заводим клиентов, КП и&nbsp;счета.</li>
+            <li>Этапы работы с&nbsp;клиентом под ваш порядок.</li>
+            <li>Загрузка банковской выписки и&nbsp;разнесение оплат с&nbsp;первого дня.</li>
+            <li>Прямой канал с&nbsp;командой продукта.</li>
+            <li>Индивидуальные условия пилота.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 9 · Кто за БАЗОЙ ============ -->
+    <section class="sec" id="team" aria-labelledby="tm-h">
+      <div class="wrap">
+        <div class="sec__head">
+          <p class="eyebrow" data-in>Кто за&nbsp;БАЗОЙ</p>
+          <h2 class="h2" id="tm-h" data-in="2" style="max-width:20ch">Мы строим БАЗУ сами — от&nbsp;архитектуры до&nbsp;внедрения.</h2>
+        </div>
+        <div class="team">
+          <div class="person" data-in><img src="../assets/icon-anna-cut-400.png" width="400" height="400" alt="Анна" loading="lazy" /><div><b>Анна</b><span class="role">Продукт · Архитектура</span><p>Проектирует, как БАЗА видит компанию и&nbsp;как говорит с&nbsp;человеком: сценарии, экраны, Ба́зику.</p></div></div>
+          <div class="person" data-in="2"><img src="../assets/icon-artem-cut-400.png" width="400" height="400" alt="Артем" loading="lazy" /><div><b>Артем</b><span class="role">Бизнес · Процессы · Внедрение</span><p>Разбирает, как живёт настоящая компания, и&nbsp;отвечает за&nbsp;то, чтобы БАЗА работала в&nbsp;ней с&nbsp;первого дня.</p></div></div>
+          <!-- История происхождения (Арсенал / generic) — скрыта до решения D4 -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 10 · Вопросы ============ -->
+    <section class="sec sec--paper" id="faq" data-time="18:00" data-time-l="вопросы" aria-labelledby="faq-h">
+      <div class="wrap">
+        <div class="sec__head">
+          <p class="eyebrow" data-in>Вопросы</p>
+          <h2 class="h2" id="faq-h" data-in="2">Коротко о&nbsp;главном.</h2>
+        </div>
+        <div class="faq">
+          <details><summary>Что будет с&nbsp;1С и&nbsp;банком?</summary><p>1С продолжает вести бухгалтерию. Поступления БАЗА берёт из&nbsp;выписки интернет-банка — 1С:Клиент-Банк или CSV. Прямое подключение 1С, МойСклад и&nbsp;почты — в&nbsp;развитии.</p></details>
+          <details><summary>Где хранятся данные?</summary><p>Серверы БАЗЫ — у&nbsp;российского облачного провайдера Selectel. Права проверяются на&nbsp;сервере, вход — по&nbsp;ключу доступа или коду на&nbsp;почту, каждое изменение пишется в&nbsp;журнал.</p></details>
+          <details><summary>Что Ба́зика умеет сейчас?</summary><p>Отмечает в&nbsp;карточке клиента просроченные задачи и&nbsp;клиента, которому нужен ответственный, — с&nbsp;источником и&nbsp;рекомендуемым действием. Диалог и&nbsp;ответы по&nbsp;данным — следующий слой.</p></details>
+          <details><summary>Что из&nbsp;описанного уже работает?</summary><p>Всё, что отмечено «Работает», есть в&nbsp;БАЗЕ сейчас. «Следующий этап» и&nbsp;«Растём» — направления, которые строим вместе с&nbsp;первыми компаниями.</p></details>
+          <details><summary>Может ли работать вся команда?</summary><p>Сегодня — рабочее место руководителя. Рабочие места сотрудников с&nbsp;ролями и&nbsp;правами — следующий этап; компании раннего доступа получают их&nbsp;первыми.</p></details>
+          <details><summary>Сколько стоит?</summary><p>Первые компании подключаются на&nbsp;индивидуальных условиях пилота. Расскажем после разговора о&nbsp;вашей компании.</p></details>
+          <details><summary>Сколько занимает подключение?</summary><p>Начинаем с&nbsp;клиентов и&nbsp;Пульта, чтобы картина появилась быстрее. Срок назовём после разговора.</p></details>
+          <details><summary>Нас больше тридцати человек.</summary><p>Сейчас фокус — компании до&nbsp;30&nbsp;человек. Оставьте заявку — расскажем, когда откроем формат для больших команд.</p></details>
+          <details><summary>Как начать?</summary><p>Оставьте заявку. Созвонимся, разберём вашу компанию и&nbsp;покажем БАЗУ на&nbsp;демонстрационных данных.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 11 · 18:10 · вечер + заявка (тёмная сцена №2) ============ -->
+    <section class="sec dusk" id="contact" data-dusk data-time="18:10" data-time-l="вечер" aria-labelledby="ct2-h">
+      <div class="wrap dusk__in">
+        <div class="dusk__txt">
+          <p class="eyebrow"><span class="t">18:10</span> Вечер</p>
+          <h2 class="h2" id="ct2-h">День закрыт. Завтра в&nbsp;8:47 вы&nbsp;снова будете знать главное.</h2>
+          <p class="lead">Расскажите о&nbsp;своей компании — покажем, как она выглядит в&nbsp;БАЗЕ.</p>
+          <p class="dusk__done"><i></i>Все решения дня приняты</p>
+          <img class="dusk__bz" src="img/bazika-wave.webp" width="408" height="440" alt="" loading="lazy" />
+        </div>
+
+        <form class="lead-form" id="lead-form" data-lead-form novalidate>
+          <div class="lead-form__row">
+            <label class="f"><span>Имя</span><input class="b6form__input" type="text" name="name" autocomplete="name" required maxlength="80" placeholder="Как к&nbsp;вам обращаться" /></label>
+            <label class="f"><span>E-mail</span><input class="b6form__input" type="email" name="email" autocomplete="email" required maxlength="120" placeholder="you@example.com" /></label>
+          </div>
+          <label class="f"><span>Комментарий</span><textarea class="b6form__input" name="message" rows="4" required maxlength="1500" placeholder="Сколько человек в команде и что хотите видеть первым"></textarea></label>
+          <label class="consent b6form__consent">
+            <input type="checkbox" name="consent" data-consent required />
+            <span>Я&nbsp;ознакомлен(а) с&nbsp;<a href="../privacy.html" target="_blank" rel="noopener">Политикой&nbsp;конфиденциальности</a> и&nbsp;даю <a href="../consent.html" target="_blank" rel="noopener">согласие на&nbsp;обработку персональных данных</a>.</span>
+          </label>
+          <div class="lead-form__foot">
+            <label class="f"><span>Проверка: сколько будет <b data-captcha-q>…</b></span><input class="b6form__input" type="text" inputmode="numeric" name="captcha" required autocomplete="off" placeholder="Ответ" /></label>
+            <button class="btn btn--main" type="submit">Стать первым клиентом <span class="arr" aria-hidden="true">→</span></button>
+          </div>
+          <div class="hp-field" aria-hidden="true" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden"><label>Не заполняйте это поле <input type="text" name="website" tabindex="-1" autocomplete="off" /></label></div>
+          <p class="form-note b6form__note" data-form-note role="status" aria-live="polite"></p>
+        </form>
+      </div>
+      <div class="wrap"><p class="direct">или&nbsp;напишите напрямую: <a href="mailto:go@bazaone.ru">go@bazaone.ru</a></p></div>
+
+      <footer class="foot" aria-label="Подвал сайта">
+        <div class="wrap">
+          <div class="foot__in">
+            <div>
+              <img class="foot__logo" src="../assets/logo-baza-header.svg" width="650" height="710" alt="БАЗА" loading="lazy" />
+              <p><a href="mailto:go@bazaone.ru">go@bazaone.ru</a></p>
+            </div>
+            <nav aria-label="Правовые документы">
+              <a href="../privacy.html">Политика конфиденциальности</a>
+              <a href="../consent.html">Согласие на&nbsp;обработку ПД</a>
+              <a href="../cookie.html">Файлы cookie</a>
+            </nav>
+          </div>
+          <p>ИП&nbsp;Гордиенко А.&nbsp;Д. · ОГРНИП 325784700359474 · ИНН 780620653426</p>
+          <p>© 2026 БАЗА. Все права защищены.</p>
+          <p>Мы&nbsp;используем технические cookie, чтобы сайт работал корректно. Аналитические cookie (Яндекс&nbsp;Метрика)&nbsp;— только после вашего согласия. Подробнее&nbsp;— в&nbsp;<a href="../cookie.html">Политике&nbsp;cookie</a>.</p>
+        </div>
+      </footer>
+    </section>
+  </main>
+
+  <!-- Баннер согласия на cookie (тексты как на главной) -->
+  <div class="cookie" data-cookie hidden role="dialog" aria-label="Уведомление о файлах cookie">
+    <p class="cookie__text">Мы&nbsp;используем файлы cookie для&nbsp;корректной работы сайта и&nbsp;аналитики. Подробнее — в&nbsp;<a href="../cookie.html">Политике&nbsp;cookie</a>.</p>
+    <div class="cookie__actions">
+      <button class="cookie__btn cookie__btn--accept" type="button" data-cookie-accept>Принять</button>
+      <button class="cookie__btn cookie__btn--decline" type="button" data-cookie-decline>Отклонить</button>
+    </div>
+  </div>
+
+  <script src="home.js?v=1" defer></script>
+  <script src="../js/lead-send.js?v=2" defer></script>
+  <script src="../js/form.js?v=5" defer></script>
+  <script src="../js/metrika.js?v=1" defer></script>
+  <script src="../js/cookie.js?v=3" defer></script>
+</body>
+</html>

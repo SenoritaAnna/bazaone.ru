@@ -72,10 +72,11 @@
 
   /* --- лента «Последние изменения»: новые строки, пока Пульт на экране --- */
   var feed = $('[data-feed]');
+  // только типы, которые реально попадают в «Изменилось» (дела, решения, сверки, входящие, клиенты)
   var feedQueue = [
-    ['9:12', 'Поступление 186&nbsp;000&nbsp;₽ связано со&nbsp;счётом №&nbsp;214', 'Выписка банка · ООО «Северный ветер»'],
-    ['9:20', 'Акт по&nbsp;счёту №&nbsp;198 подписан', 'Документы · ООО «Лесная гавань»'],
-    ['9:31', 'КП №&nbsp;57 отправлено клиенту', 'Продажи · ИП Орлова']
+    ['8:52', 'Дело «Звонок» отмечено выполненным', 'Дела · ООО «Северный ветер»'],
+    ['8:55', 'Сверка подтверждена человеком', 'Сверки · ООО «Лесная гавань»'],
+    ['9:01', 'Ответственный клиента назначен', 'Клиенты · ИП Орлова']
   ];
   if (feed && !RM && 'IntersectionObserver' in window) {
     var feedTimer = null, feedVisible = false;
@@ -146,6 +147,16 @@
   var frags = day && $('[data-frags]', day);
   var desktopDay = function () { return window.innerWidth > 1024; };
   var lastScene = -1;
+  // на узких экранах кадр продукта стоит под текстом своей сцены
+  scenes.forEach(function (sc, i) {
+    var ui = visCards[i] && visCards[i].querySelector('.ui');
+    if (!ui) return;
+    var box = document.createElement('div');
+    box.className = 'scene__ui';
+    box.setAttribute('aria-hidden', 'true');
+    box.appendChild(ui.cloneNode(true));
+    sc.appendChild(box);
+  });
   function setScene(n) {
     if (n === lastScene) return; lastScene = n;
     scenes.forEach(function (s, i) { s.classList.toggle('is-on', i === n); s.setAttribute('aria-hidden', i === n ? 'false' : 'true'); });
@@ -170,13 +181,14 @@
     if (cur) setClock(cur.getAttribute('data-time'), cur.getAttribute('data-time-l'));
 
     // сцены дня
+    var inDay = day && dayTrack.getBoundingClientRect().top < mid && dayTrack.getBoundingClientRect().bottom > mid;
     if (day && desktopDay()) {
       var p = stickyProgress(dayTrack);
       var n = clamp(Math.floor(p * scenes.length * .999), 0, scenes.length - 1);
       setScene(n);
       if (frags) frags.classList.toggle('is-gathered', p > .12);
       var st = scenes[n] && scenes[n].getAttribute('data-time');
-      if (st) setClock(st, scenes[n].getAttribute('data-time-l'));
+      if (st && inDay) setClock(st, scenes[n].getAttribute('data-time-l'));
     }
 
     // нити / граф / стрелки сопоставления
